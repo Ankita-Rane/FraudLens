@@ -1,0 +1,4 @@
+-r requirements.txt
+torch==2.13.0
+transformers==5.16.0
+accelerate==1.14.0

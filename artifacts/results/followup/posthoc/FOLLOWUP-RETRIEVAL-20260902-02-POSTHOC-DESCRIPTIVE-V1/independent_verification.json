@@ -1,0 +1,333 @@
+{
+  "analysis_id": "FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1",
+  "audit_manifest_sha256": "ff59a253fbf23888b4a7e006e51ea75d84d09375979f742d87e31458cc3b2a93",
+  "check_count": 38,
+  "checks": [
+    {
+      "check": "analysis_id",
+      "expected": "FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1",
+      "observed": "FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1",
+      "passed": true
+    },
+    {
+      "check": "scientific_status",
+      "expected": "post_hoc_descriptive_evidence_audit_passed",
+      "observed": "post_hoc_descriptive_evidence_audit_passed",
+      "passed": true
+    },
+    {
+      "check": "no_new_model_calls",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "check": "v4_modified",
+      "expected": false,
+      "observed": false,
+      "passed": true
+    },
+    {
+      "check": "source_results_hash",
+      "expected": "219092d03d75c6511896ba0df1f50e3ad38cb7e80e31c8f8537aa1983d79e65e",
+      "observed": "219092d03d75c6511896ba0df1f50e3ad38cb7e80e31c8f8537aa1983d79e65e",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash",
+      "expected": "af9fbda7a2edee26cb02ce32f70e0a661d1ab681ab602a6fe5b233792f366ff5",
+      "observed": "af9fbda7a2edee26cb02ce32f70e0a661d1ab681ab602a6fe5b233792f366ff5",
+      "passed": true
+    },
+    {
+      "check": "analysis_module_hash",
+      "expected": "a8a2bee815f6fd23ef231051182a47df52cab305e3f91ebc76073a5035ba8e20",
+      "observed": "a8a2bee815f6fd23ef231051182a47df52cab305e3f91ebc76073a5035ba8e20",
+      "passed": true
+    },
+    {
+      "check": "build_tool_hash",
+      "expected": "d2c5ab673f407a4fd9e1f07a15c6cfd1f39bfa5757e5bc452221626c19a3b3de",
+      "observed": "d2c5ab673f407a4fd9e1f07a15c6cfd1f39bfa5757e5bc452221626c19a3b3de",
+      "passed": true
+    },
+    {
+      "check": "output_hash:fidelity_availability_records",
+      "expected": {
+        "bytes": 385394,
+        "exists": true,
+        "sha256": "66059bcd7b17899f02ab35e3fc292996da996240b828591043f3b0810eada352"
+      },
+      "observed": {
+        "bytes": 385394,
+        "exists": true,
+        "sha256": "66059bcd7b17899f02ab35e3fc292996da996240b828591043f3b0810eada352"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:fidelity_missingness_summary",
+      "expected": {
+        "bytes": 1673,
+        "exists": true,
+        "sha256": "0e9c61702654cb903bfa3d66899a7e3a34e26dad2ecfa28642875c4daaf49730"
+      },
+      "observed": {
+        "bytes": 1673,
+        "exists": true,
+        "sha256": "0e9c61702654cb903bfa3d66899a7e3a34e26dad2ecfa28642875c4daaf49730"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:gate_case_scores",
+      "expected": {
+        "bytes": 34929,
+        "exists": true,
+        "sha256": "afa10bfbf3802aa07100bf23b34351455b2e13467b2e9503b148f4702f09ce42"
+      },
+      "observed": {
+        "bytes": 34929,
+        "exists": true,
+        "sha256": "afa10bfbf3802aa07100bf23b34351455b2e13467b2e9503b148f4702f09ce42"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:gate_figure",
+      "expected": {
+        "bytes": 141492,
+        "exists": true,
+        "sha256": "3eeb0d5a65955e96350d0bf90ebfa2939ba28982ee67aec1a2869e7c2645533f"
+      },
+      "observed": {
+        "bytes": 141492,
+        "exists": true,
+        "sha256": "3eeb0d5a65955e96350d0bf90ebfa2939ba28982ee67aec1a2869e7c2645533f"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:generation_only_latency_summary",
+      "expected": {
+        "bytes": 3265,
+        "exists": true,
+        "sha256": "889a99f6f7513e30c414089248fd6bdc9bf44996c3eb1a4e071511c1fa672900"
+      },
+      "observed": {
+        "bytes": 3265,
+        "exists": true,
+        "sha256": "889a99f6f7513e30c414089248fd6bdc9bf44996c3eb1a4e071511c1fa672900"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:latency_by_disposition_summary",
+      "expected": {
+        "bytes": 16095,
+        "exists": true,
+        "sha256": "91b53f3f5f8e08481c5429ede440749182d82ab5db107297b7985091ae397142"
+      },
+      "observed": {
+        "bytes": 16095,
+        "exists": true,
+        "sha256": "91b53f3f5f8e08481c5429ede440749182d82ab5db107297b7985091ae397142"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:latency_figure",
+      "expected": {
+        "bytes": 143107,
+        "exists": true,
+        "sha256": "1e0aa7f42aa64d567e3735b59e429d033e4d51d2843a56842c81a402cd0fa48f"
+      },
+      "observed": {
+        "bytes": 143107,
+        "exists": true,
+        "sha256": "1e0aa7f42aa64d567e3735b59e429d033e4d51d2843a56842c81a402cd0fa48f"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:latency_records",
+      "expected": {
+        "bytes": 501579,
+        "exists": true,
+        "sha256": "b14e8ff882183abf042f69e72a4cec5a9c0dd1c142d11bded24b1dc209f2e931"
+      },
+      "observed": {
+        "bytes": 501579,
+        "exists": true,
+        "sha256": "b14e8ff882183abf042f69e72a4cec5a9c0dd1c142d11bded24b1dc209f2e931"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:reporting_notes",
+      "expected": {
+        "bytes": 975,
+        "exists": true,
+        "sha256": "71e53127da557b1e0db81f955f0b2bc2db29315372321355279efe2e1f869da1"
+      },
+      "observed": {
+        "bytes": 975,
+        "exists": true,
+        "sha256": "71e53127da557b1e0db81f955f0b2bc2db29315372321355279efe2e1f869da1"
+      },
+      "passed": true
+    },
+    {
+      "check": "output_hash:summary",
+      "expected": {
+        "bytes": 62490,
+        "exists": true,
+        "sha256": "f3652f5c7d9fb2bc1dd47bc58892f4a2ff182f4a3d3c4be96c1041dccf4a277a"
+      },
+      "observed": {
+        "bytes": 62490,
+        "exists": true,
+        "sha256": "f3652f5c7d9fb2bc1dd47bc58892f4a2ff182f4a3d3c4be96c1041dccf4a277a"
+      },
+      "passed": true
+    },
+    {
+      "check": "accepted_manifest_count",
+      "expected": 55,
+      "observed": 55,
+      "passed": true
+    },
+    {
+      "check": "case_count",
+      "expected": 550,
+      "observed": 550,
+      "passed": true
+    },
+    {
+      "check": "raw_call_count",
+      "expected": 3300,
+      "observed": 3300,
+      "passed": true
+    },
+    {
+      "check": "condition_count",
+      "expected": 6,
+      "observed": 6,
+      "passed": true
+    },
+    {
+      "check": "gate_csv_rows",
+      "expected": 550,
+      "observed": 550,
+      "passed": true
+    },
+    {
+      "check": "gate_unique_samples",
+      "expected": 550,
+      "observed": 550,
+      "passed": true
+    },
+    {
+      "check": "ULB_gate_eligible",
+      "expected": 68,
+      "observed": 68,
+      "passed": true
+    },
+    {
+      "check": "ULB_gate_below",
+      "expected": 82,
+      "observed": 82,
+      "passed": true
+    },
+    {
+      "check": "Sparkov_gate_eligible",
+      "expected": 201,
+      "observed": 201,
+      "passed": true
+    },
+    {
+      "check": "Sparkov_gate_below",
+      "expected": 199,
+      "observed": 199,
+      "passed": true
+    },
+    {
+      "check": "fidelity_csv_rows",
+      "expected": 3300,
+      "observed": 3300,
+      "passed": true
+    },
+    {
+      "check": "generated_count",
+      "expected": 2457,
+      "observed": 2457,
+      "passed": true
+    },
+    {
+      "check": "not_generated_count",
+      "expected": 843,
+      "observed": 843,
+      "passed": true
+    },
+    {
+      "check": "fidelity_available_count",
+      "expected": 1610,
+      "observed": 1610,
+      "passed": true
+    },
+    {
+      "check": "fidelity_unavailable_count",
+      "expected": 847,
+      "observed": 847,
+      "passed": true
+    },
+    {
+      "check": "fidelity_unavailable_reasons_partition",
+      "expected": "counts sum to 847",
+      "observed": {
+        "candidate_invalid_json": 818,
+        "model_drivers_missing": 29
+      },
+      "passed": true
+    },
+    {
+      "check": "latency_csv_rows",
+      "expected": 3300,
+      "observed": 3300,
+      "passed": true
+    },
+    {
+      "check": "disposition_partition",
+      "expected": 3300,
+      "observed": 3300,
+      "passed": true
+    },
+    {
+      "check": "suppressed_disposition",
+      "expected": 843,
+      "observed": 843,
+      "passed": true
+    },
+    {
+      "check": "suppressed_generation_latency_blank",
+      "expected": "all blank",
+      "observed": "all blank",
+      "passed": true
+    }
+  ],
+  "checks_passed": 38,
+  "errors": [],
+  "evidence_directory": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1",
+  "observed_disposition_counts": {
+    "generated_blocked": 796,
+    "generated_released": 1661,
+    "pre_generation_suppressed": 843
+  },
+  "observed_fidelity_unavailable_reasons": {
+    "candidate_invalid_json": 818,
+    "model_drivers_missing": 29
+  },
+  "schema_version": "1.0",
+  "status": "passed",
+  "verified_at_utc": "2026-09-04T16:47:41.055170+00:00"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset": "Sparkov",
+  "data_nature": "synthetic credit-card transactions",
+  "train_sha256": "fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d",
+  "test_sha256": "12d553ab19440c752d2531ee1af44bb64f12cc3d3839f1649f19e81c230545f0",
+  "seed": 42,
+  "validation_cutoff": "2020-03-06 07:15:17",
+  "source_timestamp_order_violations": {
+    "train": 1,
+    "test": 0
+  },
+  "selected_model": "Random forest",
+  "primary_metric": "average_precision",
+  "threshold_selection": "maximum validation F2",
+  "selected_threshold": 0.41071273660926644,
+  "excluded_direct_identifiers": [
+    "cc_num",
+    "first",
+    "last",
+    "street",
+    "trans_num",
+    "Unnamed: 0"
+  ],
+  "split_manifest": [
+    {
+      "split": "train",
+      "rows": 1037339,
+      "fraud": 5968,
+      "fraud_rate": 0.005753181939558813,
+      "start": "2019-01-01 00:00:18",
+      "end": "2020-03-06 07:14:37"
+    },
+    {
+      "split": "validation",
+      "rows": 259336,
+      "fraud": 1538,
+      "fraud_rate": 0.0059305302773236266,
+      "start": "2020-03-06 07:15:17",
+      "end": "2020-06-21 12:13:37"
+    },
+    {
+      "split": "official_test",
+      "rows": 555719,
+      "fraud": 2145,
+      "fraud_rate": 0.0038598644278853163,
+      "start": "2020-06-21 12:14:25",
+      "end": "2020-12-31 23:59:34"
+    }
+  ],
+  "versions": {
+    "python": "3.13.5",
+    "pandas": "2.3.1",
+    "numpy": "2.3.2",
+    "scikit_learn": "1.6.1",
+    "imbalanced_learn": "0.13.0"
+  }
+}

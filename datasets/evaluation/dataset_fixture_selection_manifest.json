@@ -1,0 +1,4235 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Row selectors and serialization rules for byte-identical local fixture reconstruction without redistributing transaction values.",
+  "contains_transaction_values": false,
+  "selector_fields": [
+    "sample_id",
+    "test_case_type",
+    "evaluation_cohort",
+    "source_test_row_index"
+  ],
+  "datasets": {
+    "ULB": {
+      "dataset_key": "ulb",
+      "source_path": "datasets/ULB_creditCard.csv",
+      "source_preparation": "drop_exact_duplicates_keep_first_then_reset_index",
+      "source_sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"
+    },
+    "Sparkov": {
+      "dataset_key": "sparkov",
+      "source_path": "datasets/sparkov/fraudTest.csv",
+      "source_preparation": "frozen_sparkov_feature_engineering_in_source_row_order",
+      "source_sha256": "12d553ab19440c752d2531ee1af44bb64f12cc3d3839f1649f19e81c230545f0"
+    }
+  },
+  "fixtures": [
+    {
+      "path": "datasets/ulb/candidate_transaction_samples.csv",
+      "dataset_id": "ULB",
+      "expected_rows": 30,
+      "expected_sha256": "447a4381728635b3798c6aefa370268332ca50d88c2a1865e85f7884e67a6a77",
+      "columns": [
+        "sample_id",
+        "dataset_id",
+        "test_case_type",
+        "evaluation_cohort",
+        "source_test_row_index",
+        "Time",
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "expected_fraud_probability",
+        "decision_threshold",
+        "expected_alert",
+        "evaluation_only_actual_class"
+      ],
+      "decision_threshold": 0.1698167512,
+      "pipeline_path": "artifacts/ulb/selected_pipeline.joblib",
+      "pipeline_sha256": "e6d9f23da962c2dd86d931f835ba75a953801c1a11b51f59ee396182d64a58c4",
+      "metrics_path": "artifacts/ulb/test_metrics.csv",
+      "metrics_sha256": "75d937cba663878471432bcdbfdf4a31d8dc4992f49b52a8227fefd8d9e8526a",
+      "float_format": "%.10f",
+      "column_formats": {},
+      "timestamp_style": "iso_t",
+      "rows": [
+        {
+          "sample_id": "FINALCAND_ULB_001",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 150027,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_002",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 127992,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_003",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 534,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_004",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 214375,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_005",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 142647,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_006",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 248688,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_007",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 229227,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_008",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 202971,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_009",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 149297,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_010",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 8273,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_011",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 115676,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_012",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 79578,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_013",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 191677,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_014",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 106646,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_015",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 162967,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_016",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 250554,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_017",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 106577,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_018",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 64200,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_019",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 120368,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_020",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 6570,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_021",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 154099,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_022",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 228865,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_023",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 150110,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_024",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 150337,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_025",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 156390,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_026",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 82744,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_027",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 222745,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_028",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 154122,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_029",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 15423,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_ULB_030",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 15683,
+          "evaluation_cohort": "narrative_comparison"
+        }
+      ]
+    },
+    {
+      "path": "datasets/ulb/followup_transaction_samples.csv",
+      "dataset_id": "ULB",
+      "expected_rows": 150,
+      "expected_sha256": "03578bbd7389b6af654d1c87fb33873039e1fde0352235687c81908c6e37bd33",
+      "columns": [
+        "sample_id",
+        "dataset_id",
+        "test_case_type",
+        "evaluation_cohort",
+        "source_test_row_index",
+        "Time",
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "expected_fraud_probability",
+        "decision_threshold",
+        "expected_alert"
+      ],
+      "decision_threshold": 0.3699359669,
+      "pipeline_path": "artifacts/followup_detectors/ulb/selected_pipeline.joblib",
+      "pipeline_sha256": "f80165ee6110c595d9e9ef103e0d812cf5f5977a380c3baa335c97cbe8cde2c5",
+      "metrics_path": "artifacts/followup_detectors/ulb/test_metrics.csv",
+      "metrics_sha256": "a016c7e6718a46c72b1f2a310ba3624d83d136c13b1b162d1c11fe279264350c",
+      "float_format": "%.10f",
+      "column_formats": {},
+      "timestamp_style": "iso_t",
+      "rows": [
+        {
+          "sample_id": "FOLLOWUP_ULB_001",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 210435,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_002",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 115911,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_003",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 121789,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_004",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 23722,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_005",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 47052,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_006",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 29492,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_007",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 239619,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_008",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 64091,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_009",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 12173,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_010",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 281126,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_011",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 104367,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_012",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 180844,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_013",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 233832,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_014",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 7,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_015",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 168967,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_016",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 5883,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_017",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 228041,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_018",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 72475,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_019",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 133174,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_020",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 251341,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_021",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 144697,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_022",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 75743,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_023",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 35383,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_024",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 127401,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_025",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 20129,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_026",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 163091,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_027",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 58489,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_028",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 41215,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_029",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 68371,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_030",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 248322,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_031",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 150985,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_032",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 275119,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_033",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 56464,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_034",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 81621,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_035",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 58516,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_036",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 107830,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_037",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 110206,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_038",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 157345,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_039",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 257492,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_040",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 138950,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_041",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 29566,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_042",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 204470,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_043",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 216208,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_044",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 198682,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_045",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 52732,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_046",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 17967,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_047",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 174991,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_048",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 69929,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_049",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 145246,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_050",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 269447,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_051",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 87360,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_052",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 263530,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_053",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 186859,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_054",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 192753,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_055",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 112392,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_056",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 245409,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_057",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 93081,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_058",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 98731,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_059",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 222188,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_060",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 88151,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_061",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 119245,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_062",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 211775,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_063",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 101128,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_064",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 67805,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_065",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 212341,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_066",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 531,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_067",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 153692,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_068",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 274961,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_069",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 68058,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_070",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 231118,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_071",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 239334,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_072",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 93159,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_073",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 182321,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_074",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 250968,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_075",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 228883,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_076",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 87035,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_077",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 4886,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_078",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 8933,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_079",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 6932,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_080",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 248054,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_081",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 47884,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_082",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 33139,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_083",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 18409,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_084",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 233831,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_085",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 41762,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_086",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 123612,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_087",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 18746,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_088",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 43441,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_089",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 88869,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_090",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 279096,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_091",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 23334,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_092",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 96420,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_093",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 45010,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_094",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 123640,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_095",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 154362,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_096",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 191879,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_097",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 93891,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_098",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 213905,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_099",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 6433,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_100",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 211895,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_101",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 247381,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_102",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 63161,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_103",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 149302,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_104",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 81304,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_105",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 254457,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_106",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 63374,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_107",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 83108,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_108",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 222539,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_109",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 14158,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_110",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 106259,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_111",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 30191,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_112",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 64151,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_113",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 217669,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_114",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 200883,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_115",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 150068,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_116",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 99129,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_117",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 27641,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_118",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 52236,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_119",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 154279,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_120",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 150087,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_121",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 143557,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_122",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 142793,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_123",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 17311,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_124",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 150420,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_125",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 6680,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_126",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 57376,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_127",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 52352,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_128",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 233704,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_129",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 41826,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_130",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 124863,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_131",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 12325,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_132",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 74219,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_133",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 77045,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_134",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 150078,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_135",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 42979,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_136",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 177539,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_137",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 157261,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_138",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 150084,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_139",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 43498,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_140",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 6860,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_141",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 150088,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_142",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 30875,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_143",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 42755,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_144",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 143561,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_145",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 240549,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_146",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 151632,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_147",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 44087,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_148",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 222791,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_149",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 42428,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_ULB_150",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 6695,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        }
+      ]
+    },
+    {
+      "path": "datasets/ulb/pilot_transaction_samples.csv",
+      "dataset_id": "ULB",
+      "expected_rows": 8,
+      "expected_sha256": "9eadfab2900c75d73e3927a00d92ea52d5354890bfc3544709b53a70e0088d1c",
+      "columns": [
+        "sample_id",
+        "dataset_id",
+        "test_case_type",
+        "evaluation_cohort",
+        "source_test_row_index",
+        "Time",
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "expected_fraud_probability",
+        "decision_threshold",
+        "expected_alert",
+        "evaluation_only_actual_class"
+      ],
+      "decision_threshold": 0.1698167512,
+      "pipeline_path": "artifacts/ulb/selected_pipeline.joblib",
+      "pipeline_sha256": "e6d9f23da962c2dd86d931f835ba75a953801c1a11b51f59ee396182d64a58c4",
+      "metrics_path": "artifacts/ulb/test_metrics.csv",
+      "metrics_sha256": "75d937cba663878471432bcdbfdf4a31d8dc4992f49b52a8227fefd8d9e8526a",
+      "float_format": "%.10f",
+      "column_formats": {},
+      "timestamp_style": "iso_t",
+      "rows": [
+        {
+          "sample_id": "PILOT_ULB_001",
+          "test_case_type": "pilot_narrative_comparison",
+          "source_test_row_index": 153640,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "PILOT_ULB_002",
+          "test_case_type": "pilot_narrative_comparison",
+          "source_test_row_index": 9210,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "PILOT_ULB_003",
+          "test_case_type": "pilot_narrative_comparison",
+          "source_test_row_index": 122008,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "PILOT_ULB_004",
+          "test_case_type": "pilot_narrative_comparison",
+          "source_test_row_index": 42588,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "PILOT_ULB_005",
+          "test_case_type": "pilot_score_gate_challenge",
+          "source_test_row_index": 8586,
+          "evaluation_cohort": "score_gate_challenge"
+        },
+        {
+          "sample_id": "PILOT_ULB_006",
+          "test_case_type": "pilot_score_gate_challenge",
+          "source_test_row_index": 149032,
+          "evaluation_cohort": "score_gate_challenge"
+        },
+        {
+          "sample_id": "PILOT_ULB_007",
+          "test_case_type": "pilot_false_negative_control",
+          "source_test_row_index": 10442,
+          "evaluation_cohort": "false_negative_control"
+        },
+        {
+          "sample_id": "PILOT_ULB_008",
+          "test_case_type": "pilot_true_negative_control",
+          "source_test_row_index": 86249,
+          "evaluation_cohort": "true_negative_control"
+        }
+      ]
+    },
+    {
+      "path": "datasets/ulb/runtime_transaction_samples.csv",
+      "dataset_id": "ULB",
+      "expected_rows": 4,
+      "expected_sha256": "70ef3698234a093b7ea1af62eb5fc50b5b6fa1b9b20f606c3795af2f595449e8",
+      "columns": [
+        "sample_id",
+        "dataset_id",
+        "test_case_type",
+        "source_test_row_index",
+        "Time",
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount",
+        "expected_fraud_probability",
+        "decision_threshold",
+        "expected_alert",
+        "evaluation_only_actual_class"
+      ],
+      "decision_threshold": 0.1698167512,
+      "pipeline_path": "artifacts/ulb/selected_pipeline.joblib",
+      "pipeline_sha256": "e6d9f23da962c2dd86d931f835ba75a953801c1a11b51f59ee396182d64a58c4",
+      "metrics_path": "artifacts/ulb/test_metrics.csv",
+      "metrics_sha256": "75d937cba663878471432bcdbfdf4a31d8dc4992f49b52a8227fefd8d9e8526a",
+      "float_format": "%.10f",
+      "column_formats": {},
+      "timestamp_style": "iso_t",
+      "rows": [
+        {
+          "sample_id": "ULB_S1_HIGH_RISK",
+          "test_case_type": "high_confidence_true_positive",
+          "source_test_row_index": 42588
+        },
+        {
+          "sample_id": "ULB_S2_FALSE_POSITIVE",
+          "test_case_type": "high_score_false_positive",
+          "source_test_row_index": 119616
+        },
+        {
+          "sample_id": "ULB_S3_BORDERLINE_FN",
+          "test_case_type": "near_threshold_false_negative",
+          "source_test_row_index": 10442
+        },
+        {
+          "sample_id": "ULB_S4_LOW_RISK",
+          "test_case_type": "low_risk_true_negative",
+          "source_test_row_index": 5
+        }
+      ]
+    },
+    {
+      "path": "datasets/sparkov/candidate_transaction_samples.csv",
+      "dataset_id": "Sparkov",
+      "expected_rows": 30,
+      "expected_sha256": "f0a588011ef8c0ecd1b4c6f68545dce0a3bd2450669f685d1eac66c43356932b",
+      "columns": [
+        "sample_id",
+        "dataset_id",
+        "test_case_type",
+        "evaluation_cohort",
+        "source_test_row_index",
+        "transaction_time",
+        "amt",
+        "log_amt",
+        "city_pop",
+        "lat",
+        "long",
+        "merch_lat",
+        "merch_long",
+        "age",
+        "distance_km",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_weekend",
+        "category",
+        "gender",
+        "state",
+        "expected_fraud_probability",
+        "decision_threshold",
+        "expected_alert",
+        "evaluation_only_actual_class"
+      ],
+      "decision_threshold": 0.4107127366,
+      "pipeline_path": "artifacts/sparkov/selected_pipeline.joblib",
+      "pipeline_sha256": "2d8ebdc05d59df9d79f21e08ced27904018e91b2059c24c357e27aa71f78d65a",
+      "metrics_path": "artifacts/sparkov/test_metrics.csv",
+      "metrics_sha256": "1541df07bf1c63df17aea3103d8eb120ce6ca92d16c6e01e622676a56b091a56",
+      "float_format": "%.10f",
+      "column_formats": {},
+      "timestamp_style": "iso_t",
+      "rows": [
+        {
+          "sample_id": "FINALCAND_SPARKOV_001",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 439914,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_002",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 23015,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_003",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 62035,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_004",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 155492,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_005",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 209872,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_006",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 472101,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_007",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 234409,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_008",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 192352,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_009",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 313791,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_010",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 141633,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_011",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 133300,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_012",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 13741,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_013",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 425220,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_014",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 242213,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_015",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 215843,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_016",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 85656,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_017",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 457111,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_018",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 391235,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_019",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 306270,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_020",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 401705,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_021",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 2195,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_022",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 401805,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_023",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 45927,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_024",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 371703,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_025",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 311586,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_026",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 212009,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_027",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 405026,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_028",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 50266,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_029",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 357378,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "FINALCAND_SPARKOV_030",
+          "test_case_type": "candidate_narrative_comparison",
+          "source_test_row_index": 113754,
+          "evaluation_cohort": "narrative_comparison"
+        }
+      ]
+    },
+    {
+      "path": "datasets/sparkov/followup_transaction_samples.csv",
+      "dataset_id": "Sparkov",
+      "expected_rows": 400,
+      "expected_sha256": "54d812d11e033660a1a77fab62cba9af598344fd1c341305ebb8093872961ffc",
+      "columns": [
+        "sample_id",
+        "dataset_id",
+        "test_case_type",
+        "evaluation_cohort",
+        "source_test_row_index",
+        "transaction_time",
+        "amt",
+        "log_amt",
+        "city_pop",
+        "lat",
+        "long",
+        "merch_lat",
+        "merch_long",
+        "age",
+        "distance_km",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_weekend",
+        "category",
+        "gender",
+        "state",
+        "expected_fraud_probability",
+        "decision_threshold",
+        "expected_alert"
+      ],
+      "decision_threshold": 0.4107127366,
+      "pipeline_path": "artifacts/sparkov/selected_pipeline.joblib",
+      "pipeline_sha256": "2d8ebdc05d59df9d79f21e08ced27904018e91b2059c24c357e27aa71f78d65a",
+      "metrics_path": "artifacts/sparkov/test_metrics.csv",
+      "metrics_sha256": "1541df07bf1c63df17aea3103d8eb120ce6ca92d16c6e01e622676a56b091a56",
+      "float_format": "%.10f",
+      "column_formats": {},
+      "timestamp_style": "iso_t",
+      "rows": [
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_001",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 1,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_002",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 4736,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_003",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 9462,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_004",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 14348,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_005",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 19062,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_006",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 23740,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_007",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 28565,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_008",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 33336,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_009",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 38009,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_010",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 42824,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_011",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 47504,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_012",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 48140,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_013",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 52258,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_014",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 56970,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_015",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 61609,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_016",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 66512,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_017",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 71162,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_018",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 75853,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_019",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 80583,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_020",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 85353,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_021",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 90274,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_022",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 94920,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_023",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 99604,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_024",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 104331,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_025",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 109027,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_026",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 113840,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_027",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 118574,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_028",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 123268,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_029",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 128071,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_030",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 132827,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_031",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 137569,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_032",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 142487,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_033",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 147191,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_034",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 152005,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_035",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 156725,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_036",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 161533,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_037",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 166233,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_038",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 171029,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_039",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 175737,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_040",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 180362,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_041",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 185240,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_042",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 189896,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_043",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 194533,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_044",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 199257,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_045",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 204017,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_046",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 208950,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_047",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 213744,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_048",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 218614,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_049",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 223286,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_050",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 228108,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_051",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 232808,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_052",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 237570,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_053",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 242375,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_054",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 247056,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_055",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 251830,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_056",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 256652,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_057",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 261385,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_058",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 266124,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_059",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 270972,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_060",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 275712,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_061",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 280478,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_062",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 284389,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_063",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 285209,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_064",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 290069,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_065",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 294781,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_066",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 299555,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_067",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 304260,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_068",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 309108,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_069",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 313840,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_070",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 318707,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_071",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 323450,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_072",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 328289,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_073",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 333086,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_074",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 337903,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_075",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 342651,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_076",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 347369,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_077",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 352140,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_078",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 356982,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_079",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 361675,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_080",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 366517,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_081",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 371269,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_082",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 376100,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_083",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 380827,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_084",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 385625,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_085",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 390346,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_086",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 395112,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_087",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 399872,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_088",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 404717,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_089",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 409524,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_090",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 414135,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_091",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 418979,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_092",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 423789,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_093",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 428647,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_094",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 433354,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_095",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 438074,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_096",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 442964,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_097",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 447743,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_098",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 452417,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_099",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 457388,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_100",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 462042,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_101",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 466758,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_102",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 471461,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_103",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 476272,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_104",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 481167,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_105",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 485964,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_106",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 490577,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_107",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 495280,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_108",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 500202,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_109",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 504900,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_110",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 509711,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_111",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 514514,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_112",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 519310,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_113",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 524070,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_114",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 528759,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_115",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 533476,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_116",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 538383,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_117",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 543295,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_118",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 547823,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_119",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 552749,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_120",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 154719,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_121",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 540978,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_122",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 405058,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_123",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 124821,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_124",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 157666,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_125",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 152501,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_126",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 287487,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_127",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 278536,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_128",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 526198,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_129",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 549085,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_130",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 134726,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_131",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 384252,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_132",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 422241,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_133",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 181451,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_134",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 75593,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_135",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 135278,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_136",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 1210,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_137",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 503188,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_138",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 462378,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_139",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 354117,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_140",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 111011,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_141",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 288685,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_142",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 387605,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_143",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 378128,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_144",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 29716,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_145",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 401064,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_146",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 435973,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_147",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 345173,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_148",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 461105,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_149",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 361911,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_150",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 473010,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_151",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 287536,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_152",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 523834,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_153",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 159549,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_154",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 261802,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_155",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 282264,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_156",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 26780,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_157",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 86102,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_158",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 217750,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_159",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 309627,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_160",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 346223,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_161",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 41726,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_162",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 18487,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_163",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 157874,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_164",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 221700,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_165",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 285494,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_166",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 291704,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_167",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 188602,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_168",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 378097,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_169",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 488657,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_170",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 295650,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_171",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 149190,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_172",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 41948,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_173",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 266366,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_174",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 314178,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_175",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 218538,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_176",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 131610,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_177",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 261676,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_178",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 125530,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_179",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 266436,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_180",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 131478,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_181",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 259794,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_182",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 386313,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_183",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 56279,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_184",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 92597,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_185",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 259965,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_186",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 312276,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_187",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 215776,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_188",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 2495,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_189",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 155665,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_190",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 215405,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_191",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 65920,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_192",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 229460,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_193",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 135773,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_194",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 121416,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_195",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 86261,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_196",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 485148,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_197",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 259802,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_198",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 289494,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_199",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 259926,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_200",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 435333,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_201",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 27436,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_202",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 354302,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_203",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 194922,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_204",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 309296,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_205",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 387443,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_206",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 357702,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_207",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 173022,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_208",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 391528,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_209",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 84649,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_210",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 171701,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_211",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 288690,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_212",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 489185,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_213",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 314232,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_214",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 305209,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_215",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 181509,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_216",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 278017,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_217",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 448589,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_218",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 102606,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_219",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 233400,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_220",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 267729,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_221",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 241342,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_222",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 111635,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_223",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 55462,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_224",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 457409,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_225",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 394148,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_226",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 2039,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_227",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 447897,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_228",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 403525,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_229",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 422683,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_230",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 288442,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_231",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 86283,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_232",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 290102,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_233",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 2467,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_234",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 432709,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_235",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 89926,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_236",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 85908,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_237",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 118522,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_238",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 34114,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_239",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 402489,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_240",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 260176,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_241",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 401785,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_242",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 489181,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_243",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 258990,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_244",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 436151,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_245",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 464440,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_246",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 365850,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_247",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 149479,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_248",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 442214,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_249",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 78873,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_250",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 211624,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_251",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 26567,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_252",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 58582,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_253",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 279520,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_254",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 505711,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_255",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 389373,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_256",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 13806,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_257",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 384716,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_258",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 464810,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_259",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 425118,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_260",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 393745,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_261",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 86150,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_262",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 11789,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_263",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 258083,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_264",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 135996,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_265",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 256535,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_266",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 153648,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_267",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 473228,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_268",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 279571,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_269",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 51879,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_270",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 42208,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_271",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 330196,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_272",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 101821,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_273",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 282848,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_274",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 341816,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_275",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 448848,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_276",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 357074,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_277",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 253829,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_278",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 428496,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_279",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 1781,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_280",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 275898,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_281",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 387625,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_282",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 223930,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_283",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 149204,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_284",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 261766,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_285",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 149426,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_286",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 306195,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_287",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 66193,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_288",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 175150,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_289",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 322184,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_290",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 136086,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_291",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 327564,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_292",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 211731,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_293",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 460624,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_294",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 133756,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_295",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 81736,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_296",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 448527,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_297",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 297159,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_298",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 349364,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_299",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 314222,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_300",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 432283,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_301",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 279654,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_302",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 343441,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_303",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 453717,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_304",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 314106,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_305",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 306258,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_306",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 227823,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_307",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 330355,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_308",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 307797,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_309",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 171134,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_310",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 389348,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_311",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 36187,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_312",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 266177,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_313",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 151391,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_314",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 279580,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_315",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 227811,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_316",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 165207,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_317",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 307779,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_318",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 113676,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_319",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 171009,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_320",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 81697,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_321",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 16196,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_322",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 499585,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_323",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 258453,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_324",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 272580,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_325",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 149668,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_326",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 394245,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_327",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 454312,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_328",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 93728,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_329",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 290084,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_330",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 352431,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_331",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 197591,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_332",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 359492,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_333",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 151313,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_334",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 192598,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_335",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 282286,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_336",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 121955,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_337",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 115753,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_338",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 275747,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_339",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 14043,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_340",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 517571,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_341",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 307992,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_342",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 336763,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_343",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 349069,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_344",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 258455,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_345",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 499719,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_346",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 1968,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_347",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 121745,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_348",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 113606,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_349",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 213855,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_350",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 301389,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_351",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 26219,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_352",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 188526,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_353",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 78846,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_354",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 113580,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_355",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 269483,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_356",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 365495,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_357",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 16231,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_358",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 113491,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_359",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 290196,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_360",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 213814,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_361",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 275753,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_362",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 293629,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_363",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 14064,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_364",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 361904,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_365",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 213485,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_366",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 221429,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_367",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 133465,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_368",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 69850,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_369",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 243924,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_370",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 78966,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_371",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 129229,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_372",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 492025,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_373",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 98542,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_374",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 405160,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_375",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 146170,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_376",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 245857,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_377",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 85967,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_378",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 2026,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_379",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 250930,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_380",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 288763,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_381",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 511675,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_382",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 151364,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_383",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 237667,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_384",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 175454,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_385",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 76277,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_386",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 116112,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_387",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 492284,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_388",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 50228,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_389",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 309787,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_390",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 118079,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_391",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 371808,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_392",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 213577,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_393",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 269380,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_394",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 285459,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_395",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 269493,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_396",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 293570,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_397",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 184762,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_398",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 106121,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_399",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 403438,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        },
+        {
+          "sample_id": "FOLLOWUP_SPARKOV_400",
+          "test_case_type": "followup_final_retrieval_comparison",
+          "source_test_row_index": 105539,
+          "evaluation_cohort": "label_stratified_transaction_panel"
+        }
+      ]
+    },
+    {
+      "path": "datasets/sparkov/pilot_transaction_samples.csv",
+      "dataset_id": "Sparkov",
+      "expected_rows": 8,
+      "expected_sha256": "e41b6c0c88a6237f57c0595c8521166f9f8dac9990b2e8920b08bb84fcc395d6",
+      "columns": [
+        "sample_id",
+        "dataset_id",
+        "test_case_type",
+        "evaluation_cohort",
+        "source_test_row_index",
+        "transaction_time",
+        "amt",
+        "log_amt",
+        "city_pop",
+        "lat",
+        "long",
+        "merch_lat",
+        "merch_long",
+        "age",
+        "distance_km",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_weekend",
+        "category",
+        "gender",
+        "state",
+        "expected_fraud_probability",
+        "decision_threshold",
+        "expected_alert",
+        "evaluation_only_actual_class"
+      ],
+      "decision_threshold": 0.4107127366,
+      "pipeline_path": "artifacts/sparkov/selected_pipeline.joblib",
+      "pipeline_sha256": "2d8ebdc05d59df9d79f21e08ced27904018e91b2059c24c357e27aa71f78d65a",
+      "metrics_path": "artifacts/sparkov/test_metrics.csv",
+      "metrics_sha256": "1541df07bf1c63df17aea3103d8eb120ce6ca92d16c6e01e622676a56b091a56",
+      "float_format": "%.10f",
+      "column_formats": {},
+      "timestamp_style": "iso_t",
+      "rows": [
+        {
+          "sample_id": "PILOT_SPARKOV_001",
+          "test_case_type": "pilot_narrative_comparison",
+          "source_test_row_index": 373666,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "PILOT_SPARKOV_002",
+          "test_case_type": "pilot_narrative_comparison",
+          "source_test_row_index": 180527,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "PILOT_SPARKOV_003",
+          "test_case_type": "pilot_narrative_comparison",
+          "source_test_row_index": 314330,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "PILOT_SPARKOV_004",
+          "test_case_type": "pilot_narrative_comparison",
+          "source_test_row_index": 355667,
+          "evaluation_cohort": "narrative_comparison"
+        },
+        {
+          "sample_id": "PILOT_SPARKOV_005",
+          "test_case_type": "pilot_score_gate_challenge",
+          "source_test_row_index": 266229,
+          "evaluation_cohort": "score_gate_challenge"
+        },
+        {
+          "sample_id": "PILOT_SPARKOV_006",
+          "test_case_type": "pilot_score_gate_challenge",
+          "source_test_row_index": 56699,
+          "evaluation_cohort": "score_gate_challenge"
+        },
+        {
+          "sample_id": "PILOT_SPARKOV_007",
+          "test_case_type": "pilot_false_negative_control",
+          "source_test_row_index": 146491,
+          "evaluation_cohort": "false_negative_control"
+        },
+        {
+          "sample_id": "PILOT_SPARKOV_008",
+          "test_case_type": "pilot_true_negative_control",
+          "source_test_row_index": 0,
+          "evaluation_cohort": "true_negative_control"
+        }
+      ]
+    },
+    {
+      "path": "datasets/sparkov/runtime_transaction_samples.csv",
+      "dataset_id": "Sparkov",
+      "expected_rows": 4,
+      "expected_sha256": "4e4bcac424576047dd0cd42d159fa7b2ab406661681a63c12a1863bc8b6b76aa",
+      "columns": [
+        "sample_id",
+        "dataset_id",
+        "test_case_type",
+        "source_test_row_index",
+        "transaction_time",
+        "amt",
+        "log_amt",
+        "city_pop",
+        "lat",
+        "long",
+        "merch_lat",
+        "merch_long",
+        "age",
+        "distance_km",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_weekend",
+        "category",
+        "gender",
+        "state",
+        "expected_fraud_probability",
+        "decision_threshold",
+        "expected_alert",
+        "evaluation_only_actual_class"
+      ],
+      "decision_threshold": 0.410713,
+      "pipeline_path": "artifacts/sparkov/selected_pipeline.joblib",
+      "pipeline_sha256": "2d8ebdc05d59df9d79f21e08ced27904018e91b2059c24c357e27aa71f78d65a",
+      "metrics_path": "artifacts/sparkov/test_metrics.csv",
+      "metrics_sha256": "1541df07bf1c63df17aea3103d8eb120ce6ca92d16c6e01e622676a56b091a56",
+      "float_format": "%.6f",
+      "column_formats": {
+        "amt": ".2f",
+        "log_amt": ".6f",
+        "city_pop": "d",
+        "lat": ".4f",
+        "long": ".4f",
+        "merch_lat": ".6f",
+        "merch_long": ".6f",
+        "age": ".6f",
+        "distance_km": ".6f",
+        "expected_fraud_probability": ".6f",
+        "decision_threshold": ".6f"
+      },
+      "timestamp_style": "space",
+      "rows": [
+        {
+          "sample_id": "S1_HIGH_RISK",
+          "test_case_type": "high_confidence_true_positive",
+          "source_test_row_index": 355667
+        },
+        {
+          "sample_id": "S2_FALSE_POSITIVE_TEST",
+          "test_case_type": "high_score_false_positive",
+          "source_test_row_index": 368620
+        },
+        {
+          "sample_id": "S3_BORDERLINE_TEST",
+          "test_case_type": "near_threshold_false_negative",
+          "source_test_row_index": 146491
+        },
+        {
+          "sample_id": "S4_LOW_RISK",
+          "test_case_type": "low_risk_true_negative",
+          "source_test_row_index": 0
+        }
+      ]
+    }
+  ]
+}

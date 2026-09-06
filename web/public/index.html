@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="FraudLens reproducible fraud research and Jira operations console" />
+  <title>FraudLens · Research & Operations Console</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#command"><span class="brand-mark">FL</span><span><strong>FraudLens</strong><small>Research & operations</small></span></a>
+    <nav aria-label="Console pages">
+      <button class="nav-item active" data-screen="command"><span>01</span>Command Centre</button>
+      <button class="nav-item" data-screen="workflow"><span>02</span>Workflow Runner</button>
+      <button class="nav-item" data-screen="eda"><span>03</span>EDA & Models</button>
+      <button class="nav-item" data-screen="experiment"><span>04</span>Experiment Lab</button>
+      <button class="nav-item" data-screen="alerts"><span>05</span>Alerts & Jira</button>
+      <button class="nav-item" data-screen="evidence"><span>06</span>Evidence & Reports</button>
+      <button class="nav-item" data-screen="system"><span>07</span>System & Safety</button>
+    </nav>
+    <div class="sidebar-foot"><span id="api-dot" class="status-dot"></span><span id="api-status">Checking local API…</span></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><span class="eyebrow">LOCAL RESEARCH WORKSPACE</span><h1 id="screen-title">Command Centre</h1></div><div class="top-controls"><label>Legacy UI family<select id="global-family"><option>AUTO-ABC-20260829-01</option></select></label><label>Instance<select id="global-instance"><option>ORIGINAL</option></select></label></div></header>
+    <section id="command" class="screen active">
+      <div class="hero"><div><span class="eyebrow">REPRODUCIBLE WORKFLOW</span><h2>From source evidence to governed investigation referrals.</h2><p>Inspect the definitive six-condition evidence separately from the retained A/B/C integration scaffold and post-experiment Jira operations.</p></div><div class="hero-mark"><strong>2</strong><span>independent datasets</span><strong>6</strong><span>definitive conditions</span></div></div>
+      <div id="readiness-ribbon" class="readiness"></div>
+      <div class="section-heading"><div><span class="eyebrow">START HERE</span><h2>Choose a controlled path</h2></div></div>
+      <div class="choice-grid">
+        <article><span class="tag recommended">Recommended</span><h3>Replay saved evidence</h3><p>Re-aggregate the immutable primary calls. No detector training, model generation or Jira write.</p><button class="primary job-start" data-job="REPLAY_PRIMARY_RESULTS">Replay evidence</button></article>
+        <article><span class="tag">Local verification</span><h3>Fresh build & pilot</h3><p>Run audited inputs, detector builds and a deterministic pilot as separate traceable jobs.</p><button class="secondary navigate" data-target="workflow">Open runner</button></article>
+        <article><span class="tag">Legacy scaffold</span><h3>Inspect development replication</h3><p>Preview the retained 180-call A/B/C integration scaffold. It is not definitive thesis evidence.</p><button class="secondary navigate" data-target="experiment">Open legacy lab</button></article>
+        <article><span class="tag operations">Post-C only</span><h3>Operational Jira demo</h3><p>Route eligible Configuration C alerts to idempotent human-review Stories.</p><button class="secondary navigate" data-target="alerts">Open operations</button></article>
+      </div>
+      <div id="overview-cards" class="kpi-grid"></div>
+    </section>
+    <section id="workflow" class="screen">
+      <div class="section-heading"><div><span class="eyebrow">ALLOWLISTED ORCHESTRATION</span><h2>Workflow Runner</h2><p>Each card maps to a fixed Python operation. Shell text and custom executables are never accepted.</p></div><button id="refresh-jobs" class="secondary">Refresh jobs</button></div>
+      <div id="workflow-cards" class="workflow-grid"></div>
+      <div class="split"><div><h3>Recent jobs</h3><div id="job-list" class="stack"></div></div><div><h3>Selected job log</h3><pre id="job-log" class="log-panel">Select a job to inspect its bounded log.</pre></div></div>
+    </section>
+    <section id="eda" class="screen">
+      <div class="section-heading"><div><span class="eyebrow">DATASET-SPECIFIC EVIDENCE</span><h2>EDA & detector performance</h2><p>ULB and Sparkov remain separate because one is anonymized real data and the other is synthetic.</p></div><div class="segmented"><button class="dataset-tab active" data-dataset="ULB">ULB</button><button class="dataset-tab" data-dataset="Sparkov">Sparkov</button></div></div>
+      <div id="eda-kpis" class="kpi-grid"></div>
+      <div class="dashboard-grid"><article class="panel"><h3>Class profile</h3><div id="class-chart" class="chart"></div></article><article class="panel"><h3>Test performance</h3><div id="model-chart" class="chart"></div></article></div>
+      <div class="panel"><div class="section-heading compact"><h3>Detector metric rows</h3><button id="run-model-build" class="secondary">Run selected detector build</button></div><div id="model-table" class="table-wrap"></div><p class="boundary-note">Detector performance is not explanation reliability and does not establish real-world fraud.</p></div>
+    </section>
+    <section id="experiment" class="screen">
+      <div class="section-heading"><div><span class="eyebrow">LEGACY DEVELOPMENT SCAFFOLD — NOT THESIS EVIDENCE</span><h2>Experiment Lab</h2><p>This 180-call A/B/C reservation interface predates the definitive 3,300-record six-condition study. It remains only for local integration testing.</p></div><button class="secondary job-start" data-job="RUN_DETERMINISTIC_PILOT">Run deterministic pilot</button></div>
+      <div class="selector-bar"><label>View instance<select id="instance-one"></select></label><label>Compare with<select id="instance-two"></select></label><button id="compare-instances" class="secondary">Compare</button></div>
+      <div id="study-status" class="message"></div><div id="experiment-results"></div>
+      <div class="dashboard-grid"><article class="panel"><h3>Create legacy scaffold reservations</h3><label>Number of new replications<input id="replication-count" type="number" min="1" max="5" value="1" /></label><div class="button-row"><button id="preview-replications" class="secondary">Preview workload</button><button id="reserve-replications" class="primary">Reserve IDs/directories</button></div><div id="replication-preview" class="message subtle">No generation will start from this control.</div></article><article class="panel"><h3>Scientific boundary</h3><ul class="plain-list"><li>180 legacy scaffold calls per replication</li><li>Not part of the definitive six-condition thesis evidence</li><li>Jira disabled for all experiment IDs</li><li>No automatic pooling across replications</li><li>Retrained detectors require a new study family</li></ul></article></div>
+    </section>
+    <section id="alerts" class="screen">
+      <div class="section-heading"><div><span class="eyebrow">BOUNDED POST-C AGENTIC LAYER</span><h2>Alerts & Jira</h2><p>One eligible detector alert maps to one idempotent research Story for human investigation—not a fraud verdict.</p></div><button id="refresh-jira" class="secondary">Refresh Jira</button></div>
+      <div class="flow-strip"><span>Detector alert</span><b>→</b><span>Configuration C</span><b>→</b><span>Guardrail release</span><b>→</b><span>Jira Story</span><b>→</b><span>Human review</span></div>
+      <div id="jira-kpis" class="kpi-grid"></div><div class="dashboard-grid"><article class="panel"><h3>Status workload</h3><div id="jira-status-chart" class="chart"></div></article><article class="panel"><h3>Resolution and aging</h3><div id="jira-duration-chart" class="chart"></div></article></div>
+      <div class="panel"><h3>Submit bounded operational alerts</h3><p class="note">Select up to 10 runtime sample IDs. Preview calculates the maximum possible writes; actual creation still requires all server-side Jira gates.</p><div id="alert-samples" class="sample-grid"></div><div class="button-row"><button id="preview-alerts" class="secondary">Preview</button><button id="submit-alerts" class="danger">Confirm and process via C</button></div><div id="alert-message" class="message subtle"></div></div>
+      <div class="panel"><h3>Research cases</h3><div id="jira-table" class="table-wrap"></div></div>
+    </section>
+    <section id="evidence" class="screen">
+      <div class="section-heading"><div><span class="eyebrow">TRACEABILITY</span><h2>Evidence & Reports</h2><p>JSON, CSV and manifests are sources; HTML and spreadsheets are human-readable projections.</p></div><button class="primary job-start" data-job="BUILD_SELECTED_HTML_REPORT">Generate selected HTML last</button></div>
+      <div id="evidence-list" class="evidence-list"></div><div class="button-row"><button class="secondary job-start" data-job="INPUT_AUDIT">Audit inputs</button><button class="secondary job-start" data-job="RUN_ALIGNMENT_AUDIT">Run alignment audit</button><button class="secondary job-start" data-job="BUILD_TEST_WORKBOOK">Build test workbook</button><button class="secondary job-start" data-job="RUN_REPOSITORY_TESTS">Run all tests</button></div>
+    </section>
+    <section id="system" class="screen">
+      <div class="section-heading"><div><span class="eyebrow">LOCAL SAFETY POSTURE</span><h2>System & Safety</h2><p>Status is visible; secrets, offline labels and unrestricted tools are not.</p></div></div><div id="system-grid" class="system-grid"></div>
+      <div class="panel boundary-panel"><h3>Non-negotiable boundaries</h3><ul class="plain-list"><li>API and UI bind to localhost by default.</li><li>ULB and Sparkov training/evaluation stay independent.</li><li>Ground-truth labels remain withheld from prompts and browser sample payloads.</li><li>Configuration C is governed RAG; Jira is a separately labelled post-C agentic layer.</li><li>Comparative and replication runs cannot create Jira Stories.</li><li>Jira credentials and user email never appear in browser responses.</li></ul></div>
+    </section>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+POLICY SOURCE use_for / not_for CROSS-CHECK FOR THESIS CITATION
+================================================================
+
+Cross-check date: 2026-09-02
+Purpose: distinguish source-supported subject scope from researcher-imposed study
+boundaries. Registry version 1.2 and the replacement canonical diagnostic implement
+the corrections; version 1.1 and older diagnostics are preserved under old/.
+
+IMPORTANT INTERPRETATION RULE
+-----------------------------
+The registry's use_for and not_for fields are metadata written by the researcher.
+They are not quotations from CFPB, the Federal Reserve, NIST, or BIS. In the thesis,
+cite the official source for what it covers. Describe not_for as a boundary imposed by
+this study unless the source itself expressly states the limitation.
+
+Do not write: "The source says it is not for fraud classification labels."
+Safe wording: "The study uses the source only for [supported subject] and does not
+treat it as authority for transaction-level classification or internal bank policy."
+
+
+1. CFPB — 12 CFR 1026.12, Special credit card provisions
+---------------------------------------------------------
+Registry file: regulation_z_1026_12.html
+Official URL: https://www.consumerfinance.gov/rules-policy/regulations/1026/12/
+Official page location: § 1026.12(b), "Liability of cardholder for unauthorized use";
+official interpretations of § 1026.12(b).
+Short source evidence: "Liability of cardholder for unauthorized use."
+
+Registry use_for cross-check:
+- "unauthorized credit-card use" — DIRECTLY SUPPORTED by § 1026.12(b)(1), which
+  defines unauthorized use.
+- "consumer liability context" — DIRECTLY SUPPORTED by § 1026.12(b), including the
+  conditions and limits of cardholder liability.
+
+Registry not_for cross-check:
+- "institution-specific alert thresholds" — VALID STUDY BOUNDARY, but not an express
+  statement by CFPB. The regulation addresses credit-card provisions and liability;
+  it does not define this study's detector threshold.
+- "fraud classification labels" — VALID STUDY BOUNDARY, but not an express CFPB
+  statement. Do not cite § 1026.12 as a source of ULB/Sparkov labels or as proof that a
+  transaction is fraudulent.
+
+Thesis-safe description:
+"Section 1026.12 was used as official regulatory context for unauthorized credit-card
+use and cardholder-liability provisions. It was not used to determine detector
+thresholds or transaction labels."
+
+Suggested reference:
+Consumer Financial Protection Bureau. (current version). 12 C.F.R. § 1026.12,
+Special credit card provisions. Accessed 2 September 2026 from the URL above.
+
+
+2. CFPB — 12 CFR 1026.13, Billing error resolution
+---------------------------------------------------
+Registry file: regulation_z_1026_13.html
+Official URL: https://www.consumerfinance.gov/rules-policy/regulations/1026/13/
+Official page locations: § 1026.13(b), billing-error notice; § 1026.13(c), time for
+resolution and general procedures; § 1026.13(e)-(f), resolution and investigation;
+§ 1026.13(f)(2), documentary evidence on request.
+Short source evidence: "Time for resolution; general procedures."
+
+Registry use_for cross-check:
+- "billing-error investigation procedure" — DIRECTLY SUPPORTED by § 1026.13(c),
+  (e), and (f), including reasonable-investigation requirements.
+- "timing and evidence context" — DIRECTLY SUPPORTED. Section 1026.13(b)(1) gives the
+  notice period; § 1026.13(c) gives acknowledgement/resolution periods; § 1026.13(f)
+  addresses explanations and documentary evidence.
+
+Registry not_for cross-check:
+- "institution-specific alert thresholds" — VALID STUDY BOUNDARY, not an express
+  CFPB limitation.
+- "fraud classification labels" — VALID STUDY BOUNDARY, not an express CFPB
+  limitation. Billing-error procedures must not be presented as dataset ground truth.
+
+Thesis-safe description:
+"Section 1026.13 was used for official billing-error notice, investigation, timing and
+documentary-evidence context. It was not used to set model thresholds or assign fraud
+labels."
+
+Suggested reference:
+Consumer Financial Protection Bureau. (current version). 12 C.F.R. § 1026.13,
+Billing error resolution. Accessed 2 September 2026 from the URL above.
+
+
+3. Federal Reserve — SR 26-2, Revised Guidance on Model Risk Management
+------------------------------------------------------------------------
+Registry file: federal_reserve_sr_26_2.html
+Official URL: https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm
+Official page locations: applicability paragraph; announcement paragraphs; attached
+"Revised Guidance on Model Risk Management."
+Short source evidence: "emphasize a risk-based approach to model risk management."
+
+Registry use_for cross-check:
+- "model governance" — SUPPORTED IN SUBSTANCE by the official letter's model-risk-
+  management purpose and sound-principles language. "Model risk management" is more
+  exact than "model governance" when citing the landing page.
+- "validation" — NOT ESTABLISHED BY THE LOCALLY STORED LANDING-PAGE TEXT ALONE. It
+  should be cited to the attached revised guidance, with a precise section/page, if it
+  is used as a substantive claim.
+- "controls and documentation" — TOO BROAD FOR THE LOCALLY STORED LANDING PAGE ALONE.
+  Cite exact sections/pages of the attached guidance or narrow the registry wording.
+
+Registry not_for cross-check:
+- "transaction-level fraud decisions" — VALID STUDY BOUNDARY. The letter concerns
+  model-risk-management principles and does not adjudicate individual transactions.
+- "consumer legal advice" — VALID STUDY BOUNDARY, not an express sentence in the
+  letter.
+
+Applicability qualification that must appear when relevant:
+The page says the letter is expected to be most relevant to Federal Reserve-regulated
+banking organizations with more than $30 billion in total assets. Do not describe it
+as universally applicable bank policy.
+
+Registry correction implemented in version 1.2:
+Replaced ["model governance", "validation", "controls and documentation"] with
+["model risk management principles", "risk-based model risk management"] unless the
+attached guidance is separately frozen and exact validation/control/documentation
+sections are registered.
+
+Thesis-safe description using the current local source:
+"SR 26-2 was used as supervisory context for sound, risk-based model-risk-management
+principles. It was not used to decide whether an individual transaction was fraud or
+to provide consumer legal advice."
+
+Suggested reference:
+Board of Governors of the Federal Reserve System. (2026, April 17). SR 26-2: Revised
+Guidance on Model Risk Management. URL above. Cite the attached guidance separately
+for any validation, control, or documentation requirement.
+
+
+4. NIST AI 600-1 — Generative Artificial Intelligence Profile
+--------------------------------------------------------------
+Registry file: nist_ai_600_1.html
+Official URL: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
+DOI: https://doi.org/10.6028/NIST.AI.600-1
+Official page locations: abstract; publication keywords; the linked NIST AI 600-1
+report for detailed practices.
+Short source evidence: "cross-sectoral profile of and companion resource for the AI Risk Management Framework."
+
+Registry use_for cross-check:
+- "generative-AI risk" — DIRECTLY SUPPORTED by the title, abstract, report identity,
+  and GAI-risk keywords.
+- "measurement" — SUPPORTED IN SUBSTANCE by the page's AI measurement and evaluation
+  classification and the report's relationship to the AI RMF.
+- "governance controls" — BROAD PARAPHRASE. Prefer "GAI risk management and
+  trustworthiness considerations" unless exact GOVERN function actions in the report
+  are cited by action identifier/page.
+
+Registry not_for cross-check:
+- "transaction-level fraud decisions" — VALID STUDY BOUNDARY; NIST AI 600-1 is a
+  cross-sectoral GAI risk-management profile, not a transaction classifier.
+- "bank operating policy" — VALID STUDY BOUNDARY; the source is cross-sectoral and
+  voluntary rather than an institution-specific operating policy.
+
+Thesis-safe description:
+"NIST AI 600-1 was used as a voluntary, cross-sectoral source for generative-AI risk
+management and trustworthiness considerations. It was not treated as transaction-level
+fraud authority or as a bank's operating policy."
+
+Suggested reference:
+Autio, C., Schwartz, R., Dunietz, J., Jain, S., Stanley, M., Tabassi, E., Hall, P., &
+Roberts, K. (2024). Artificial Intelligence Risk Management Framework: Generative
+Artificial Intelligence Profile (NIST AI 600-1). National Institute of Standards and
+Technology. https://doi.org/10.6028/NIST.AI.600-1
+
+
+5. BIS Financial Stability Institute — FSI Insights 63
+-------------------------------------------------------
+Registry file: bis_fsi_insights_63.html
+Official URL: https://www.bis.org/fsi/publ/insights63.htm
+Current official landing URL: https://www.bis.org/publications/fsi-insight-63-regulating-ai-financial-sector-recent-developments-and-main-challenges
+Official page locations: publication description/abstract and author disclaimer.
+Short source evidence: "gen AI, which may give rise to hallucination and anthropomorphism risks."
+
+Registry use_for cross-check:
+- "financial-sector AI governance" — DIRECTLY SUPPORTED. The publication examines AI
+  risks and regulatory implications in banking/insurance and identifies governance
+  and model-risk management as areas needing attention.
+- "hallucination and model-risk context" — DIRECTLY SUPPORTED by the official
+  publication description.
+
+Registry not_for cross-check:
+- "transaction-level fraud decisions" — VALID STUDY BOUNDARY. The publication is
+  sector-level research and supervisory analysis, not a transaction decision rule.
+- "binding institution policy" — STRONGLY SUPPORTED AS A BOUNDARY. The page labels it
+  an FSI publication and states that the authors' views do not necessarily represent
+  the BIS, member central banks, or Basel-based standard setters.
+
+Thesis-safe description:
+"FSI Insights 63 was used for financial-sector AI-governance, model-risk and
+generative-AI hallucination context. It was treated as research and supervisory
+analysis, not as binding institution policy or transaction-level decision authority."
+
+Suggested reference:
+Crisanto, J. C., Leuterio, C. B., Prenio, J., & Yong, J. (2024). Regulating AI in the
+financial sector: recent developments and main challenges (FSI Insights No. 63).
+Financial Stability Institute, Bank for International Settlements. URL above.
+
+
+SUMMARY OF REQUIRED THESIS WORDING CHANGES
+------------------------------------------
+1. Identify every not_for item as a study-imposed use boundary unless the source
+   expressly supplies that limitation.
+2. For SR 26-2, either freeze and cite the attached guidance by section/page or narrow
+   use_for to model-risk-management principles and a risk-based approach.
+3. For NIST, prefer "GAI risk management and trustworthiness considerations" over the
+   unspecific phrase "governance controls" unless exact GOVERN actions are cited.
+4. Do not imply that any of the five sources determines ULB/Sparkov labels, detector
+   thresholds, legal outcomes, or transaction-level fraud.
+5. Preserve access dates and snapshot hashes separately from bibliographic citations;
+   a hash establishes snapshot integrity, not continuing legal applicability.

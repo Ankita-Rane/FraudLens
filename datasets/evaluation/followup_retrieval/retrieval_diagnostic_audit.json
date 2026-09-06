@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-09-02T11:51:40.067746+00:00",
+  "scientific_status": "verified_scope_safe_retrieval_diagnostic_audit",
+  "manifest_path": "datasets/evaluation/followup_retrieval/known_item_diagnostic_locked.json",
+  "manifest_sha256": "49b2a73ebff38d15f3390bc041cd49091b7bddb07e02eb83cbd3f238772a4ef5",
+  "results_path": "datasets/evaluation/followup_retrieval/retrieval_diagnostic_results.json",
+  "results_sha256": "2368088d30cc3c74f0dfc92c83fdcafe20590ee1064c12cce856fac35555619c",
+  "recomputed_query_strategy_cells": 45,
+  "checks": {
+    "manifest_hash_matches_results": true,
+    "registry_hash_matches_results": true,
+    "status_is_scope_safe_completed": true,
+    "no_human_relevance_judgments": true,
+    "all_strategies_retained": true,
+    "exact_strategy_set": true,
+    "current_registry_hash_matches_manifest": true,
+    "every_current_source_hash_matches_registry": true,
+    "current_corpus_hash_matches_results": true,
+    "all_query_strategy_cells_present": true,
+    "all_metrics_recomputed_exactly": true,
+    "all_rank_metrics_bounded_0_1": true,
+    "identical_corpus_across_strategies": true,
+    "pinned_dense_revision_recorded": true,
+    "rankings_and_evidence_ids_recorded": true,
+    "latency_and_memory_observations_recorded": true
+  },
+  "all_checks_passed": true,
+  "claim_boundary": "Expected documents are researcher-authored design targets derived from registry metadata; they are not an independently adjudicated relevance gold standard and do not prove semantic correctness, entailment, legal correctness, or operational usefulness."
+}

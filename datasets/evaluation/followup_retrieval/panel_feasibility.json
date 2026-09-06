@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-09-02T12:13:48.746596+00:00",
+  "scientific_status": "pre_generation_feasibility_only",
+  "sampling_frame_pending": "label_stratified_TP_FP_FN_TN_transactions",
+  "ground_truth_generation_boundary": "Labels are used only to form/evaluate the panel and must be removed from generation inputs.",
+  "datasets": [
+    {
+      "dataset_id": "ULB",
+      "prediction_path": "artifacts/followup_detectors/ulb/test_predictions.csv",
+      "prediction_sha256": "67a935045a2a1e5fa090cefc77413ce7a88fd3ab8204170bb04ba38055388c08",
+      "threshold_path": "artifacts/followup_detectors/ulb/test_metrics.csv",
+      "threshold": 0.3699359669388152,
+      "requested": {
+        "total": 150,
+        "fraud": 97,
+        "non_fraud": 53
+      },
+      "heldout_rows": 99305,
+      "heldout_label_counts": {
+        "fraud": 166,
+        "non_fraud": 99139
+      },
+      "heldout_confusion_counts": {
+        "TN": 99129,
+        "TP": 126,
+        "FN": 40,
+        "FP": 10
+      },
+      "heldout_alert_counts": {
+        "fraud": 126,
+        "non_fraud": 10
+      },
+      "excluded_previously_exposed_source_rows": 50,
+      "fresh_label_counts": {
+        "fraud": 123,
+        "non_fraud": 99132
+      },
+      "fresh_confusion_counts": {
+        "TN": 99123,
+        "TP": 87,
+        "FN": 36,
+        "FP": 9
+      },
+      "fresh_alert_counts": {
+        "fraud": 87,
+        "non_fraud": 9
+      },
+      "transaction_panel_feasible": true,
+      "alert_only_panel_feasible": false,
+      "status": "feasible"
+    },
+    {
+      "dataset_id": "Sparkov",
+      "prediction_path": "artifacts/followup_detectors/sparkov/test_predictions.csv",
+      "prediction_sha256": "758cd71fb494bd6dcd54b7b3711c2bd501495c7606c40cb3eacab8f31de081cb",
+      "threshold_path": "artifacts/followup_detectors/sparkov/test_metrics.csv",
+      "threshold": 0.4107127366092664,
+      "requested": {
+        "total": 400,
+        "fraud": 260,
+        "non_fraud": 140
+      },
+      "heldout_rows": 555719,
+      "heldout_label_counts": {
+        "fraud": 2145,
+        "non_fraud": 553574
+      },
+      "heldout_confusion_counts": {
+        "TN": 552920,
+        "TP": 1730,
+        "FP": 654,
+        "FN": 415
+      },
+      "heldout_alert_counts": {
+        "fraud": 1730,
+        "non_fraud": 654
+      },
+      "excluded_previously_exposed_source_rows": 51,
+      "fresh_label_counts": {
+        "fraud": 2106,
+        "non_fraud": 553562
+      },
+      "fresh_confusion_counts": {
+        "TN": 552916,
+        "TP": 1694,
+        "FP": 646,
+        "FN": 412
+      },
+      "fresh_alert_counts": {
+        "fraud": 1694,
+        "non_fraud": 646
+      },
+      "transaction_panel_feasible": true,
+      "alert_only_panel_feasible": true,
+      "status": "feasible"
+    }
+  ],
+  "overall_status": "feasible_current_artifacts",
+  "blocking_reasons": []
+}

@@ -1,0 +1,20 @@
+FOLLOW-UP STUDY ARTIFACT VERSIONING POLICY
+==========================================
+
+1. A locked, accepted, or previously used artifact is never overwritten.
+2. Before replacing a canonical artifact, move the complete old artifact set into a
+   clearly named old/ directory.
+3. Record SHA-256, original relative path, archive relative path, byte size, status,
+   and replacement relationship in an archive manifest.
+4. Copy/move operations must be followed by byte-hash verification.
+5. Only after archival verification may a newly generated artifact be promoted to the
+   canonical filename.
+6. Every dependent manifest/protocol must bind the new canonical artifact by SHA-256.
+7. Old protocols remain provenance only and cannot authorize a new run.
+8. Raw runs are immutable per attempt. Failed or interrupted attempts remain recorded
+   and are never silently merged into accepted evidence.
+9. Detector studies, panels, attribution evidence, retrieval diagnostics, protocols,
+   raw LLM runs, aggregates, analyses, and thesis outputs use separate lineage/status
+   fields and must never be pooled across generations without an explicit method.
+10. A new artifact hash proves the promoted file's identity; it does not alter or
+    invalidate the bytes or hashes preserved in old/.

@@ -1,0 +1,105 @@
+{
+  "analysis_id": "FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1",
+  "code_provenance": {
+    "analysis_module": "src/followup_posthoc_analysis.py",
+    "analysis_module_sha256": "a8a2bee815f6fd23ef231051182a47df52cab305e3f91ebc76073a5035ba8e20",
+    "build_tool": "tools/build_followup_posthoc_evidence.py",
+    "build_tool_sha256": "d2c5ab673f407a4fd9e1f07a15c6cfd1f39bfa5757e5bc452221626c19a3b3de"
+  },
+  "generated_at_utc": "2026-09-04T16:46:03.332652+00:00",
+  "no_new_model_calls": true,
+  "outputs": [
+    {
+      "bytes": 385394,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/fidelity_availability_records.csv",
+      "role": "fidelity_availability_records",
+      "sha256": "66059bcd7b17899f02ab35e3fc292996da996240b828591043f3b0810eada352"
+    },
+    {
+      "bytes": 1673,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/fidelity_missingness_summary.csv",
+      "role": "fidelity_missingness_summary",
+      "sha256": "0e9c61702654cb903bfa3d66899a7e3a34e26dad2ecfa28642875c4daaf49730"
+    },
+    {
+      "bytes": 34929,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/gate_case_scores.csv",
+      "role": "gate_case_scores",
+      "sha256": "afa10bfbf3802aa07100bf23b34351455b2e13467b2e9503b148f4702f09ce42"
+    },
+    {
+      "bytes": 141492,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/gate_score_distribution.png",
+      "role": "gate_figure",
+      "sha256": "3eeb0d5a65955e96350d0bf90ebfa2939ba28982ee67aec1a2869e7c2645533f"
+    },
+    {
+      "bytes": 3265,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/generation_only_latency_summary.csv",
+      "role": "generation_only_latency_summary",
+      "sha256": "889a99f6f7513e30c414089248fd6bdc9bf44996c3eb1a4e071511c1fa672900"
+    },
+    {
+      "bytes": 16095,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/latency_by_disposition_summary.csv",
+      "role": "latency_by_disposition_summary",
+      "sha256": "91b53f3f5f8e08481c5429ede440749182d82ab5db107297b7985091ae397142"
+    },
+    {
+      "bytes": 143107,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/latency_by_disposition.png",
+      "role": "latency_figure",
+      "sha256": "1e0aa7f42aa64d567e3735b59e429d033e4d51d2843a56842c81a402cd0fa48f"
+    },
+    {
+      "bytes": 501579,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/latency_records.csv",
+      "role": "latency_records",
+      "sha256": "b14e8ff882183abf042f69e72a4cec5a9c0dd1c142d11bded24b1dc209f2e931"
+    },
+    {
+      "bytes": 975,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/THESIS_REPORTING_NOTES.txt",
+      "role": "reporting_notes",
+      "sha256": "71e53127da557b1e0db81f955f0b2bc2db29315372321355279efe2e1f869da1"
+    },
+    {
+      "bytes": 62490,
+      "path": "artifacts/results/followup/posthoc/FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1/posthoc_summary.json",
+      "role": "summary",
+      "sha256": "f3652f5c7d9fb2bc1dd47bc58892f4a2ff182f4a3d3c4be96c1041dccf4a277a"
+    }
+  ],
+  "schema_version": "1.0",
+  "scientific_status": "post_hoc_descriptive_evidence_audit_passed",
+  "source_provenance": {
+    "accepted_manifest_count": 55,
+    "accepted_manifest_set_sha256": "03c818b5ceaa0e5715ebb86f76be408b52a5747dbb20b4da5f85acc5fdf95968",
+    "accepted_raw_run_count": 3300,
+    "accepted_raw_run_set_sha256": "79ad556512db560a4b2b9368711ca798e42945bcb0c84a1de5f1737d810caa50",
+    "case_count": 550,
+    "condition_ids": [
+      "A_direct",
+      "B_lexical",
+      "B_dense",
+      "C_lexical",
+      "C_dense",
+      "D_hybrid"
+    ],
+    "protocol_path": "datasets/evaluation/followup_retrieval/protocol_locked.json",
+    "protocol_sha256": "af9fbda7a2edee26cb02ce32f70e0a661d1ab681ab602a6fe5b233792f366ff5",
+    "source_results_path": "artifacts/results/followup/FOLLOWUP-RETRIEVAL-20260902-02-CORRECTED-V4.json",
+    "source_results_sha256": "219092d03d75c6511896ba0df1f50e3ad38cb7e80e31c8f8537aa1983d79e65e"
+  },
+  "v4_modified": false,
+  "verified_invariants": {
+    "accepted_manifest_count": 55,
+    "case_count": 550,
+    "condition_count": 6,
+    "fidelity_available_count": 1610,
+    "fidelity_unavailable_count": 847,
+    "generated_count": 2457,
+    "not_generated_count": 843,
+    "raw_call_count": 3300
+  }
+}

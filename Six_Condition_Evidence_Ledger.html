@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Six-Condition Release Ledger</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+</head>
+<body>
+<style>
+  :root{
+    --paper:#f6f7f9; --surface:#ffffff; --sunk:#eef0f4;
+    --ink:#131822; --ink-2:#3d4757; --ink-3:#6b7688;
+    --rule:#dde1e8; --rule-strong:#c3c9d4;
+    --accent:#3a49a8; --accent-soft:#e8eaf7;
+    --released:#12735170; --released-solid:#127351;
+    --blocked:#a52a1f; --suppressed:#96690b;
+    --released-bg:#e2f2ea; --blocked-bg:#fae8e6; --suppressed-bg:#fbf0d9;
+    --shadow:0 1px 2px rgba(19,24,34,.05),0 8px 24px -16px rgba(19,24,34,.28);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0e1117; --surface:#161b24; --sunk:#1c222d;
+      --ink:#e9edf4; --ink-2:#b3bcca; --ink-3:#7f8a9c;
+      --rule:#28303c; --rule-strong:#3a4453;
+      --accent:#8f9cf0; --accent-soft:#1e2440;
+      --released-solid:#4bbd8f; --blocked:#f08d80; --suppressed:#e0b054;
+      --released-bg:#12291f; --blocked-bg:#2c1815; --suppressed-bg:#2a2113;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0e1117; --surface:#161b24; --sunk:#1c222d;
+    --ink:#e9edf4; --ink-2:#b3bcca; --ink-3:#7f8a9c;
+    --rule:#28303c; --rule-strong:#3a4453;
+    --accent:#8f9cf0; --accent-soft:#1e2440;
+    --released-solid:#4bbd8f; --blocked:#f08d80; --suppressed:#e0b054;
+    --released-bg:#12291f; --blocked-bg:#2c1815; --suppressed-bg:#2a2113;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:15px; line-height:1.6; margin:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:56px 28px 96px;}
+  header{display:flex; flex-direction:column; gap:14px; margin-bottom:14px;}
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px;
+    letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3);
+  }
+  h1{
+    font-family:Newsreader,Georgia,serif; font-weight:500; font-size:clamp(32px,4.4vw,46px);
+    line-height:1.12; letter-spacing:-.015em; margin:0; text-wrap:balance;
+  }
+  .standfirst{
+    font-family:Newsreader,Georgia,serif; font-size:19px; line-height:1.55;
+    color:var(--ink-2); max-width:64ch; margin:0;
+  }
+  h2{
+    font-family:Newsreader,Georgia,serif; font-weight:600; font-size:25px;
+    letter-spacing:-.01em; margin:0 0 6px; text-wrap:balance;
+  }
+  h3{
+    font-family:"Source Sans 3",sans-serif; font-weight:700; font-size:12px;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin:0 0 12px;
+  }
+  section{margin-top:52px;}
+  .lede{color:var(--ink-2); max-width:70ch; margin:0 0 22px;}
+  p{margin:0 0 14px;}
+
+  /* ---- verdict ---- */
+  .verdict{
+    margin-top:34px; border:1px solid var(--rule-strong); border-radius:3px;
+    background:var(--surface); box-shadow:var(--shadow); overflow:hidden;
+  }
+  .verdict-head{
+    padding:22px 26px 20px; border-bottom:1px solid var(--rule);
+    display:flex; flex-wrap:wrap; gap:18px; align-items:baseline; justify-content:space-between;
+  }
+  .verdict-q{font-family:Newsreader,Georgia,serif; font-size:20px; color:var(--ink-2); font-style:italic;}
+  .verdict-a{
+    font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:13px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--blocked);
+    padding:5px 11px; border:1px solid currentColor; border-radius:2px;
+  }
+  .breakdown{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));}
+  .bd{padding:20px 26px; border-right:1px solid var(--rule); border-top:1px solid var(--rule);}
+  .bd:last-child{border-right:none;}
+  .bd-n{
+    font-family:"IBM Plex Mono",monospace; font-size:30px; font-weight:500;
+    font-variant-numeric:tabular-nums; line-height:1.1; letter-spacing:-.02em;
+  }
+  .bd-l{font-size:13px; color:var(--ink-3); margin-top:5px;}
+  .bd-d{font-size:13.5px; color:var(--ink-2); margin-top:9px; line-height:1.45;}
+  .c-rel{color:var(--released-solid)} .c-blk{color:var(--blocked)} .c-sup{color:var(--suppressed)}
+
+  /* ---- disposition bars ---- */
+  .panel{
+    border:1px solid var(--rule); border-radius:3px; background:var(--surface);
+    padding:24px 26px; box-shadow:var(--shadow);
+  }
+  .panel + .panel{margin-top:18px;}
+  .panel-title{
+    display:flex; align-items:baseline; gap:11px; margin-bottom:20px;
+    padding-bottom:12px; border-bottom:1px solid var(--rule);
+  }
+  .panel-title strong{font-family:Newsreader,serif; font-size:21px; font-weight:600;}
+  .panel-title span{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-3);}
+  .bars{display:flex; flex-direction:column; gap:11px;}
+  .bar-row{display:grid; grid-template-columns:96px 1fr; gap:14px; align-items:center;}
+  .bar-lab{
+    font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink-2);
+    text-align:right; font-variant-numeric:tabular-nums;
+  }
+  .bar{display:flex; height:26px; border-radius:2px; overflow:hidden; background:var(--sunk);}
+  .seg{
+    display:flex; align-items:center; justify-content:center;
+    font-family:"IBM Plex Mono",monospace; font-size:11.5px; font-weight:500;
+    color:#fff; min-width:0; white-space:nowrap; overflow:hidden;
+  }
+  .seg-rel{background:var(--released-solid)}
+  .seg-blk{background:var(--blocked)}
+  .seg-sup{background:var(--suppressed)}
+  .legend{display:flex; flex-wrap:wrap; gap:20px; margin-top:20px; padding-top:16px; border-top:1px solid var(--rule); font-size:13px; color:var(--ink-2);}
+  .legend i{display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:7px; vertical-align:-1px;}
+
+  /* ---- tables ---- */
+  .scroll{overflow-x:auto; border:1px solid var(--rule); border-radius:3px; background:var(--surface); box-shadow:var(--shadow);}
+  table{border-collapse:collapse; width:100%; min-width:660px; font-size:13.5px;}
+  caption{
+    text-align:left; padding:18px 20px 14px; border-bottom:1px solid var(--rule);
+    font-family:Newsreader,serif; font-size:19px; font-weight:600; color:var(--ink);
+  }
+  caption small{display:block; font-family:"Source Sans 3",sans-serif; font-size:13px; font-weight:400; color:var(--ink-3); margin-top:4px; line-height:1.5;}
+  th,td{padding:8px 13px; text-align:right; border-bottom:1px solid var(--rule); font-variant-numeric:tabular-nums;}
+  th:first-child,td:first-child{text-align:left; font-variant-numeric:normal;}
+  thead th{
+    font-family:"IBM Plex Mono",monospace; font-size:11.5px; font-weight:500;
+    color:var(--ink-3); letter-spacing:.04em; background:var(--sunk); white-space:nowrap;
+    position:sticky; top:0;
+  }
+  tbody td{font-family:"IBM Plex Mono",monospace; color:var(--ink-2);}
+  tbody td:first-child{font-family:"Source Sans 3",sans-serif; color:var(--ink);}
+  tr.group td{
+    background:var(--sunk); font-family:"Source Sans 3",sans-serif; font-weight:700;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3);
+    padding:7px 13px;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  .zero{color:var(--blocked); font-weight:600;}
+  .best{color:var(--released-solid); font-weight:600;}
+  .sig{color:var(--accent); font-weight:600;}
+  .ns{color:var(--ink-3);}
+  .dir-up::before{content:"▲ "; font-size:9px; color:var(--released-solid);}
+  .dir-dn::before{content:"▼ "; font-size:9px; color:var(--blocked);}
+
+  .note{
+    margin-top:18px; padding:16px 20px; background:var(--accent-soft);
+    border-left:2px solid var(--accent); border-radius:0 3px 3px 0;
+    font-size:14px; color:var(--ink-2); line-height:1.6;
+  }
+  .note strong{color:var(--ink);}
+  .cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px;}
+  .mono{font-family:"IBM Plex Mono",monospace; font-size:12.5px;}
+  footer{
+    margin-top:64px; padding-top:22px; border-top:1px solid var(--rule);
+    font-size:12.5px; color:var(--ink-3); line-height:1.7;
+  }
+  footer code{font-family:"IBM Plex Mono",monospace; font-size:11.5px; word-break:break-all;}
+  @media (max-width:640px){
+    .wrap{padding:36px 18px 64px;}
+    .bar-row{grid-template-columns:74px 1fr; gap:9px;}
+    .bar-lab{font-size:11px;}
+  }
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Original six-condition experiment · immutable study ID FOLLOWUP-RETRIEVAL-20260902-02 · corrected aggregate V4 · 550 cases · 3,300 calls</div>
+  <h1>Six-Condition Release Ledger</h1>
+  <p class="standfirst">Every condition, both datasets, read from the locked evidence — why the guardrailed conditions released nothing at all on Sparkov, and which single check turns out to be doing all the blocking.</p>
+</header>
+
+<div class="verdict">
+  <div class="verdict-head">
+    <div class="verdict-q">Did the guardrailed conditions really release 0 of 400 Sparkov cases?</div>
+    <div class="verdict-a">Confirmed</div>
+  </div>
+  <div class="breakdown">
+    <div class="bd">
+      <div class="bd-n c-sup">199</div>
+      <div class="bd-l">Suppressed before generation</div>
+      <div class="bd-d">Fell below the 0.5 fraud-score release gate. No model call was made, so there was no text to assess.</div>
+    </div>
+    <div class="bd">
+      <div class="bd-n c-blk">201</div>
+      <div class="bd-l">Blocked after generation</div>
+      <div class="bd-d">Text was produced, then failed a structural check — most often the model-driver allowlist.</div>
+    </div>
+    <div class="bd">
+      <div class="bd-n">0</div>
+      <div class="bd-l">Released to the user</div>
+      <div class="bd-d">199 + 201 = 400. Every Sparkov case was accounted for by one of the two gates.</div>
+    </div>
+  </div>
+</div>
+
+<div class="note" style="margin-top:18px;">
+  <strong>This is the original and sole thesis experiment.</strong> Its locked six-condition design evaluates 150 ULB cases and 400 Sparkov cases, with each case run once under every condition. The zero-release Sparkov result is therefore a finding within this 550-case experiment — not a replication claim and not evidence from a separate earlier experiment.
+</div>
+
+<section>
+  <h2>Where each run ended</h2>
+  <p class="lede">The three unguarded conditions released everything. The three guarded conditions released almost nothing — and the suppressed set is <em>identical</em> across all three of them, because the score gate runs before retrieval and cannot see which retriever was used.</p>
+
+  <div class="panel">
+    <div class="panel-title"><strong>ULB</strong><span>150 cases per condition</span></div>
+    <div class="bars">
+      <div class="bar-row"><div class="bar-lab">A direct</div><div class="bar"><div class="seg seg-rel" style="flex:150">150 released</div></div></div>
+      <div class="bar-row"><div class="bar-lab">B lexical</div><div class="bar"><div class="seg seg-rel" style="flex:150">150 released</div></div></div>
+      <div class="bar-row"><div class="bar-lab">B dense</div><div class="bar"><div class="seg seg-rel" style="flex:150">150 released</div></div></div>
+      <div class="bar-row"><div class="bar-lab">C lexical</div><div class="bar"><div class="seg seg-rel" style="flex:5"></div><div class="seg seg-blk" style="flex:63">63</div><div class="seg seg-sup" style="flex:82">82</div></div></div>
+      <div class="bar-row"><div class="bar-lab">C dense</div><div class="bar"><div class="seg seg-rel" style="flex:3"></div><div class="seg seg-blk" style="flex:65">65</div><div class="seg seg-sup" style="flex:82">82</div></div></div>
+      <div class="bar-row"><div class="bar-lab">D hybrid</div><div class="bar"><div class="seg seg-rel" style="flex:3"></div><div class="seg seg-blk" style="flex:65">65</div><div class="seg seg-sup" style="flex:82">82</div></div></div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--released-solid)"></i>Released</span>
+      <span><i style="background:var(--blocked)"></i>Blocked by a structural check</span>
+      <span><i style="background:var(--suppressed)"></i>Suppressed by the score gate</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title"><strong>Sparkov</strong><span>400 cases per condition</span></div>
+    <div class="bars">
+      <div class="bar-row"><div class="bar-lab">A direct</div><div class="bar"><div class="seg seg-rel" style="flex:400">400 released</div></div></div>
+      <div class="bar-row"><div class="bar-lab">B lexical</div><div class="bar"><div class="seg seg-rel" style="flex:400">400 released</div></div></div>
+      <div class="bar-row"><div class="bar-lab">B dense</div><div class="bar"><div class="seg seg-rel" style="flex:400">400 released</div></div></div>
+      <div class="bar-row"><div class="bar-lab">C lexical</div><div class="bar"><div class="seg seg-blk" style="flex:201">201 blocked</div><div class="seg seg-sup" style="flex:199">199 suppressed</div></div></div>
+      <div class="bar-row"><div class="bar-lab">C dense</div><div class="bar"><div class="seg seg-blk" style="flex:201">201 blocked</div><div class="seg seg-sup" style="flex:199">199 suppressed</div></div></div>
+      <div class="bar-row"><div class="bar-lab">D hybrid</div><div class="bar"><div class="seg seg-blk" style="flex:201">201 blocked</div><div class="seg seg-sup" style="flex:199">199 suppressed</div></div></div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--released-solid)"></i>Released</span>
+      <span><i style="background:var(--blocked)"></i>Blocked by a structural check</span>
+      <span><i style="background:var(--suppressed)"></i>Suppressed by the score gate</span>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Why the blocks happen.</strong> Across all guarded runs, the failing checks were: model-driver allowlist 505, claim-level citation structure 354, valid JSON object 283, model-and-policy citations 167, schema contract 165, citation allowlist 93, public-source scope disclosure 8. A single run can fail more than one check.
+  </div>
+</section>
+
+<section>
+  <h2>Candidate quality against released quality</h2>
+  <p class="lede">This is the distinction the whole finding rests on. <strong>Candidate</strong> is the raw model output before any gate. <strong>Released</strong> is what actually reached the user. The guarded conditions produce text of roughly the quality you would expect — it simply never gets out.</p>
+
+  <div class="scroll">
+    <table>
+      <caption>ULB — six conditions
+        <small>150 cases per condition. Candidate means cover only runs that actually generated text — runs suppressed before generation are excluded rather than scored as zero. Released means cover all 150, since a suppressed run genuinely released nothing.</small>
+      </caption>
+      <thead><tr><th>Measure</th><th>A direct</th><th>B lexical</th><th>B dense</th><th>C lexical</th><th>C dense</th><th>D hybrid</th></tr></thead>
+      <tbody>
+        <tr class="group"><td colspan="7">Candidate — text the model actually wrote (non-generated runs excluded)</td></tr>
+        <tr><td>JSON validity</td><td>0.720</td><td>0.540</td><td>0.580</td><td>0.632</td><td>0.691</td><td class="best">0.721</td></tr>
+        <tr><td>Claim-citation coverage</td><td>0.707</td><td>0.533</td><td>0.560</td><td>0.610</td><td>0.691</td><td>0.691</td></tr>
+        <tr><td>Evidence-ID validity</td><td>0.652</td><td>0.487</td><td>0.522</td><td>0.608</td><td>0.642</td><td>0.635</td></tr>
+        <tr><td>Policy-citation coverage</td><td>0.000</td><td>0.066</td><td>0.120</td><td>0.169</td><td class="best">0.250</td><td>0.184</td></tr>
+        <tr><td>Explanation-fidelity F1</td><td class="best">0.948</td><td>0.254</td><td>0.227</td><td>0.236</td><td>0.077</td><td>0.174</td></tr>
+        <tr><td><span class="mono" style="color:var(--ink-3)">runs that generated text</span></td><td class="ns">150</td><td class="ns">150</td><td class="ns">150</td><td class="ns">68</td><td class="ns">68</td><td class="ns">68</td></tr>
+        <tr class="group"><td colspan="7">Released — what reached the user</td></tr>
+        <tr><td>JSON validity</td><td>0.720</td><td>0.540</td><td>0.580</td><td class="zero">0.033</td><td class="zero">0.020</td><td class="zero">0.020</td></tr>
+        <tr><td>Claim-citation coverage</td><td>0.707</td><td>0.533</td><td>0.560</td><td class="zero">0.033</td><td class="zero">0.020</td><td class="zero">0.020</td></tr>
+        <tr><td>Evidence-ID validity</td><td>0.652</td><td>0.487</td><td>0.522</td><td class="zero">0.033</td><td class="zero">0.020</td><td class="zero">0.020</td></tr>
+        <tr><td>Policy-citation coverage</td><td>0.000</td><td>0.066</td><td>0.120</td><td class="zero">0.007</td><td class="zero">0.007</td><td class="zero">0.010</td></tr>
+        <tr class="group"><td colspan="7">Governance and cost</td></tr>
+        <tr><td>Audit-trace completeness</td><td>0.9994</td><td>0.9994</td><td>1.0000</td><td>1.0000</td><td>1.0000</td><td>1.0000</td></tr>
+        <tr><td>Human-review referral rate</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.433</td><td>0.447</td><td>0.447</td></tr>
+        <tr><td>Median end-to-end latency (ms)</td><td>8,466</td><td>11,670</td><td>11,814</td><td>17</td><td>12</td><td>22</td></tr>
+        <tr><td>Median retrieval latency (ms)</td><td>0</td><td>10</td><td>5</td><td>10</td><td>5</td><td>15</td></tr>
+        <tr><td>Median CPU time (ms)</td><td>1,696</td><td>1,745</td><td>1,788</td><td>0</td><td>0</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Read the guarded latency figures with care.</strong> The 12–22 ms medians for ULB's guarded conditions are not a speed-up. More than half of those runs were suppressed before any model call, so the median describes a case that never generated text. The same caution applies to their 0 ms CPU medians.
+  </div>
+
+  <div class="scroll" style="margin-top:26px;">
+    <table>
+      <caption>Sparkov — six conditions
+        <small>400 cases per condition. Candidate means cover only the 201 runs that generated text. Released metrics are exactly zero under all three guarded conditions because nothing was released.</small>
+      </caption>
+      <thead><tr><th>Measure</th><th>A direct</th><th>B lexical</th><th>B dense</th><th>C lexical</th><th>C dense</th><th>D hybrid</th></tr></thead>
+      <tbody>
+        <tr class="group"><td colspan="7">Candidate — text the model actually wrote (non-generated runs excluded)</td></tr>
+        <tr><td>JSON validity</td><td class="best">0.757</td><td>0.620</td><td>0.720</td><td>0.657</td><td>0.627</td><td>0.632</td></tr>
+        <tr><td>Claim-citation coverage</td><td>0.739</td><td>0.603</td><td>0.714</td><td>0.622</td><td>0.609</td><td>0.604</td></tr>
+        <tr><td>Evidence-ID validity</td><td>0.678</td><td>0.527</td><td>0.661</td><td>0.577</td><td>0.576</td><td>0.570</td></tr>
+        <tr><td>Policy-citation coverage</td><td>0.000</td><td>0.073</td><td>0.172</td><td>0.235</td><td class="best">0.279</td><td>0.197</td></tr>
+        <tr><td>Explanation-fidelity F1</td><td class="best">0.768</td><td>0.257</td><td>0.033</td><td>0.008</td><td>0.000</td><td>0.000</td></tr>
+        <tr><td><span class="mono" style="color:var(--ink-3)">runs that generated text</span></td><td class="ns">400</td><td class="ns">400</td><td class="ns">400</td><td class="ns">201</td><td class="ns">201</td><td class="ns">201</td></tr>
+        <tr class="group"><td colspan="7">Released — what reached the user</td></tr>
+        <tr><td>JSON validity</td><td>0.757</td><td>0.620</td><td>0.720</td><td class="zero">0.000</td><td class="zero">0.000</td><td class="zero">0.000</td></tr>
+        <tr><td>Claim-citation coverage</td><td>0.739</td><td>0.603</td><td>0.714</td><td class="zero">0.000</td><td class="zero">0.000</td><td class="zero">0.000</td></tr>
+        <tr><td>Evidence-ID validity</td><td>0.678</td><td>0.527</td><td>0.661</td><td class="zero">0.000</td><td class="zero">0.000</td><td class="zero">0.000</td></tr>
+        <tr><td>Policy-citation coverage</td><td>0.000</td><td>0.073</td><td>0.172</td><td class="zero">0.000</td><td class="zero">0.000</td><td class="zero">0.000</td></tr>
+        <tr class="group"><td colspan="7">Governance and cost</td></tr>
+        <tr><td>Audit-trace completeness</td><td>0.9994</td><td>1.0000</td><td>0.9998</td><td>1.0000</td><td>1.0000</td><td>1.0000</td></tr>
+        <tr><td>Human-review referral rate</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.525</td><td>0.525</td><td>0.525</td></tr>
+        <tr><td>Median end-to-end latency (ms)</td><td>7,938</td><td>10,197</td><td>9,615</td><td>5,671</td><td>3,906</td><td>4,676</td></tr>
+        <tr><td>Median retrieval latency (ms)</td><td>0</td><td>10</td><td>6</td><td>10</td><td>6</td><td>16</td></tr>
+        <tr><td>Median CPU time (ms)</td><td>1,835</td><td>1,650</td><td>1,556</td><td>833</td><td>481</td><td>626</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Retrieval, tested on its own</h2>
+  <p class="lede">Before the transaction experiment, the three retrievers were run against a frozen 15-query known-item diagnostic. This is the part that answers the supervisor's concern that TF-IDF understated what retrieval can do.</p>
+  <div class="scroll">
+    <table>
+      <caption>Known-item retrieval diagnostic
+        <small>15 queries, top_k = 4, identical frozen corpus across all three strategies. Researcher-authored targets — a reproducible functional test, not an independently adjudicated relevance gold standard.</small>
+      </caption>
+      <thead><tr><th>Strategy</th><th>Precision@4</th><th>Recall@4</th><th>MRR</th><th>nDCG@4</th><th>Top-1 success</th><th>Mean latency (ms)</th></tr></thead>
+      <tbody>
+        <tr><td>Lexical TF-IDF</td><td>0.300</td><td>1.000</td><td>0.900</td><td>0.926</td><td>0.800</td><td class="best">9.36</td></tr>
+        <tr><td>Dense embedding</td><td>0.300</td><td>1.000</td><td class="best">1.000</td><td class="best">1.000</td><td class="best">1.000</td><td>116.04</td></tr>
+        <tr><td>Hybrid (RRF)</td><td>0.300</td><td>1.000</td><td class="best">1.000</td><td class="best">1.000</td><td class="best">1.000</td><td>13.31</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <strong>The honest reading.</strong> Dense and hybrid rank the known document first on every query; TF-IDF misses top-1 on 3 of 15. But recall@4 is 1.000 for all three — every strategy found the document inside the top four. The difference is <em>ranking position</em>, not whether retrieval works at all. Dense costs about 12× the latency of TF-IDF for that gain; hybrid gets the same ranking for about 1.4×.
+  </div>
+</section>
+
+<section>
+  <h2>Paired comparisons</h2>
+  <p class="lede">Each case is its own control — every transaction was run once under all six conditions. Wilcoxon signed-rank for continuous measures, exact McNemar for binary ones, Holm-adjusted within each dataset. Datasets are never pooled. Note the two guardrail blocks: release behaviour is measured across every case, while text quality is measured only over runs that actually generated.</p>
+
+  <div class="scroll">
+    <table>
+      <caption>Selected contrasts, both datasets
+        <small>Effect is the mean paired difference in the direction named by the comparison. The reported correction treats each dataset as one Holm family; the single global family originally implemented is shown alongside as a conservative sensitivity analysis. Marked <span class="sig">significant</span> where the per-dataset adjusted p is below .05 \u2014 no result changes status between the two columns.</small>
+      </caption>
+      <thead><tr><th>Dataset</th><th>Comparison</th><th>Measure</th><th>Effect</th><th>95% CI</th><th>Holm p, per dataset</th><th>Global sensitivity</th></tr></thead>
+      <tbody>
+        <tr class="group"><td colspan="7">Does retrieval help? — B against A</td></tr>
+        <tr><td>ULB</td><td>B lexical − A direct</td><td>Policy-citation coverage</td><td class="dir-up">+0.0656</td><td>[+0.038, +0.093]</td><td class="sig">.001</td><td class="ns">.002</td></tr>
+        <tr><td>ULB</td><td>B dense − A direct</td><td>Policy-citation coverage</td><td class="dir-up">+0.1200</td><td>[+0.083, +0.157]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>ULB</td><td>B dense − A direct</td><td>Explanation fidelity</td><td class="dir-dn">−0.7010</td><td>[−0.824, −0.578]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>B lexical − A direct</td><td>Policy-citation coverage</td><td class="dir-up">+0.0733</td><td>[+0.056, +0.091]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>B dense − A direct</td><td>Policy-citation coverage</td><td class="dir-up">+0.1725</td><td>[+0.149, +0.196]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>B dense − A direct</td><td>Explanation fidelity</td><td class="dir-dn">−0.7360</td><td>[−0.798, −0.674]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+
+        <tr class="group"><td colspan="7">Is dense better than lexical? — the dataset split</td></tr>
+        <tr><td>ULB</td><td>B dense − B lexical</td><td>Claim-citation coverage</td><td>+0.0267</td><td>[−0.081, +0.134]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>ULB</td><td>B dense − B lexical</td><td>Evidence-ID validity</td><td>+0.0350</td><td>[−0.067, +0.137]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>ULB</td><td>B dense − B lexical</td><td>Policy-citation coverage</td><td>+0.0544</td><td>[+0.012, +0.097]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>Sparkov</td><td>B dense − B lexical</td><td>Evidence-ID validity</td><td class="dir-up">+0.1338</td><td>[+0.070, +0.197]</td><td class="sig">.003</td><td class="ns">.006</td></tr>
+        <tr><td>Sparkov</td><td>B dense − B lexical</td><td>Policy-citation coverage</td><td class="dir-up">+0.0992</td><td>[+0.070, +0.128]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>B dense − B lexical</td><td>Explanation fidelity</td><td class="dir-dn">−0.2423</td><td>[−0.311, −0.173]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+
+        <tr class="group"><td colspan="7">Guardrails: what reaches the reader — all 150 / 400 cases</td></tr>
+        <tr><td>ULB</td><td>C lexical − B lexical</td><td>Human-review referral</td><td>+65 / −0</td><td>65 discordant</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>ULB</td><td>C dense − B dense</td><td>Human-review referral</td><td>+67 / −0</td><td>67 discordant</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>ULB</td><td>C lexical − B lexical</td><td>Released claim-citation cov.</td><td class="dir-dn">−0.5000</td><td>[−0.587, −0.413]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>ULB</td><td>C dense − B dense</td><td>Released claim-citation cov.</td><td class="dir-dn">−0.5400</td><td>[−0.622, −0.458]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>C lexical − B lexical</td><td>Human-review referral</td><td>+210 / −0</td><td>210 discordant</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>C dense − B dense</td><td>Human-review referral</td><td>+210 / −0</td><td>210 discordant</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>C lexical − B lexical</td><td>Released claim-citation cov.</td><td class="dir-dn">−0.6025</td><td>[−0.650, −0.555]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>C dense − B dense</td><td>Released claim-citation cov.</td><td class="dir-dn">−0.7137</td><td>[−0.758, −0.669]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+
+        <tr class="group"><td colspan="7">Guardrails: structural format and provenance — generated runs only, n = 68 / 201</td></tr>
+        <tr><td>ULB</td><td>C lexical − B lexical</td><td>Claim-citation coverage</td><td>+0.1250</td><td>[−0.045, +0.295]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>ULB</td><td>C lexical − B lexical</td><td>Evidence-ID validity</td><td>+0.1887</td><td>[+0.023, +0.354]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>ULB</td><td>C lexical − B lexical</td><td>Policy-citation coverage</td><td class="dir-up">+0.1324</td><td>[+0.068, +0.197]</td><td class="sig">.026</td><td class="ns">.044</td></tr>
+        <tr><td>ULB</td><td>C dense − B dense</td><td>Claim-citation coverage</td><td>+0.0956</td><td>[−0.076, +0.267]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>ULB</td><td>C dense − B dense</td><td>Policy-citation coverage</td><td>+0.1397</td><td>[+0.054, +0.226]</td><td class="ns">.244</td><td class="ns">.401</td></tr>
+        <tr><td>Sparkov</td><td>C lexical − B lexical</td><td>Claim-citation coverage</td><td>+0.0547</td><td>[−0.043, +0.152]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>Sparkov</td><td>C lexical − B lexical</td><td>Policy-citation coverage</td><td class="dir-up">+0.1783</td><td>[+0.129, +0.227]</td><td class="sig">&lt;.001</td><td class="ns">&lt;.001</td></tr>
+        <tr><td>Sparkov</td><td>C dense − B dense</td><td>Claim-citation coverage</td><td>−0.1244</td><td>[−0.217, −0.032]</td><td class="ns">.553</td><td class="ns">1.000</td></tr>
+        <tr><td>Sparkov</td><td>C dense − B dense</td><td>Policy-citation coverage</td><td class="dir-up">+0.1103</td><td>[+0.056, +0.164]</td><td class="sig">.009</td><td class="ns">.021</td></tr>
+
+        <tr class="group"><td colspan="7">Guardrails: explanation fidelity — reported separately, not folded into the set above</td></tr>
+        <tr><td>ULB</td><td>C lexical − B lexical</td><td>Explanation fidelity</td><td>−0.0055</td><td>[−0.358, +0.347]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>Sparkov</td><td>C lexical − B lexical</td><td>Explanation fidelity</td><td class="dir-dn">−0.2373</td><td>[−0.335, −0.139]</td><td class="sig">.003</td><td class="ns">.007</td></tr>
+
+        <tr class="group"><td colspan="7">Does hybrid beat dense? — the exploratory arm</td></tr>
+        <tr><td>ULB</td><td>D hybrid − C dense</td><td>Claim-citation coverage</td><td>+0.0000</td><td>[−0.151, +0.151]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>ULB</td><td>D hybrid − C dense</td><td>Policy-citation coverage</td><td>−0.0662</td><td>[−0.159, +0.027]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>Sparkov</td><td>D hybrid − C dense</td><td>Claim-citation coverage</td><td>−0.0050</td><td>[−0.103, +0.093]</td><td class="ns">1.000</td><td class="ns">1.000</td></tr>
+        <tr><td>Sparkov</td><td>D hybrid − C dense</td><td>Policy-citation coverage</td><td>−0.0821</td><td>[−0.134, −0.030]</td><td class="ns">.154</td><td class="ns">.387</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cols" style="margin-top:26px;">
+    <div class="note" style="margin-top:0;">
+      <strong>Guardrails change disposition, not text quality.</strong> Every referral contrast moves one way only — 65, 67, 210, 210 cases into referral, and zero back out. Measured over the runs that actually generated, twelve of the sixteen candidate-quality contrasts are null after adjustment, and the significant remainder <em>favours</em> the guarded conditions on policy citation.
+    </div>
+    <div class="note" style="margin-top:0;">
+      <strong>Dense retrieval helps on Sparkov, not on ULB.</strong> The same contrast is significant on one dataset and flat on the other. This is why the protocol prohibits pooling, and it is a finding in its own right rather than a nuisance.
+    </div>
+    <div class="note" style="margin-top:0;">
+      <strong>Retrieval trades fidelity for grounding.</strong> Policy-citation coverage rises everywhere retrieval is added, while explanation-fidelity F1 falls sharply. Both effects are large and survive adjustment. Neither condition is simply better.
+    </div>
+    <div class="note" style="margin-top:0;">
+      <strong>Hybrid did not beat dense.</strong> No contrast in the exploratory arm survives adjustment on either dataset. It was registered as exploratory and it stays that way.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Which guardrail actually binds</h2>
+  <p class="lede">The guardrail layer was run as a package, so the contrast above measures the bundle. But every one of the six structural checks was recorded separately on each run, and blocking is exactly equivalent to at least one check failing — verified across all 807 generated runs, no exceptions. Because those six checks are validators applied to text that already exists, withdrawing one cannot change what the model wrote, so the release decision can be recomputed on the frozen outputs.</p>
+
+  <div class="scroll">
+    <table>
+      <caption>Counterfactual release rate under alternative enforcement policies
+        <small>Computed on the 807 generated guardrailed runs — ULB 204, Sparkov 603. Rates are exact to six decimal places, with the underlying counts alongside, so nothing is hidden by rounding. Sparkov\u2019s 0.000000 is a true zero: none of its 603 generated outputs passed. The fraud-score gate is excluded — it acts before generation, so its effect is the suppression count, not a check.</small>
+      </caption>
+      <thead><tr><th>Enforcement policy</th><th>ULB</th><th>Sparkov</th><th>Both</th><th>Released count ULB / Sparkov / both</th></tr></thead>
+      <tbody>
+        <tr><td>No structural checks</td><td>1.000000</td><td>1.000000</td><td>1.000000</td><td class="ns">204 / 603 / 807</td></tr>
+        <tr><td><strong>Full bundle, as executed</strong></td><td>0.053922</td><td class="zero">0.000000</td><td>0.013631</td><td class="ns">11 / 0 / 11</td></tr>
+        <tr class="group"><td colspan="5">Only this check active</td></tr>
+        <tr><td>Valid JSON object</td><td>0.681373</td><td>0.638474</td><td>0.649318</td><td class="ns">139 / 385 / 524</td></tr>
+        <tr><td>Schema contract</td><td>0.598039</td><td>0.578773</td><td>0.583643</td><td class="ns">122 / 349 / 471</td></tr>
+        <tr><td>Citation allowlist</td><td>0.558824</td><td>0.525705</td><td>0.534077</td><td class="ns">114 / 317 / 431</td></tr>
+        <tr><td>Model and policy citations</td><td>0.470588</td><td>0.459370</td><td>0.462206</td><td class="ns">96 / 277 / 373</td></tr>
+        <tr><td>Claim-level citation structure</td><td>0.406863</td><td>0.295191</td><td>0.323420</td><td class="ns">83 / 178 / 261</td></tr>
+        <tr><td>Public-source scope disclosure</td><td>0.671569</td><td>0.628524</td><td>0.639405</td><td class="ns">137 / 379 / 516</td></tr>
+        <tr><td><strong>Model-driver allowlist</strong></td><td>0.088235</td><td>0.001658</td><td class="sig">0.023544</td><td class="ns">18 / 1 / 19</td></tr>
+        <tr class="group"><td colspan="5">Full bundle minus this check</td></tr>
+        <tr><td><strong>Model-driver allowlist</strong></td><td>0.328431</td><td>0.255390</td><td class="best">0.273854</td><td class="ns">67 / 154 / 221</td></tr>
+        <tr><td>Claim-level citation structure</td><td>0.063725</td><td>0.000000</td><td>0.016109</td><td class="ns">13 / 0 / 13</td></tr>
+        <tr><td>Any of the other five checks</td><td>0.053922</td><td>0.000000</td><td class="ns">0.013631 — unchanged</td><td class="ns">11 / 0 / 11</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cols" style="margin-top:26px;">
+    <div class="note" style="margin-top:0;">
+      <strong>The bundle is effectively one check.</strong> Drop any of five checks and the release rate moves by nothing at all — everything they would reject is rejected by something else too. Drop the model-driver allowlist and releases rise twentyfold, from 0.014 to 0.274. Enforcing that one check alone very nearly reproduces the whole package.
+    </div>
+    <div class="note" style="margin-top:0;">
+      <strong>What that check does.</strong> It requires every risk driver named in the narrative to correspond to an attribution feature actually supplied to the model. The model named unsupplied drivers in <strong>97.6%</strong> of generated outputs. Of 212 runs rejected by exactly one failing check, <strong>210</strong> were rejected by this one.
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>What this is, and is not.</strong> A counterfactual re-scoring of the same frozen outputs, not a re-execution. It identifies which check binds in this evaluation. It does not predict how the model would write under a different prompt contract or a differently designed guardrail layer — that still needs new runs. The other five checks are not redundant as governance controls; each would reject genuinely malformed output arriving alone. They simply were not the binding constraint here.
+  </div>
+</section>
+
+<section>
+  <h2>Outcomes by offline outcome class</h2>
+  <p class="lede">Your supervisor asked for conditional analysis — true positives against false positives on Sparkov. The join works on all 3,300 runs, but the comparison cannot be made, and the table shows why immediately.</p>
+  <div class="scroll">
+    <table>
+      <caption>Disposition by outcome class, guardrailed conditions
+        <small>All three guardrailed conditions pooled, so each unique case appears three times. Counts are runs; unique cases are given separately.</small>
+      </caption>
+      <thead><tr><th>Dataset</th><th>Class</th><th>Unique cases</th><th>Runs</th><th>Released</th><th>Blocked</th><th>Suppressed</th></tr></thead>
+      <tbody>
+        <tr><td>ULB</td><td>True positive</td><td>69</td><td>207</td><td class="best">11</td><td>190</td><td>6</td></tr>
+        <tr><td>ULB</td><td>False positive</td><td class="zero">1</td><td>3</td><td>0</td><td>3</td><td>0</td></tr>
+        <tr><td>ULB</td><td>False negative</td><td>28</td><td>84</td><td>0</td><td>0</td><td>84</td></tr>
+        <tr><td>ULB</td><td>True negative</td><td>52</td><td>156</td><td>0</td><td>0</td><td>156</td></tr>
+        <tr><td>Sparkov</td><td>True positive</td><td>209</td><td>627</td><td class="zero">0</td><td>600</td><td>27</td></tr>
+        <tr><td>Sparkov</td><td>False positive</td><td class="zero">1</td><td>3</td><td>0</td><td>3</td><td>0</td></tr>
+        <tr><td>Sparkov</td><td>False negative</td><td>51</td><td>153</td><td>0</td><td>0</td><td>153</td></tr>
+        <tr><td>Sparkov</td><td>True negative</td><td>139</td><td>417</td><td>0</td><td>0</td><td>417</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cols" style="margin-top:26px;">
+    <div class="note" style="margin-top:0;">
+      <strong>Why true-positive versus false-positive cannot be tested.</strong> The panel holds exactly <strong>one</strong> false positive per dataset. There is nothing to compare true positives against. This is a panel-composition consequence — the detectors are precise, so few false positives existed to sample — not a missing-data problem.
+    </div>
+    <div class="note" style="margin-top:0;">
+      <strong>What the table does show.</strong> Every false negative and every true negative was suppressed before generation, without exception, because those cases score below the release gate. Only true positives and the single false positive ever reached the model. Suppression tracks the panel's deliberate stratification, not anything about the generated text.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>The eleven that passed everything</h2>
+  <p class="lede">Across 1,650 guardrailed runs, eleven outputs satisfied all seven structural checks — all of them on ULB, none on Sparkov. This is the clearest available evidence for what the study does and does not measure.</p>
+  <div class="scroll">
+    <table>
+      <caption>Outputs passing every structural check
+        <small>Counts of runs, not unique cases.</small>
+      </caption>
+      <thead><tr><th>Condition</th><th>ULB</th><th>Sparkov</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>C lexical</td><td>5</td><td>0</td><td>5</td></tr>
+        <tr><td>C dense</td><td>3</td><td>0</td><td>3</td></tr>
+        <tr><td>D hybrid</td><td>3</td><td>0</td><td>3</td></tr>
+        <tr><td><strong>All guardrailed conditions</strong></td><td><strong>11</strong></td><td class="zero"><strong>0</strong></td><td><strong>11</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <strong>What a fully compliant output looks like.</strong> One of the eleven reads, in full: <em>&ldquo;Model risk drivers include model performance metrics and local attribution. Public governance context involves regulatory frameworks. Human investigation step is to review fraud patterns.&rdquo;</em> Every claim carries a citation, every identifier resolves, every named driver was supplied. It is also generic rather than case-specific, and the drivers it names are anonymised components with undisclosed semantics.
+  </div>
+  <div class="note">
+    <strong>This is the semantic-validity gap, made concrete.</strong> The metrics on this page ask whether a citation is present, whether an identifier resolves, whether the JSON parses. They cannot ask whether a sentence is true, or whether the cited passage supports the claim attached to it. A model writing accurate case-specific analysis and one writing fluent filler with well-formed citations score identically here. Closing that needs independent human judgement on a sample; no result on this page substitutes for it.
+  </div>
+</section>
+
+<section>
+  <h2>Supervisor review coverage</h2>
+  <p class="lede">Where each recommendation from the written review now stands. Seventeen inline PDF comments reduce to six distinct issues, all closed.</p>
+  <div class="scroll">
+    <table>
+      <caption>Status against the eight review categories</caption>
+      <thead><tr><th>Category</th><th>Recommendation</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>1 Title and framing</td><td>Remove &ldquo;agentic&rdquo; unless agency is evaluated</td><td class="best">Retitled</td></tr>
+        <tr><td>1 Contribution</td><td>Add semantic validity or reframe as governance evaluation</td><td class="best">Reframed, stated in Ch. 1 and 5</td></tr>
+        <tr><td>2 Structure</td><td>Move Jira and console detail to an appendix</td><td class="ns">Reading notes instead; disclosed</td></tr>
+        <tr><td>3 Literature</td><td>Reference audit; add canonical XAI sources</td><td class="best">38 references verified; four canonical sources added</td></tr>
+        <tr><td>4 Methodology</td><td>Add a dense retrieval baseline</td><td class="best">Lexical, dense and hybrid evaluated</td></tr>
+        <tr><td>4 Methodology</td><td>Ablation separating guardrail mechanisms</td><td class="best">Closed by the analysis above</td></tr>
+        <tr><td>4 Methodology</td><td>Semantic evaluation on a subset</td><td class="zero">Open — needs human judgement</td></tr>
+        <tr><td>4 Methodology</td><td>Use a sufficiently broad, reproducible evaluation panel</td><td class="best">Original locked design: 550 cases, six conditions, 3,300 calls</td></tr>
+        <tr><td>5 Reasoning</td><td>Reframe as &ldquo;guardrails change disposition&rdquo;</td><td class="best">Done, and now evidenced</td></tr>
+        <tr><td>5 Reasoning</td><td>Conditional true positive versus false positive</td><td class="ns">Not testable — one false positive per dataset</td></tr>
+        <tr><td>5 Reasoning</td><td>Qualitative failure-mode examples</td><td class="best">Added to Ch. 4</td></tr>
+        <tr><td>6 Conclusions</td><td>Separate research conclusions from engineering verification</td><td class="best">Done</td></tr>
+        <tr><td>7 Writing</td><td>Fix DOI line breaks and broken links</td><td class="best">40 URLs verified live</td></tr>
+        <tr><td>8 References</td><td>Citation audit; page-accurate claims</td><td class="best">Done; OWASP page corrected to p. 4</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Two corrections behind these numbers</h2>
+  <p class="lede">This page reports the third and current aggregate. Both earlier aggregates are retained unchanged; every effect size, interval and manifest below was recomputed from the same 3,300 raw runs.</p>
+
+  <p><strong>First, a p-value rounding defect.</strong> The original aggregate stored 75 p-values as exactly <span class="mono">0.0</span>, because p-values were rounded to eight decimal places and anything below 5e-9 collapsed to zero. That also created false ties in the Holm ranking. Correcting it changed 861 p-value fields and <em>zero</em> non-p-value fields, and left the significant count unchanged.</p>
+
+  <p><strong>Second, and larger, a candidate-measurement defect.</strong> All 843 runs suppressed before generation carry no text and zero output tokens, yet they were scored <span class="mono">0.0</span> on candidate text-quality measures — recording &ldquo;was never asked to write&rdquo; as &ldquo;wrote badly&rdquo;. Candidate measures now exclude those runs; released measures are untouched, since a suppressed run genuinely released nothing. Only candidate metrics changed (54 records); no released, audit, latency or resource metric moved at all.</p>
+
+  <p>The correction reverses the guardrail result. Where the earlier aggregate showed guardrails reducing candidate claim-citation coverage by 0.25 to 0.41, the corrected figures show <strong>+0.125</strong> and <strong>+0.096</strong> on ULB and <strong>+0.055</strong> on Sparkov, none significant, with Sparkov dense the one mild exception at &minus;0.124. Fifteen spurious findings disappeared and three real ones emerged that the zeros had masked. Holm-significant totals moved from 123 to <strong>111</strong> (ULB 38, Sparkov 73).</p>
+
+  <p><strong>Eight cells still show a highly significant Wilcoxon result beside a mean interval that spans zero</strong> — for example ULB hybrid against dense on retrieval latency: <span class="mono">−0.72 ms, 95% CI [−8.50, 7.07], Wilcoxon p = 1.8e-15, t p = .856</span>. These are not contradictions. Wilcoxon tests whether differences are consistently signed; the interval describes their mean. On skewed latency and memory data nearly every pair can shift the same way by a small amount while a few outliers drag the mean across zero. They are reported as distributional shifts, never as mean effects, and all are latency, CPU or memory measures — none is a structural-quality outcome.</p>
+</section>
+
+
+
+</div>
+
+</body>
+</html>

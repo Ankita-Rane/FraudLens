@@ -1,0 +1,1232 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-09-02T11:51:39.059857+00:00",
+  "scientific_status": "completed_scope_safe_known_item_diagnostic",
+  "interpretation_boundary": "Researcher-authored functional diagnostic; not an independently adjudicated relevance gold standard.",
+  "diagnostic_manifest_path": "datasets/evaluation/followup_retrieval/known_item_diagnostic_locked.json",
+  "diagnostic_manifest_sha256": "49b2a73ebff38d15f3390bc041cd49091b7bddb07e02eb83cbd3f238772a4ef5",
+  "source_registry_sha256": "9004b0676ca564ad851d3a82c2f82fe5058f803c83913260f0243197304d8cc5",
+  "query_count": 15,
+  "top_k": 4,
+  "document_candidate_multiplier": 32,
+  "evaluated_strategy_ids": [
+    "lexical_tfidf",
+    "dense",
+    "hybrid_rrf"
+  ],
+  "all_strategies_retained_regardless_of_result": true,
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "strategies": {
+    "lexical_tfidf": {
+      "manifest": {
+        "strategy_id": "lexical_tfidf",
+        "scientific_status": "frozen_lexical_baseline",
+        "corpus_sha256": "4e2b6e40c2fa076fe9da7bf7477b57fd379fa76657d3d64be5f38908d77fce7f"
+      },
+      "query_results": [
+        {
+          "query_id": "DIRECT_RZ12",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 2,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ndcg_at_k": 0.63093,
+          "top_1_success": false,
+          "latency_ns": 10348250,
+          "max_rss_before_bytes": 175538176,
+          "max_rss_after_bytes": 176422912,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-1",
+            "policy:260d168e25d19ffe:chunk-1"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ12_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 2,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9542416,
+          "max_rss_before_bytes": 176422912,
+          "max_rss_after_bytes": 176472064,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-32",
+            "policy:80f3bb93d9f7b866:chunk-10"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ12_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9454792,
+          "max_rss_before_bytes": 176472064,
+          "max_rss_after_bytes": 176472064,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "bis_fsi_insights_63.html",
+            "regulation_z_1026_13.html",
+            "nist_ai_600_1.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-26",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:80f3bb93d9f7b866:chunk-10",
+            "policy:5a54dc1590e9dc6c:chunk-1"
+          ]
+        },
+        {
+          "query_id": "DIRECT_RZ13",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 2,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ndcg_at_k": 0.63093,
+          "top_1_success": false,
+          "latency_ns": 9409250,
+          "max_rss_before_bytes": 176472064,
+          "max_rss_after_bytes": 176488448,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-60",
+            "policy:80f3bb93d9f7b866:chunk-19"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ13_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 2,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9330375,
+          "max_rss_before_bytes": 176488448,
+          "max_rss_after_bytes": 176488448,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-29",
+            "policy:260d168e25d19ffe:chunk-34"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ13_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 3,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ndcg_at_k": 0.63093,
+          "top_1_success": false,
+          "latency_ns": 9794167,
+          "max_rss_before_bytes": 176488448,
+          "max_rss_after_bytes": 176488448,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-51",
+            "policy:80f3bb93d9f7b866:chunk-19",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "DIRECT_SR",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9392625,
+          "max_rss_before_bytes": 176488448,
+          "max_rss_after_bytes": 176488448,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-1",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:260d168e25d19ffe:chunk-9"
+          ]
+        },
+        {
+          "query_id": "PARA_SR_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9289375,
+          "max_rss_before_bytes": 176488448,
+          "max_rss_after_bytes": 176504832,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:260d168e25d19ffe:chunk-9"
+          ]
+        },
+        {
+          "query_id": "PARA_SR_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9194791,
+          "max_rss_before_bytes": 176504832,
+          "max_rss_after_bytes": 176504832,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:260d168e25d19ffe:chunk-26"
+          ]
+        },
+        {
+          "query_id": "DIRECT_NIST",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9034125,
+          "max_rss_before_bytes": 176504832,
+          "max_rss_after_bytes": 176504832,
+          "ranked_document_ids": [
+            "nist_ai_600_1.html",
+            "bis_fsi_insights_63.html",
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:260d168e25d19ffe:chunk-9",
+            "policy:80f3bb93d9f7b866:chunk-9"
+          ]
+        },
+        {
+          "query_id": "PARA_NIST_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 8943833,
+          "max_rss_before_bytes": 176504832,
+          "max_rss_after_bytes": 176504832,
+          "ranked_document_ids": [
+            "nist_ai_600_1.html",
+            "bis_fsi_insights_63.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:80f3bb93d9f7b866:chunk-10"
+          ]
+        },
+        {
+          "query_id": "DIRECT_BIS",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9119000,
+          "max_rss_before_bytes": 176504832,
+          "max_rss_after_bytes": 176504832,
+          "ranked_document_ids": [
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:80f3bb93d9f7b866:chunk-24",
+            "policy:260d168e25d19ffe:chunk-9"
+          ]
+        },
+        {
+          "query_id": "PARA_BIS_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9159625,
+          "max_rss_before_bytes": 176504832,
+          "max_rss_after_bytes": 176504832,
+          "ranked_document_ids": [
+            "bis_fsi_insights_63.html",
+            "federal_reserve_sr_26_2.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:80f3bb93d9f7b866:chunk-10"
+          ]
+        },
+        {
+          "query_id": "MULTI_CONSUMER",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 2,
+          "precision_at_k": 0.5,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9390000,
+          "max_rss_before_bytes": 176504832,
+          "max_rss_after_bytes": 176504832,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-24",
+            "policy:80f3bb93d9f7b866:chunk-29"
+          ]
+        },
+        {
+          "query_id": "MULTI_AI_GOV",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.75,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 9033750,
+          "max_rss_before_bytes": 176504832,
+          "max_rss_after_bytes": 176504832,
+          "ranked_document_ids": [
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:80f3bb93d9f7b866:chunk-24"
+          ]
+        }
+      ],
+      "macro_average": {
+        "eligible_query_count": 15,
+        "precision_at_k": 0.3,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.9,
+        "ndcg_at_k": 0.926186,
+        "top_1_success": 0.8,
+        "mean_latency_ms": 9.362425
+      }
+    },
+    "dense": {
+      "manifest": {
+        "strategy_id": "dense",
+        "scientific_status": "pinned_dense_semantic_encoder",
+        "corpus_sha256": "4e2b6e40c2fa076fe9da7bf7477b57fd379fa76657d3d64be5f38908d77fce7f",
+        "encoder_model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "encoder_model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "query_results": [
+        {
+          "query_id": "DIRECT_RZ12",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 1693072417,
+          "max_rss_before_bytes": 176504832,
+          "max_rss_after_bytes": 545603584,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-1",
+            "policy:80f3bb93d9f7b866:chunk-1",
+            "policy:7bae111d2372f562:chunk-1",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ12_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3626500,
+          "max_rss_before_bytes": 545603584,
+          "max_rss_after_bytes": 545865728,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-26",
+            "policy:80f3bb93d9f7b866:chunk-10",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ12_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3546375,
+          "max_rss_before_bytes": 545865728,
+          "max_rss_after_bytes": 546029568,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-22",
+            "policy:80f3bb93d9f7b866:chunk-31",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "DIRECT_RZ13",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3306959,
+          "max_rss_before_bytes": 546029568,
+          "max_rss_after_bytes": 546095104,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-9",
+            "policy:260d168e25d19ffe:chunk-1",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ13_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3245708,
+          "max_rss_before_bytes": 546095104,
+          "max_rss_after_bytes": 546177024,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-29",
+            "policy:260d168e25d19ffe:chunk-23",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-2"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ13_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3462917,
+          "max_rss_before_bytes": 546177024,
+          "max_rss_after_bytes": 546390016,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-40",
+            "policy:260d168e25d19ffe:chunk-1",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-2"
+          ]
+        },
+        {
+          "query_id": "DIRECT_SR",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3385708,
+          "max_rss_before_bytes": 546390016,
+          "max_rss_after_bytes": 546504704,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-2",
+            "policy:260d168e25d19ffe:chunk-27"
+          ]
+        },
+        {
+          "query_id": "PARA_SR_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3329333,
+          "max_rss_before_bytes": 546504704,
+          "max_rss_after_bytes": 546635776,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:260d168e25d19ffe:chunk-27"
+          ]
+        },
+        {
+          "query_id": "PARA_SR_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3280917,
+          "max_rss_before_bytes": 546635776,
+          "max_rss_after_bytes": 546701312,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:260d168e25d19ffe:chunk-26"
+          ]
+        },
+        {
+          "query_id": "DIRECT_NIST",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3223209,
+          "max_rss_before_bytes": 546701312,
+          "max_rss_after_bytes": 546832384,
+          "ranked_document_ids": [
+            "nist_ai_600_1.html",
+            "bis_fsi_insights_63.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:5a54dc1590e9dc6c:chunk-2",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:80f3bb93d9f7b866:chunk-40"
+          ]
+        },
+        {
+          "query_id": "PARA_NIST_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3427334,
+          "max_rss_before_bytes": 546832384,
+          "max_rss_after_bytes": 546947072,
+          "ranked_document_ids": [
+            "nist_ai_600_1.html",
+            "bis_fsi_insights_63.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:260d168e25d19ffe:chunk-1"
+          ]
+        },
+        {
+          "query_id": "DIRECT_BIS",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3254208,
+          "max_rss_before_bytes": 546947072,
+          "max_rss_after_bytes": 547078144,
+          "ranked_document_ids": [
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:5a54dc1590e9dc6c:chunk-2",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:260d168e25d19ffe:chunk-1"
+          ]
+        },
+        {
+          "query_id": "PARA_BIS_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3524125,
+          "max_rss_before_bytes": 547078144,
+          "max_rss_after_bytes": 547192832,
+          "ranked_document_ids": [
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:260d168e25d19ffe:chunk-60"
+          ]
+        },
+        {
+          "query_id": "MULTI_CONSUMER",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.5,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3219334,
+          "max_rss_before_bytes": 547192832,
+          "max_rss_after_bytes": 547241984,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-31",
+            "policy:260d168e25d19ffe:chunk-22",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "MULTI_AI_GOV",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.75,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 3717167,
+          "max_rss_before_bytes": 547241984,
+          "max_rss_after_bytes": 547323904,
+          "ranked_document_ids": [
+            "nist_ai_600_1.html",
+            "bis_fsi_insights_63.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:260d168e25d19ffe:chunk-1"
+          ]
+        }
+      ],
+      "macro_average": {
+        "eligible_query_count": 15,
+        "precision_at_k": 0.3,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "top_1_success": 1.0,
+        "mean_latency_ms": 116.041481
+      }
+    },
+    "hybrid_rrf": {
+      "manifest": {
+        "strategy_id": "hybrid_rrf",
+        "scientific_status": "pinned_dense_semantic_encoder",
+        "corpus_sha256": "4e2b6e40c2fa076fe9da7bf7477b57fd379fa76657d3d64be5f38908d77fce7f",
+        "encoder_model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "encoder_model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "rrf_k": 60,
+        "candidate_multiplier": 4
+      },
+      "query_results": [
+        {
+          "query_id": "DIRECT_RZ12",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 14462500,
+          "max_rss_before_bytes": 547323904,
+          "max_rss_after_bytes": 547913728,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-1",
+            "policy:80f3bb93d9f7b866:chunk-1",
+            "policy:7bae111d2372f562:chunk-1",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ12_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13535750,
+          "max_rss_before_bytes": 547913728,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-26",
+            "policy:80f3bb93d9f7b866:chunk-10",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ12_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13206750,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "regulation_z_1026_12.html",
+            "regulation_z_1026_13.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:260d168e25d19ffe:chunk-26",
+            "policy:80f3bb93d9f7b866:chunk-10",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:5a54dc1590e9dc6c:chunk-1"
+          ]
+        },
+        {
+          "query_id": "DIRECT_RZ13",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13635333,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-19",
+            "policy:260d168e25d19ffe:chunk-60",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ13_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13236042,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-29",
+            "policy:260d168e25d19ffe:chunk-34",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-2"
+          ]
+        },
+        {
+          "query_id": "PARA_RZ13_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13119541,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html",
+            "bis_fsi_insights_63.html",
+            "federal_reserve_sr_26_2.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-29",
+            "policy:260d168e25d19ffe:chunk-43",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:7bae111d2372f562:chunk-3"
+          ]
+        },
+        {
+          "query_id": "DIRECT_SR",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13054167,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-1",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-2",
+            "policy:80f3bb93d9f7b866:chunk-9"
+          ]
+        },
+        {
+          "query_id": "PARA_SR_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 12996959,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:80f3bb93d9f7b866:chunk-9"
+          ]
+        },
+        {
+          "query_id": "PARA_SR_B",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13287083,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:66468a094cbc48bb:chunk-2",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:260d168e25d19ffe:chunk-26"
+          ]
+        },
+        {
+          "query_id": "DIRECT_NIST",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 12941584,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "nist_ai_600_1.html",
+            "bis_fsi_insights_63.html",
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:80f3bb93d9f7b866:chunk-9",
+            "policy:260d168e25d19ffe:chunk-5"
+          ]
+        },
+        {
+          "query_id": "PARA_NIST_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13134333,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "nist_ai_600_1.html",
+            "bis_fsi_insights_63.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:260d168e25d19ffe:chunk-9"
+          ]
+        },
+        {
+          "query_id": "DIRECT_BIS",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13032833,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:80f3bb93d9f7b866:chunk-9",
+            "policy:260d168e25d19ffe:chunk-5"
+          ]
+        },
+        {
+          "query_id": "PARA_BIS_A",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.25,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13076625,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "bis_fsi_insights_63.html",
+            "nist_ai_600_1.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:80f3bb93d9f7b866:chunk-41"
+          ]
+        },
+        {
+          "query_id": "MULTI_CONSUMER",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.5,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13561958,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "regulation_z_1026_13.html",
+            "regulation_z_1026_12.html",
+            "federal_reserve_sr_26_2.html",
+            "bis_fsi_insights_63.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:80f3bb93d9f7b866:chunk-31",
+            "policy:260d168e25d19ffe:chunk-22",
+            "policy:7bae111d2372f562:chunk-3",
+            "policy:66468a094cbc48bb:chunk-1"
+          ]
+        },
+        {
+          "query_id": "MULTI_AI_GOV",
+          "diagnostic_eligible": true,
+          "k": 4,
+          "returned_unique_document_count": 4,
+          "precision_at_k": 0.75,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ndcg_at_k": 1.0,
+          "top_1_success": true,
+          "latency_ns": 13350541,
+          "max_rss_before_bytes": 547979264,
+          "max_rss_after_bytes": 547979264,
+          "ranked_document_ids": [
+            "nist_ai_600_1.html",
+            "bis_fsi_insights_63.html",
+            "federal_reserve_sr_26_2.html",
+            "regulation_z_1026_13.html"
+          ],
+          "ranked_evidence_ids": [
+            "policy:5a54dc1590e9dc6c:chunk-1",
+            "policy:66468a094cbc48bb:chunk-1",
+            "policy:7bae111d2372f562:chunk-2",
+            "policy:80f3bb93d9f7b866:chunk-46"
+          ]
+        }
+      ],
+      "macro_average": {
+        "eligible_query_count": 15,
+        "precision_at_k": 0.3,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "top_1_success": 1.0,
+        "mean_latency_ms": 13.3088
+      }
+    }
+  }
+}

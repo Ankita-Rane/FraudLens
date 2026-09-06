@@ -1,0 +1,9 @@
+# SHA256SUMS — locked artefacts referenced in the thesis (Appendix E, Table E.1)
+# Verify with:  shasum -a 256 -c SHA256SUMS
+#
+af9fbda7a2edee26cb02ce32f70e0a661d1ab681ab602a6fe5b233792f366ff5  datasets/evaluation/followup_retrieval/protocol_locked.json
+e2b388848a479c6ff932f06f2e39b2cbc72c41d67712ebb61b7a423a9054b774  datasets/evaluation/followup_retrieval/followup_panel_manifest.json
+49b2a73ebff38d15f3390bc041cd49091b7bddb07e02eb83cbd3f238772a4ef5  datasets/evaluation/followup_retrieval/known_item_diagnostic_locked.json
+2368088d30cc3c74f0dfc92c83fdcafe20590ee1064c12cce856fac35555619c  datasets/evaluation/followup_retrieval/retrieval_diagnostic_results.json
+ad528ea399a8e376cc13ab545f5f83c9273f4ca94ef9642f458f7e6c9f90ed38  datasets/evaluation/followup_retrieval/retrieval_diagnostic_audit.json
+219092d03d75c6511896ba0df1f50e3ad38cb7e80e31c8f8537aa1983d79e65e  artifacts/results/followup/FOLLOWUP-RETRIEVAL-20260902-02-CORRECTED-V4.json

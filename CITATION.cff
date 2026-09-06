@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use FraudLens, please cite the software using this metadata."
+title: "FraudLens: Guardrail-Aware RAG Investigation Assistant"
+type: software
+authors:
+  - family-names: "Rane"
+    given-names: "Ankita"
+repository-code: "https://github.com/Ankita-Rane/FraudLens"
+url: "https://github.com/Ankita-Rane/FraudLens"
+license: MIT
+version: 1.0.0
+date-released: 2026-09-06
+keywords:
+  - credit-card fraud detection
+  - retrieval-augmented generation
+  - guardrails
+  - explainable artificial intelligence
+  - reproducible research

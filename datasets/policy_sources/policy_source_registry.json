@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.2",
+  "frozen_at_utc": "2026-09-02T00:00:00Z",
+  "research_scope": "Public governance and US consumer-credit reference material for controlled RAG experiments; not institution-specific operating policy or legal advice.",
+  "sources": [
+    {
+      "local_filename": "regulation_z_1026_12.html",
+      "title": "12 CFR 1026.12 - Special credit card provisions",
+      "publisher": "Consumer Financial Protection Bureau",
+      "canonical_url": "https://www.consumerfinance.gov/rules-policy/regulations/1026/12/",
+      "jurisdiction": "United States",
+      "authority": "official_regulatory_reference",
+      "snapshot_date": "2026-08-28",
+      "effective_date": null,
+      "effective_date_status": "Not established by this snapshot registry; verify applicability before use.",
+      "use_for": ["unauthorized credit-card use", "consumer liability context"],
+      "not_for": ["institution-specific alert thresholds", "fraud classification labels"],
+      "sha256": "1f608120fc200ef3eda65b1f271735cf652b62e136a323fe5e51f4c3fc77f0f6"
+    },
+    {
+      "local_filename": "regulation_z_1026_13.html",
+      "title": "12 CFR 1026.13 - Billing error resolution",
+      "publisher": "Consumer Financial Protection Bureau",
+      "canonical_url": "https://www.consumerfinance.gov/rules-policy/regulations/1026/13/",
+      "jurisdiction": "United States",
+      "authority": "official_regulatory_reference",
+      "snapshot_date": "2026-08-28",
+      "effective_date": null,
+      "effective_date_status": "Not established by this snapshot registry; verify applicability before use.",
+      "use_for": ["billing-error investigation procedure", "timing and evidence context"],
+      "not_for": ["institution-specific alert thresholds", "fraud classification labels"],
+      "sha256": "52f39d35540ffac91215f4d1e67e2028b5a1a23dcf1c4f0f443e45e6c78b9561"
+    },
+    {
+      "local_filename": "federal_reserve_sr_26_2.html",
+      "title": "SR 26-2 - Revised Guidance on Model Risk Management",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "canonical_url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+      "jurisdiction": "United States; scope stated by the publisher",
+      "authority": "official_supervisory_guidance",
+      "snapshot_date": "2026-08-28",
+      "effective_date": null,
+      "effective_date_status": "Not established by this snapshot registry; verify applicability before use.",
+      "use_for": ["model risk management principles", "risk-based model risk management"],
+      "not_for": ["transaction-level fraud decisions", "consumer legal advice"],
+      "sha256": "fd78559ba18f6d8032a108aab9225ede3c89245e45ffc701f734c7c70199e11d"
+    },
+    {
+      "local_filename": "nist_ai_600_1.html",
+      "title": "NIST AI 600-1 - Generative AI Profile",
+      "publisher": "National Institute of Standards and Technology",
+      "canonical_url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "jurisdiction": "Cross-sector voluntary framework",
+      "authority": "official_governance_framework",
+      "snapshot_date": "2026-08-28",
+      "effective_date": null,
+      "effective_date_status": "Not established by this snapshot registry; voluntary framework applicability requires review.",
+      "use_for": ["generative-AI risk management", "trustworthiness considerations", "AI measurement and evaluation"],
+      "not_for": ["transaction-level fraud decisions", "bank operating policy"],
+      "sha256": "11e93c9582f2e92b8e78a81b17b42a9f5dd3e47a9cf34e30ace25164b0f36b2a"
+    },
+    {
+      "local_filename": "bis_fsi_insights_63.html",
+      "title": "FSI Insights 63 - Regulating AI in the financial sector",
+      "publisher": "Bank for International Settlements Financial Stability Institute",
+      "canonical_url": "https://www.bis.org/fsi/publ/insights63.htm",
+      "jurisdiction": "International research and supervisory analysis",
+      "authority": "official_research_guidance",
+      "snapshot_date": "2026-08-28",
+      "effective_date": null,
+      "effective_date_status": "Research and supervisory analysis; no binding effective date is asserted.",
+      "use_for": ["financial-sector AI governance", "hallucination and model-risk context"],
+      "not_for": ["transaction-level fraud decisions", "binding institution policy"],
+      "sha256": "8ba194d967ef0ccbda02a63becc9b1edc9ce74c36900462a133fc0e0378b6252"
+    }
+  ],
+  "kaggle_assessment": {
+    "decision": "Do not use a Kaggle dataset as authoritative bank policy grounding.",
+    "reason": "Located candidates are synthetic or derived Q&A datasets and do not establish issuer, jurisdiction, version, or binding policy applicable to ULB or Sparkov.",
+    "optional_benchmarks": [
+      {
+        "url": "https://www.kaggle.com/datasets/jiscecseaiml/bankkyc-hallubench",
+        "role": "optional synthetic KYC/AML hallucination benchmark only"
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/shivamsiddhant/adaption-banking-and-digital-payments",
+        "role": "optional banking Q&A robustness material only"
+      }
+    ]
+  }
+}

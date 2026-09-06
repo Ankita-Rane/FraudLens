@@ -1,0 +1,24 @@
+{
+  "schema_version": "2.0",
+  "project_root_policy": "Immutable inputs for the sole original six-condition experiment are stored below thesis_code/datasets; the definitive derived aggregate is versioned separately below artifacts/results/followup.",
+  "artifacts": [
+    {"id":"ulb_credit_card","path":"datasets/ULB_creditCard.csv","kind":"source_dataset","required":true,"sha256":"76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"},
+    {"id":"sparkov_train","path":"datasets/sparkov/fraudTrain.csv","kind":"source_dataset","required":true,"sha256":"fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d"},
+    {"id":"sparkov_test","path":"datasets/sparkov/fraudTest.csv","kind":"source_dataset","required":true,"sha256":"12d553ab19440c752d2531ee1af44bb64f12cc3d3839f1649f19e81c230545f0"},
+    {"id":"dataset_fixture_selector_manifest","path":"datasets/evaluation/dataset_fixture_selection_manifest.json","kind":"transaction_free_reconstruction_selectors","required":true,"sha256":"fdc5848d265e2c4e7e21a0b893fb261f1f9dad26950e0d0dabeb64ab12812e52"},
+    {"id":"ulb_six_condition_panel","path":"datasets/ulb/followup_transaction_samples.csv","kind":"frozen_evaluation_cases","required":true,"sha256":"03578bbd7389b6af654d1c87fb33873039e1fde0352235687c81908c6e37bd33"},
+    {"id":"sparkov_six_condition_panel","path":"datasets/sparkov/followup_transaction_samples.csv","kind":"frozen_evaluation_cases","required":true,"sha256":"54d812d11e033660a1a77fab62cba9af598344fd1c341305ebb8093872961ffc"},
+    {"id":"six_condition_panel_manifest","path":"datasets/evaluation/followup_retrieval/followup_panel_manifest.json","kind":"frozen_evaluation_case_provenance","required":true,"sha256":"e2b388848a479c6ff932f06f2e39b2cbc72c41d67712ebb61b7a423a9054b774"},
+    {"id":"six_condition_labels","path":"datasets/evaluation/followup_retrieval/followup_evaluation_labels.csv","kind":"offline_evaluation_labels_withheld_from_generation","required":true,"sha256":"097096b6373f6bee8191bbcec8af7bad67d2ca69f6c5515d2ec8f67677131276"},
+    {"id":"primary_question_manifest","path":"datasets/evaluation/abc_questions_primary_candidate.json","kind":"frozen_experiment_question","required":true,"sha256":"2fe4bdb2946f0a89cc22bd467299318f61daff8181b23ff75ebfcb3d5b82533b"},
+    {"id":"six_condition_protocol","path":"datasets/evaluation/followup_retrieval/protocol_locked.json","kind":"locked_experiment_protocol","required":true,"sha256":"af9fbda7a2edee26cb02ce32f70e0a661d1ab681ab602a6fe5b233792f366ff5"},
+    {"id":"known_item_diagnostic","path":"datasets/evaluation/followup_retrieval/known_item_diagnostic_locked.json","kind":"locked_retrieval_diagnostic","required":true,"sha256":"49b2a73ebff38d15f3390bc041cd49091b7bddb07e02eb83cbd3f238772a4ef5"},
+    {"id":"retrieval_diagnostic_results","path":"datasets/evaluation/followup_retrieval/retrieval_diagnostic_results.json","kind":"retrieval_diagnostic_evidence","required":true,"sha256":"2368088d30cc3c74f0dfc92c83fdcafe20590ee1064c12cce856fac35555619c"},
+    {"id":"retrieval_diagnostic_audit","path":"datasets/evaluation/followup_retrieval/retrieval_diagnostic_audit.json","kind":"retrieval_diagnostic_verification","required":true,"sha256":"ad528ea399a8e376cc13ab545f5f83c9273f4ca94ef9642f458f7e6c9f90ed38"},
+    {"id":"policy_source_registry","path":"datasets/policy_sources/policy_source_registry.json","kind":"policy_provenance_registry","required":true,"sha256":"9004b0676ca564ad851d3a82c2f82fe5058f803c83913260f0243197304d8cc5"},
+    {"id":"policy_sources","path":"datasets/policy_sources/source","kind":"frozen_official_policy_corpus","required":true,"minimum_files":5}
+  ],
+  "external_runtime_dependencies": [
+    {"id":"qwen_model_weights","reference":"Qwen/Qwen3-0.6B","reason_not_vendored":"Downloaded and cached runtime dependency; model weights are not a thesis input dataset."}
+  ]
+}

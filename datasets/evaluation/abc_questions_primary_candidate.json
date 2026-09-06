@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "status": "candidate_not_preregistered",
+  "pre_registered": false,
+  "analysis_set": "primary_narrative_comparison",
+  "analysis_unit": "one alert within one dataset",
+  "repeat_policy": "one generation per alert-configuration; no consistency repeat in the resource-constrained primary study",
+  "resource_rationale": "One neutral composite question avoids treating multiple questions as independent observations and reduces generation and annotation workload by approximately two thirds versus the three-question candidate.",
+  "questions": [
+    {
+      "question_id": "Q_PRIMARY_COMPOSITE_INVESTIGATION",
+      "family": "primary_composite_investigation",
+      "text": "Using only the supplied evidence, explain the model risk drivers and limitations, identify any relevant public governance context, and state the appropriate human investigation step without treating the model score as proof of fraud."
+    }
+  ]
+}

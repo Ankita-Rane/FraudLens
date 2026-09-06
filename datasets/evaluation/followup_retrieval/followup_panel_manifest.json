@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-09-02T12:14:21.786410+00:00",
+  "scientific_status": "candidate_panel_not_protocol_locked",
+  "mode": "final",
+  "sampling_frame": "label_stratified_TP_FP_FN_TN_transactions",
+  "selection": "deterministic evenly spaced score ranks within offline label strata",
+  "ground_truth_withheld_from_generation": true,
+  "labels_path": "datasets/evaluation/followup_retrieval/followup_evaluation_labels.csv",
+  "labels_sha256": "097096b6373f6bee8191bbcec8af7bad67d2ca69f6c5515d2ec8f67677131276",
+  "panels": [
+    {
+      "dataset_id": "ULB",
+      "sample_count": 150,
+      "fraud_label_count": 97,
+      "non_fraud_label_count": 53,
+      "confusion_counts": {
+        "FN": 28,
+        "FP": 1,
+        "TN": 52,
+        "TP": 69
+      },
+      "generation_panel_path": "datasets/ulb/followup_transaction_samples.csv",
+      "generation_panel_sha256": "03578bbd7389b6af654d1c87fb33873039e1fde0352235687c81908c6e37bd33",
+      "prediction_path": "artifacts/followup_detectors/ulb/test_predictions.csv",
+      "prediction_sha256": "67a935045a2a1e5fa090cefc77413ce7a88fd3ab8204170bb04ba38055388c08",
+      "pipeline_path": "artifacts/followup_detectors/ulb/selected_pipeline.joblib",
+      "pipeline_sha256": "f80165ee6110c595d9e9ef103e0d812cf5f5977a380c3baa335c97cbe8cde2c5",
+      "threshold": 0.3699359669388152
+    },
+    {
+      "dataset_id": "Sparkov",
+      "sample_count": 400,
+      "fraud_label_count": 260,
+      "non_fraud_label_count": 140,
+      "confusion_counts": {
+        "FN": 51,
+        "FP": 1,
+        "TN": 139,
+        "TP": 209
+      },
+      "generation_panel_path": "datasets/sparkov/followup_transaction_samples.csv",
+      "generation_panel_sha256": "54d812d11e033660a1a77fab62cba9af598344fd1c341305ebb8093872961ffc",
+      "prediction_path": "artifacts/followup_detectors/sparkov/test_predictions.csv",
+      "prediction_sha256": "758cd71fb494bd6dcd54b7b3711c2bd501495c7606c40cb3eacab8f31de081cb",
+      "pipeline_path": "artifacts/followup_detectors/sparkov/selected_pipeline.joblib",
+      "pipeline_sha256": "2d8ebdc05d59df9d79f21e08ced27904018e91b2059c24c357e27aa71f78d65a",
+      "threshold": 0.4107127366092664
+    }
+  ]
+}

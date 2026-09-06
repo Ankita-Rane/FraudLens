@@ -1,0 +1,1051 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-09-02T12:24:54.232102+00:00",
+  "scientific_status": "locked_followup_protocol",
+  "study_id": "FOLLOWUP-RETRIEVAL-20260902-02",
+  "analysis_unit": "one evaluation transaction within one dataset",
+  "sampling_frame": "label_stratified_TP_FP_FN_TN_transactions",
+  "sample_count": 550,
+  "condition_ids": [
+    "A_direct",
+    "B_lexical",
+    "B_dense",
+    "C_lexical",
+    "C_dense",
+    "D_hybrid"
+  ],
+  "condition_registry": [
+    {
+      "condition_id": "A_direct",
+      "base_configuration": "A",
+      "retrieval_strategy": "none",
+      "guardrail_profile": "off",
+      "analysis_role": "direct_baseline"
+    },
+    {
+      "condition_id": "B_lexical",
+      "base_configuration": "B",
+      "retrieval_strategy": "lexical_tfidf",
+      "guardrail_profile": "off",
+      "analysis_role": "factorial_core"
+    },
+    {
+      "condition_id": "B_dense",
+      "base_configuration": "B",
+      "retrieval_strategy": "dense",
+      "guardrail_profile": "off",
+      "analysis_role": "factorial_core"
+    },
+    {
+      "condition_id": "C_lexical",
+      "base_configuration": "C",
+      "retrieval_strategy": "lexical_tfidf",
+      "guardrail_profile": "full",
+      "analysis_role": "factorial_core"
+    },
+    {
+      "condition_id": "C_dense",
+      "base_configuration": "C",
+      "retrieval_strategy": "dense",
+      "guardrail_profile": "full",
+      "analysis_role": "factorial_core"
+    },
+    {
+      "condition_id": "D_hybrid",
+      "base_configuration": "C",
+      "retrieval_strategy": "hybrid_rrf",
+      "guardrail_profile": "full",
+      "analysis_role": "exploratory_hybrid"
+    }
+  ],
+  "condition_registry_sha256": "5d9445ca716879d1968e4c5787c26848891651458eadbc1be98c5f8dd6664b23",
+  "panel_manifest_path": "datasets/evaluation/followup_retrieval/followup_panel_manifest.json",
+  "panel_manifest_sha256": "e2b388848a479c6ff932f06f2e39b2cbc72c41d67712ebb61b7a423a9054b774",
+  "question_manifest_path": "datasets/evaluation/abc_questions_primary_candidate.json",
+  "question_manifest_sha256": "2fe4bdb2946f0a89cc22bd467299318f61daff8181b23ff75ebfcb3d5b82533b",
+  "question_count": 1,
+  "retrieval_diagnostic": {
+    "path": "datasets/evaluation/followup_retrieval/retrieval_diagnostic_results.json",
+    "sha256": "2368088d30cc3c74f0dfc92c83fdcafe20590ee1064c12cce856fac35555619c",
+    "scientific_status": "completed_scope_safe_known_item_diagnostic",
+    "audit_path": "artifacts/readiness/retrieval_diagnostic_reaudit_20260902.json",
+    "audit_sha256": "42612df784f2f3df8c7a0964abf7d7e7a6913aa2caa2e5c93dec05000a8d66fb"
+  },
+  "qwen": {
+    "model_id": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "max_new_tokens": 360,
+    "decoding": "deterministic provider settings frozen by implementation"
+  },
+  "dense_encoder": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "normalization": "l2",
+    "similarity": "cosine_dot_product_of_normalized_embeddings"
+  },
+  "retrieval": {
+    "top_k": 4,
+    "rrf_k": 60,
+    "candidate_multiplier": 4
+  },
+  "model_score_gate": 0.5,
+  "repeats": 1,
+  "ground_truth_withheld_from_generation": true,
+  "comparisons": [
+    "B_lexical-A_direct",
+    "B_dense-A_direct",
+    "B_dense-B_lexical",
+    "C_lexical-B_lexical",
+    "C_dense-B_dense",
+    "C_dense-C_lexical",
+    "retrieval_x_guardrail_interaction",
+    "D_hybrid-C_dense",
+    "D_hybrid-C_lexical",
+    "D_hybrid-A_direct"
+  ],
+  "primary_continuous_test": "Wilcoxon signed-rank",
+  "multiplicity": "Holm within preregistered endpoint families",
+  "dataset_pooling": "prohibited",
+  "batches": [
+    {
+      "batch_id": "FOLLOWUP-BATCH-001",
+      "sample_ids": [
+        "FOLLOWUP_ULB_001",
+        "FOLLOWUP_ULB_002",
+        "FOLLOWUP_ULB_003",
+        "FOLLOWUP_ULB_004",
+        "FOLLOWUP_ULB_005",
+        "FOLLOWUP_ULB_006",
+        "FOLLOWUP_ULB_007",
+        "FOLLOWUP_ULB_008",
+        "FOLLOWUP_ULB_009",
+        "FOLLOWUP_ULB_010"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 0
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-002",
+      "sample_ids": [
+        "FOLLOWUP_ULB_011",
+        "FOLLOWUP_ULB_012",
+        "FOLLOWUP_ULB_013",
+        "FOLLOWUP_ULB_014",
+        "FOLLOWUP_ULB_015",
+        "FOLLOWUP_ULB_016",
+        "FOLLOWUP_ULB_017",
+        "FOLLOWUP_ULB_018",
+        "FOLLOWUP_ULB_019",
+        "FOLLOWUP_ULB_020"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 10
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-003",
+      "sample_ids": [
+        "FOLLOWUP_ULB_021",
+        "FOLLOWUP_ULB_022",
+        "FOLLOWUP_ULB_023",
+        "FOLLOWUP_ULB_024",
+        "FOLLOWUP_ULB_025",
+        "FOLLOWUP_ULB_026",
+        "FOLLOWUP_ULB_027",
+        "FOLLOWUP_ULB_028",
+        "FOLLOWUP_ULB_029",
+        "FOLLOWUP_ULB_030"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 20
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-004",
+      "sample_ids": [
+        "FOLLOWUP_ULB_031",
+        "FOLLOWUP_ULB_032",
+        "FOLLOWUP_ULB_033",
+        "FOLLOWUP_ULB_034",
+        "FOLLOWUP_ULB_035",
+        "FOLLOWUP_ULB_036",
+        "FOLLOWUP_ULB_037",
+        "FOLLOWUP_ULB_038",
+        "FOLLOWUP_ULB_039",
+        "FOLLOWUP_ULB_040"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 30
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-005",
+      "sample_ids": [
+        "FOLLOWUP_ULB_041",
+        "FOLLOWUP_ULB_042",
+        "FOLLOWUP_ULB_043",
+        "FOLLOWUP_ULB_044",
+        "FOLLOWUP_ULB_045",
+        "FOLLOWUP_ULB_046",
+        "FOLLOWUP_ULB_047",
+        "FOLLOWUP_ULB_048",
+        "FOLLOWUP_ULB_049",
+        "FOLLOWUP_ULB_050"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 40
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-006",
+      "sample_ids": [
+        "FOLLOWUP_ULB_051",
+        "FOLLOWUP_ULB_052",
+        "FOLLOWUP_ULB_053",
+        "FOLLOWUP_ULB_054",
+        "FOLLOWUP_ULB_055",
+        "FOLLOWUP_ULB_056",
+        "FOLLOWUP_ULB_057",
+        "FOLLOWUP_ULB_058",
+        "FOLLOWUP_ULB_059",
+        "FOLLOWUP_ULB_060"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 50
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-007",
+      "sample_ids": [
+        "FOLLOWUP_ULB_061",
+        "FOLLOWUP_ULB_062",
+        "FOLLOWUP_ULB_063",
+        "FOLLOWUP_ULB_064",
+        "FOLLOWUP_ULB_065",
+        "FOLLOWUP_ULB_066",
+        "FOLLOWUP_ULB_067",
+        "FOLLOWUP_ULB_068",
+        "FOLLOWUP_ULB_069",
+        "FOLLOWUP_ULB_070"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 60
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-008",
+      "sample_ids": [
+        "FOLLOWUP_ULB_071",
+        "FOLLOWUP_ULB_072",
+        "FOLLOWUP_ULB_073",
+        "FOLLOWUP_ULB_074",
+        "FOLLOWUP_ULB_075",
+        "FOLLOWUP_ULB_076",
+        "FOLLOWUP_ULB_077",
+        "FOLLOWUP_ULB_078",
+        "FOLLOWUP_ULB_079",
+        "FOLLOWUP_ULB_080"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 70
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-009",
+      "sample_ids": [
+        "FOLLOWUP_ULB_081",
+        "FOLLOWUP_ULB_082",
+        "FOLLOWUP_ULB_083",
+        "FOLLOWUP_ULB_084",
+        "FOLLOWUP_ULB_085",
+        "FOLLOWUP_ULB_086",
+        "FOLLOWUP_ULB_087",
+        "FOLLOWUP_ULB_088",
+        "FOLLOWUP_ULB_089",
+        "FOLLOWUP_ULB_090"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 80
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-010",
+      "sample_ids": [
+        "FOLLOWUP_ULB_091",
+        "FOLLOWUP_ULB_092",
+        "FOLLOWUP_ULB_093",
+        "FOLLOWUP_ULB_094",
+        "FOLLOWUP_ULB_095",
+        "FOLLOWUP_ULB_096",
+        "FOLLOWUP_ULB_097",
+        "FOLLOWUP_ULB_098",
+        "FOLLOWUP_ULB_099",
+        "FOLLOWUP_ULB_100"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 90
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-011",
+      "sample_ids": [
+        "FOLLOWUP_ULB_101",
+        "FOLLOWUP_ULB_102",
+        "FOLLOWUP_ULB_103",
+        "FOLLOWUP_ULB_104",
+        "FOLLOWUP_ULB_105",
+        "FOLLOWUP_ULB_106",
+        "FOLLOWUP_ULB_107",
+        "FOLLOWUP_ULB_108",
+        "FOLLOWUP_ULB_109",
+        "FOLLOWUP_ULB_110"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 100
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-012",
+      "sample_ids": [
+        "FOLLOWUP_ULB_111",
+        "FOLLOWUP_ULB_112",
+        "FOLLOWUP_ULB_113",
+        "FOLLOWUP_ULB_114",
+        "FOLLOWUP_ULB_115",
+        "FOLLOWUP_ULB_116",
+        "FOLLOWUP_ULB_117",
+        "FOLLOWUP_ULB_118",
+        "FOLLOWUP_ULB_119",
+        "FOLLOWUP_ULB_120"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 110
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-013",
+      "sample_ids": [
+        "FOLLOWUP_ULB_121",
+        "FOLLOWUP_ULB_122",
+        "FOLLOWUP_ULB_123",
+        "FOLLOWUP_ULB_124",
+        "FOLLOWUP_ULB_125",
+        "FOLLOWUP_ULB_126",
+        "FOLLOWUP_ULB_127",
+        "FOLLOWUP_ULB_128",
+        "FOLLOWUP_ULB_129",
+        "FOLLOWUP_ULB_130"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 120
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-014",
+      "sample_ids": [
+        "FOLLOWUP_ULB_131",
+        "FOLLOWUP_ULB_132",
+        "FOLLOWUP_ULB_133",
+        "FOLLOWUP_ULB_134",
+        "FOLLOWUP_ULB_135",
+        "FOLLOWUP_ULB_136",
+        "FOLLOWUP_ULB_137",
+        "FOLLOWUP_ULB_138",
+        "FOLLOWUP_ULB_139",
+        "FOLLOWUP_ULB_140"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 130
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-015",
+      "sample_ids": [
+        "FOLLOWUP_ULB_141",
+        "FOLLOWUP_ULB_142",
+        "FOLLOWUP_ULB_143",
+        "FOLLOWUP_ULB_144",
+        "FOLLOWUP_ULB_145",
+        "FOLLOWUP_ULB_146",
+        "FOLLOWUP_ULB_147",
+        "FOLLOWUP_ULB_148",
+        "FOLLOWUP_ULB_149",
+        "FOLLOWUP_ULB_150"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 140
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-016",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_001",
+        "FOLLOWUP_SPARKOV_002",
+        "FOLLOWUP_SPARKOV_003",
+        "FOLLOWUP_SPARKOV_004",
+        "FOLLOWUP_SPARKOV_005",
+        "FOLLOWUP_SPARKOV_006",
+        "FOLLOWUP_SPARKOV_007",
+        "FOLLOWUP_SPARKOV_008",
+        "FOLLOWUP_SPARKOV_009",
+        "FOLLOWUP_SPARKOV_010"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 150
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-017",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_011",
+        "FOLLOWUP_SPARKOV_012",
+        "FOLLOWUP_SPARKOV_013",
+        "FOLLOWUP_SPARKOV_014",
+        "FOLLOWUP_SPARKOV_015",
+        "FOLLOWUP_SPARKOV_016",
+        "FOLLOWUP_SPARKOV_017",
+        "FOLLOWUP_SPARKOV_018",
+        "FOLLOWUP_SPARKOV_019",
+        "FOLLOWUP_SPARKOV_020"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 160
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-018",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_021",
+        "FOLLOWUP_SPARKOV_022",
+        "FOLLOWUP_SPARKOV_023",
+        "FOLLOWUP_SPARKOV_024",
+        "FOLLOWUP_SPARKOV_025",
+        "FOLLOWUP_SPARKOV_026",
+        "FOLLOWUP_SPARKOV_027",
+        "FOLLOWUP_SPARKOV_028",
+        "FOLLOWUP_SPARKOV_029",
+        "FOLLOWUP_SPARKOV_030"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 170
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-019",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_031",
+        "FOLLOWUP_SPARKOV_032",
+        "FOLLOWUP_SPARKOV_033",
+        "FOLLOWUP_SPARKOV_034",
+        "FOLLOWUP_SPARKOV_035",
+        "FOLLOWUP_SPARKOV_036",
+        "FOLLOWUP_SPARKOV_037",
+        "FOLLOWUP_SPARKOV_038",
+        "FOLLOWUP_SPARKOV_039",
+        "FOLLOWUP_SPARKOV_040"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 180
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-020",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_041",
+        "FOLLOWUP_SPARKOV_042",
+        "FOLLOWUP_SPARKOV_043",
+        "FOLLOWUP_SPARKOV_044",
+        "FOLLOWUP_SPARKOV_045",
+        "FOLLOWUP_SPARKOV_046",
+        "FOLLOWUP_SPARKOV_047",
+        "FOLLOWUP_SPARKOV_048",
+        "FOLLOWUP_SPARKOV_049",
+        "FOLLOWUP_SPARKOV_050"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 190
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-021",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_051",
+        "FOLLOWUP_SPARKOV_052",
+        "FOLLOWUP_SPARKOV_053",
+        "FOLLOWUP_SPARKOV_054",
+        "FOLLOWUP_SPARKOV_055",
+        "FOLLOWUP_SPARKOV_056",
+        "FOLLOWUP_SPARKOV_057",
+        "FOLLOWUP_SPARKOV_058",
+        "FOLLOWUP_SPARKOV_059",
+        "FOLLOWUP_SPARKOV_060"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 200
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-022",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_061",
+        "FOLLOWUP_SPARKOV_062",
+        "FOLLOWUP_SPARKOV_063",
+        "FOLLOWUP_SPARKOV_064",
+        "FOLLOWUP_SPARKOV_065",
+        "FOLLOWUP_SPARKOV_066",
+        "FOLLOWUP_SPARKOV_067",
+        "FOLLOWUP_SPARKOV_068",
+        "FOLLOWUP_SPARKOV_069",
+        "FOLLOWUP_SPARKOV_070"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 210
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-023",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_071",
+        "FOLLOWUP_SPARKOV_072",
+        "FOLLOWUP_SPARKOV_073",
+        "FOLLOWUP_SPARKOV_074",
+        "FOLLOWUP_SPARKOV_075",
+        "FOLLOWUP_SPARKOV_076",
+        "FOLLOWUP_SPARKOV_077",
+        "FOLLOWUP_SPARKOV_078",
+        "FOLLOWUP_SPARKOV_079",
+        "FOLLOWUP_SPARKOV_080"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 220
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-024",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_081",
+        "FOLLOWUP_SPARKOV_082",
+        "FOLLOWUP_SPARKOV_083",
+        "FOLLOWUP_SPARKOV_084",
+        "FOLLOWUP_SPARKOV_085",
+        "FOLLOWUP_SPARKOV_086",
+        "FOLLOWUP_SPARKOV_087",
+        "FOLLOWUP_SPARKOV_088",
+        "FOLLOWUP_SPARKOV_089",
+        "FOLLOWUP_SPARKOV_090"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 230
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-025",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_091",
+        "FOLLOWUP_SPARKOV_092",
+        "FOLLOWUP_SPARKOV_093",
+        "FOLLOWUP_SPARKOV_094",
+        "FOLLOWUP_SPARKOV_095",
+        "FOLLOWUP_SPARKOV_096",
+        "FOLLOWUP_SPARKOV_097",
+        "FOLLOWUP_SPARKOV_098",
+        "FOLLOWUP_SPARKOV_099",
+        "FOLLOWUP_SPARKOV_100"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 240
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-026",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_101",
+        "FOLLOWUP_SPARKOV_102",
+        "FOLLOWUP_SPARKOV_103",
+        "FOLLOWUP_SPARKOV_104",
+        "FOLLOWUP_SPARKOV_105",
+        "FOLLOWUP_SPARKOV_106",
+        "FOLLOWUP_SPARKOV_107",
+        "FOLLOWUP_SPARKOV_108",
+        "FOLLOWUP_SPARKOV_109",
+        "FOLLOWUP_SPARKOV_110"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 250
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-027",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_111",
+        "FOLLOWUP_SPARKOV_112",
+        "FOLLOWUP_SPARKOV_113",
+        "FOLLOWUP_SPARKOV_114",
+        "FOLLOWUP_SPARKOV_115",
+        "FOLLOWUP_SPARKOV_116",
+        "FOLLOWUP_SPARKOV_117",
+        "FOLLOWUP_SPARKOV_118",
+        "FOLLOWUP_SPARKOV_119",
+        "FOLLOWUP_SPARKOV_120"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 260
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-028",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_121",
+        "FOLLOWUP_SPARKOV_122",
+        "FOLLOWUP_SPARKOV_123",
+        "FOLLOWUP_SPARKOV_124",
+        "FOLLOWUP_SPARKOV_125",
+        "FOLLOWUP_SPARKOV_126",
+        "FOLLOWUP_SPARKOV_127",
+        "FOLLOWUP_SPARKOV_128",
+        "FOLLOWUP_SPARKOV_129",
+        "FOLLOWUP_SPARKOV_130"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 270
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-029",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_131",
+        "FOLLOWUP_SPARKOV_132",
+        "FOLLOWUP_SPARKOV_133",
+        "FOLLOWUP_SPARKOV_134",
+        "FOLLOWUP_SPARKOV_135",
+        "FOLLOWUP_SPARKOV_136",
+        "FOLLOWUP_SPARKOV_137",
+        "FOLLOWUP_SPARKOV_138",
+        "FOLLOWUP_SPARKOV_139",
+        "FOLLOWUP_SPARKOV_140"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 280
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-030",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_141",
+        "FOLLOWUP_SPARKOV_142",
+        "FOLLOWUP_SPARKOV_143",
+        "FOLLOWUP_SPARKOV_144",
+        "FOLLOWUP_SPARKOV_145",
+        "FOLLOWUP_SPARKOV_146",
+        "FOLLOWUP_SPARKOV_147",
+        "FOLLOWUP_SPARKOV_148",
+        "FOLLOWUP_SPARKOV_149",
+        "FOLLOWUP_SPARKOV_150"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 290
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-031",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_151",
+        "FOLLOWUP_SPARKOV_152",
+        "FOLLOWUP_SPARKOV_153",
+        "FOLLOWUP_SPARKOV_154",
+        "FOLLOWUP_SPARKOV_155",
+        "FOLLOWUP_SPARKOV_156",
+        "FOLLOWUP_SPARKOV_157",
+        "FOLLOWUP_SPARKOV_158",
+        "FOLLOWUP_SPARKOV_159",
+        "FOLLOWUP_SPARKOV_160"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 300
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-032",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_161",
+        "FOLLOWUP_SPARKOV_162",
+        "FOLLOWUP_SPARKOV_163",
+        "FOLLOWUP_SPARKOV_164",
+        "FOLLOWUP_SPARKOV_165",
+        "FOLLOWUP_SPARKOV_166",
+        "FOLLOWUP_SPARKOV_167",
+        "FOLLOWUP_SPARKOV_168",
+        "FOLLOWUP_SPARKOV_169",
+        "FOLLOWUP_SPARKOV_170"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 310
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-033",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_171",
+        "FOLLOWUP_SPARKOV_172",
+        "FOLLOWUP_SPARKOV_173",
+        "FOLLOWUP_SPARKOV_174",
+        "FOLLOWUP_SPARKOV_175",
+        "FOLLOWUP_SPARKOV_176",
+        "FOLLOWUP_SPARKOV_177",
+        "FOLLOWUP_SPARKOV_178",
+        "FOLLOWUP_SPARKOV_179",
+        "FOLLOWUP_SPARKOV_180"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 320
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-034",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_181",
+        "FOLLOWUP_SPARKOV_182",
+        "FOLLOWUP_SPARKOV_183",
+        "FOLLOWUP_SPARKOV_184",
+        "FOLLOWUP_SPARKOV_185",
+        "FOLLOWUP_SPARKOV_186",
+        "FOLLOWUP_SPARKOV_187",
+        "FOLLOWUP_SPARKOV_188",
+        "FOLLOWUP_SPARKOV_189",
+        "FOLLOWUP_SPARKOV_190"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 330
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-035",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_191",
+        "FOLLOWUP_SPARKOV_192",
+        "FOLLOWUP_SPARKOV_193",
+        "FOLLOWUP_SPARKOV_194",
+        "FOLLOWUP_SPARKOV_195",
+        "FOLLOWUP_SPARKOV_196",
+        "FOLLOWUP_SPARKOV_197",
+        "FOLLOWUP_SPARKOV_198",
+        "FOLLOWUP_SPARKOV_199",
+        "FOLLOWUP_SPARKOV_200"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 340
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-036",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_201",
+        "FOLLOWUP_SPARKOV_202",
+        "FOLLOWUP_SPARKOV_203",
+        "FOLLOWUP_SPARKOV_204",
+        "FOLLOWUP_SPARKOV_205",
+        "FOLLOWUP_SPARKOV_206",
+        "FOLLOWUP_SPARKOV_207",
+        "FOLLOWUP_SPARKOV_208",
+        "FOLLOWUP_SPARKOV_209",
+        "FOLLOWUP_SPARKOV_210"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 350
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-037",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_211",
+        "FOLLOWUP_SPARKOV_212",
+        "FOLLOWUP_SPARKOV_213",
+        "FOLLOWUP_SPARKOV_214",
+        "FOLLOWUP_SPARKOV_215",
+        "FOLLOWUP_SPARKOV_216",
+        "FOLLOWUP_SPARKOV_217",
+        "FOLLOWUP_SPARKOV_218",
+        "FOLLOWUP_SPARKOV_219",
+        "FOLLOWUP_SPARKOV_220"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 360
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-038",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_221",
+        "FOLLOWUP_SPARKOV_222",
+        "FOLLOWUP_SPARKOV_223",
+        "FOLLOWUP_SPARKOV_224",
+        "FOLLOWUP_SPARKOV_225",
+        "FOLLOWUP_SPARKOV_226",
+        "FOLLOWUP_SPARKOV_227",
+        "FOLLOWUP_SPARKOV_228",
+        "FOLLOWUP_SPARKOV_229",
+        "FOLLOWUP_SPARKOV_230"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 370
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-039",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_231",
+        "FOLLOWUP_SPARKOV_232",
+        "FOLLOWUP_SPARKOV_233",
+        "FOLLOWUP_SPARKOV_234",
+        "FOLLOWUP_SPARKOV_235",
+        "FOLLOWUP_SPARKOV_236",
+        "FOLLOWUP_SPARKOV_237",
+        "FOLLOWUP_SPARKOV_238",
+        "FOLLOWUP_SPARKOV_239",
+        "FOLLOWUP_SPARKOV_240"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 380
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-040",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_241",
+        "FOLLOWUP_SPARKOV_242",
+        "FOLLOWUP_SPARKOV_243",
+        "FOLLOWUP_SPARKOV_244",
+        "FOLLOWUP_SPARKOV_245",
+        "FOLLOWUP_SPARKOV_246",
+        "FOLLOWUP_SPARKOV_247",
+        "FOLLOWUP_SPARKOV_248",
+        "FOLLOWUP_SPARKOV_249",
+        "FOLLOWUP_SPARKOV_250"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 390
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-041",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_251",
+        "FOLLOWUP_SPARKOV_252",
+        "FOLLOWUP_SPARKOV_253",
+        "FOLLOWUP_SPARKOV_254",
+        "FOLLOWUP_SPARKOV_255",
+        "FOLLOWUP_SPARKOV_256",
+        "FOLLOWUP_SPARKOV_257",
+        "FOLLOWUP_SPARKOV_258",
+        "FOLLOWUP_SPARKOV_259",
+        "FOLLOWUP_SPARKOV_260"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 400
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-042",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_261",
+        "FOLLOWUP_SPARKOV_262",
+        "FOLLOWUP_SPARKOV_263",
+        "FOLLOWUP_SPARKOV_264",
+        "FOLLOWUP_SPARKOV_265",
+        "FOLLOWUP_SPARKOV_266",
+        "FOLLOWUP_SPARKOV_267",
+        "FOLLOWUP_SPARKOV_268",
+        "FOLLOWUP_SPARKOV_269",
+        "FOLLOWUP_SPARKOV_270"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 410
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-043",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_271",
+        "FOLLOWUP_SPARKOV_272",
+        "FOLLOWUP_SPARKOV_273",
+        "FOLLOWUP_SPARKOV_274",
+        "FOLLOWUP_SPARKOV_275",
+        "FOLLOWUP_SPARKOV_276",
+        "FOLLOWUP_SPARKOV_277",
+        "FOLLOWUP_SPARKOV_278",
+        "FOLLOWUP_SPARKOV_279",
+        "FOLLOWUP_SPARKOV_280"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 420
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-044",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_281",
+        "FOLLOWUP_SPARKOV_282",
+        "FOLLOWUP_SPARKOV_283",
+        "FOLLOWUP_SPARKOV_284",
+        "FOLLOWUP_SPARKOV_285",
+        "FOLLOWUP_SPARKOV_286",
+        "FOLLOWUP_SPARKOV_287",
+        "FOLLOWUP_SPARKOV_288",
+        "FOLLOWUP_SPARKOV_289",
+        "FOLLOWUP_SPARKOV_290"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 430
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-045",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_291",
+        "FOLLOWUP_SPARKOV_292",
+        "FOLLOWUP_SPARKOV_293",
+        "FOLLOWUP_SPARKOV_294",
+        "FOLLOWUP_SPARKOV_295",
+        "FOLLOWUP_SPARKOV_296",
+        "FOLLOWUP_SPARKOV_297",
+        "FOLLOWUP_SPARKOV_298",
+        "FOLLOWUP_SPARKOV_299",
+        "FOLLOWUP_SPARKOV_300"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 440
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-046",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_301",
+        "FOLLOWUP_SPARKOV_302",
+        "FOLLOWUP_SPARKOV_303",
+        "FOLLOWUP_SPARKOV_304",
+        "FOLLOWUP_SPARKOV_305",
+        "FOLLOWUP_SPARKOV_306",
+        "FOLLOWUP_SPARKOV_307",
+        "FOLLOWUP_SPARKOV_308",
+        "FOLLOWUP_SPARKOV_309",
+        "FOLLOWUP_SPARKOV_310"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 450
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-047",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_311",
+        "FOLLOWUP_SPARKOV_312",
+        "FOLLOWUP_SPARKOV_313",
+        "FOLLOWUP_SPARKOV_314",
+        "FOLLOWUP_SPARKOV_315",
+        "FOLLOWUP_SPARKOV_316",
+        "FOLLOWUP_SPARKOV_317",
+        "FOLLOWUP_SPARKOV_318",
+        "FOLLOWUP_SPARKOV_319",
+        "FOLLOWUP_SPARKOV_320"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 460
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-048",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_321",
+        "FOLLOWUP_SPARKOV_322",
+        "FOLLOWUP_SPARKOV_323",
+        "FOLLOWUP_SPARKOV_324",
+        "FOLLOWUP_SPARKOV_325",
+        "FOLLOWUP_SPARKOV_326",
+        "FOLLOWUP_SPARKOV_327",
+        "FOLLOWUP_SPARKOV_328",
+        "FOLLOWUP_SPARKOV_329",
+        "FOLLOWUP_SPARKOV_330"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 470
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-049",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_331",
+        "FOLLOWUP_SPARKOV_332",
+        "FOLLOWUP_SPARKOV_333",
+        "FOLLOWUP_SPARKOV_334",
+        "FOLLOWUP_SPARKOV_335",
+        "FOLLOWUP_SPARKOV_336",
+        "FOLLOWUP_SPARKOV_337",
+        "FOLLOWUP_SPARKOV_338",
+        "FOLLOWUP_SPARKOV_339",
+        "FOLLOWUP_SPARKOV_340"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 480
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-050",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_341",
+        "FOLLOWUP_SPARKOV_342",
+        "FOLLOWUP_SPARKOV_343",
+        "FOLLOWUP_SPARKOV_344",
+        "FOLLOWUP_SPARKOV_345",
+        "FOLLOWUP_SPARKOV_346",
+        "FOLLOWUP_SPARKOV_347",
+        "FOLLOWUP_SPARKOV_348",
+        "FOLLOWUP_SPARKOV_349",
+        "FOLLOWUP_SPARKOV_350"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 490
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-051",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_351",
+        "FOLLOWUP_SPARKOV_352",
+        "FOLLOWUP_SPARKOV_353",
+        "FOLLOWUP_SPARKOV_354",
+        "FOLLOWUP_SPARKOV_355",
+        "FOLLOWUP_SPARKOV_356",
+        "FOLLOWUP_SPARKOV_357",
+        "FOLLOWUP_SPARKOV_358",
+        "FOLLOWUP_SPARKOV_359",
+        "FOLLOWUP_SPARKOV_360"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 500
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-052",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_361",
+        "FOLLOWUP_SPARKOV_362",
+        "FOLLOWUP_SPARKOV_363",
+        "FOLLOWUP_SPARKOV_364",
+        "FOLLOWUP_SPARKOV_365",
+        "FOLLOWUP_SPARKOV_366",
+        "FOLLOWUP_SPARKOV_367",
+        "FOLLOWUP_SPARKOV_368",
+        "FOLLOWUP_SPARKOV_369",
+        "FOLLOWUP_SPARKOV_370"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 510
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-053",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_371",
+        "FOLLOWUP_SPARKOV_372",
+        "FOLLOWUP_SPARKOV_373",
+        "FOLLOWUP_SPARKOV_374",
+        "FOLLOWUP_SPARKOV_375",
+        "FOLLOWUP_SPARKOV_376",
+        "FOLLOWUP_SPARKOV_377",
+        "FOLLOWUP_SPARKOV_378",
+        "FOLLOWUP_SPARKOV_379",
+        "FOLLOWUP_SPARKOV_380"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 520
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-054",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_381",
+        "FOLLOWUP_SPARKOV_382",
+        "FOLLOWUP_SPARKOV_383",
+        "FOLLOWUP_SPARKOV_384",
+        "FOLLOWUP_SPARKOV_385",
+        "FOLLOWUP_SPARKOV_386",
+        "FOLLOWUP_SPARKOV_387",
+        "FOLLOWUP_SPARKOV_388",
+        "FOLLOWUP_SPARKOV_389",
+        "FOLLOWUP_SPARKOV_390"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 530
+    },
+    {
+      "batch_id": "FOLLOWUP-BATCH-055",
+      "sample_ids": [
+        "FOLLOWUP_SPARKOV_391",
+        "FOLLOWUP_SPARKOV_392",
+        "FOLLOWUP_SPARKOV_393",
+        "FOLLOWUP_SPARKOV_394",
+        "FOLLOWUP_SPARKOV_395",
+        "FOLLOWUP_SPARKOV_396",
+        "FOLLOWUP_SPARKOV_397",
+        "FOLLOWUP_SPARKOV_398",
+        "FOLLOWUP_SPARKOV_399",
+        "FOLLOWUP_SPARKOV_400"
+      ],
+      "planned_calls": 60,
+      "cell_offset": 540
+    }
+  ],
+  "planned_call_count": 3300,
+  "approvals": {
+    "panel": true,
+    "retrieval_diagnostic_locked": true
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "schema_version": "2.0",
+  "generated_at_utc": "2026-08-29T08:33:06.893837+00:00",
+  "dataset": "Sparkov",
+  "model_pipeline_sha256": "2d8ebdc05d59df9d79f21e08ced27904018e91b2059c24c357e27aa71f78d65a",
+  "sample_file_sha256": "4e4bcac424576047dd0cd42d159fa7b2ab406661681a63c12a1863bc8b6b76aa",
+  "method": "tree_shap_tree_path_dependent",
+  "method_scope": "local positive-class attribution with an additive model-score check",
+  "samples": [
+    {
+      "sample_id": "S1_HIGH_RISK",
+      "dataset_id": "Sparkov",
+      "evidence_id": "model-attribution:sparkov:S1_HIGH_RISK",
+      "method": "tree_shap_tree_path_dependent",
+      "method_is_shap": true,
+      "explained_class": "fraud_class_1",
+      "model_fraud_probability": 1.0,
+      "base_value": 0.5,
+      "additivity_reconstructed_probability": 1.0,
+      "additivity_absolute_error": 0.0,
+      "all_feature_count": 16,
+      "top_features": [
+        {
+          "feature": "log_amt",
+          "shap_value": 0.2415406849,
+          "absolute_shap_value": 0.2415406849,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "amt",
+          "shap_value": 0.2021972181,
+          "absolute_shap_value": 0.2021972181,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "hour",
+          "shap_value": 0.1503152411,
+          "absolute_shap_value": 0.1503152411,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "category",
+          "shap_value": -0.0291255053,
+          "absolute_shap_value": 0.0291255053,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "age",
+          "shap_value": -0.0199332822,
+          "absolute_shap_value": 0.0199332822,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "month",
+          "shap_value": -0.0104939407,
+          "absolute_shap_value": 0.0104939407,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "city_pop",
+          "shap_value": -0.0068298278,
+          "absolute_shap_value": 0.0068298278,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "merch_long",
+          "shap_value": -0.0058476882,
+          "absolute_shap_value": 0.0058476882,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "long",
+          "shap_value": -0.0056770122,
+          "absolute_shap_value": 0.0056770122,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "state",
+          "shap_value": -0.0050618998,
+          "absolute_shap_value": 0.0050618998,
+          "direction": "decreases_fraud_probability"
+        }
+      ],
+      "limitations": [
+        "TreeSHAP explains the fitted random-forest prediction; it does not prove causality or fraud.",
+        "Correlated inputs can share or redistribute attribution and must be interpreted cautiously.",
+        "ULB V1-V28 are anonymized components and have no recoverable business meaning.",
+        "Sparkov is synthetic, so its driver patterns are not assumed to generalize to a bank portfolio."
+      ]
+    },
+    {
+      "sample_id": "S2_FALSE_POSITIVE_TEST",
+      "dataset_id": "Sparkov",
+      "evidence_id": "model-attribution:sparkov:S2_FALSE_POSITIVE_TEST",
+      "method": "tree_shap_tree_path_dependent",
+      "method_is_shap": true,
+      "explained_class": "fraud_class_1",
+      "model_fraud_probability": 0.9983451994,
+      "base_value": 0.5,
+      "additivity_reconstructed_probability": 0.9983451994,
+      "additivity_absolute_error": 0.0,
+      "all_feature_count": 16,
+      "top_features": [
+        {
+          "feature": "log_amt",
+          "shap_value": 0.2519614845,
+          "absolute_shap_value": 0.2519614845,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "amt",
+          "shap_value": 0.21218253,
+          "absolute_shap_value": 0.21218253,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "hour",
+          "shap_value": 0.1053345473,
+          "absolute_shap_value": 0.1053345473,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "age",
+          "shap_value": -0.0303144339,
+          "absolute_shap_value": 0.0303144339,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "gender",
+          "shap_value": 0.0244051505,
+          "absolute_shap_value": 0.0244051505,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "city_pop",
+          "shap_value": -0.0141079708,
+          "absolute_shap_value": 0.0141079708,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "month",
+          "shap_value": -0.0118252918,
+          "absolute_shap_value": 0.0118252918,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "category",
+          "shap_value": -0.007356939,
+          "absolute_shap_value": 0.007356939,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "distance_km",
+          "shap_value": -0.0067260967,
+          "absolute_shap_value": 0.0067260967,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "state",
+          "shap_value": -0.0063090262,
+          "absolute_shap_value": 0.0063090262,
+          "direction": "decreases_fraud_probability"
+        }
+      ],
+      "limitations": [
+        "TreeSHAP explains the fitted random-forest prediction; it does not prove causality or fraud.",
+        "Correlated inputs can share or redistribute attribution and must be interpreted cautiously.",
+        "ULB V1-V28 are anonymized components and have no recoverable business meaning.",
+        "Sparkov is synthetic, so its driver patterns are not assumed to generalize to a bank portfolio."
+      ]
+    },
+    {
+      "sample_id": "S3_BORDERLINE_TEST",
+      "dataset_id": "Sparkov",
+      "evidence_id": "model-attribution:sparkov:S3_BORDERLINE_TEST",
+      "method": "tree_shap_tree_path_dependent",
+      "method_is_shap": true,
+      "explained_class": "fraud_class_1",
+      "model_fraud_probability": 0.4102668657,
+      "base_value": 0.5,
+      "additivity_reconstructed_probability": 0.4102668657,
+      "additivity_absolute_error": 0.0,
+      "all_feature_count": 16,
+      "top_features": [
+        {
+          "feature": "log_amt",
+          "shap_value": 0.2128124929,
+          "absolute_shap_value": 0.2128124929,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "hour",
+          "shap_value": -0.1867001475,
+          "absolute_shap_value": 0.1867001475,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "amt",
+          "shap_value": 0.1651384037,
+          "absolute_shap_value": 0.1651384037,
+          "direction": "increases_fraud_probability"
+        },
+        {
+          "feature": "category",
+          "shap_value": -0.1128218291,
+          "absolute_shap_value": 0.1128218291,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "lat",
+          "shap_value": -0.0226949537,
+          "absolute_shap_value": 0.0226949537,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "merch_lat",
+          "shap_value": -0.0201974808,
+          "absolute_shap_value": 0.0201974808,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "month",
+          "shap_value": -0.0177807,
+          "absolute_shap_value": 0.0177807,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "age",
+          "shap_value": -0.0167434851,
+          "absolute_shap_value": 0.0167434851,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "merch_long",
+          "shap_value": -0.0165045296,
+          "absolute_shap_value": 0.0165045296,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "long",
+          "shap_value": -0.0162652775,
+          "absolute_shap_value": 0.0162652775,
+          "direction": "decreases_fraud_probability"
+        }
+      ],
+      "limitations": [
+        "TreeSHAP explains the fitted random-forest prediction; it does not prove causality or fraud.",
+        "Correlated inputs can share or redistribute attribution and must be interpreted cautiously.",
+        "ULB V1-V28 are anonymized components and have no recoverable business meaning.",
+        "Sparkov is synthetic, so its driver patterns are not assumed to generalize to a bank portfolio."
+      ]
+    },
+    {
+      "sample_id": "S4_LOW_RISK",
+      "dataset_id": "Sparkov",
+      "evidence_id": "model-attribution:sparkov:S4_LOW_RISK",
+      "method": "tree_shap_tree_path_dependent",
+      "method_is_shap": true,
+      "explained_class": "fraud_class_1",
+      "model_fraud_probability": 0.0,
+      "base_value": 0.5,
+      "additivity_reconstructed_probability": -0.0,
+      "additivity_absolute_error": 0.0,
+      "all_feature_count": 16,
+      "top_features": [
+        {
+          "feature": "log_amt",
+          "shap_value": -0.1393867576,
+          "absolute_shap_value": 0.1393867576,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "amt",
+          "shap_value": -0.1274445752,
+          "absolute_shap_value": 0.1274445752,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "category",
+          "shap_value": -0.0828502323,
+          "absolute_shap_value": 0.0828502323,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "hour",
+          "shap_value": -0.0787790163,
+          "absolute_shap_value": 0.0787790163,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "city_pop",
+          "shap_value": -0.0131948694,
+          "absolute_shap_value": 0.0131948694,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "distance_km",
+          "shap_value": -0.0107335119,
+          "absolute_shap_value": 0.0107335119,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "month",
+          "shap_value": -0.0081951441,
+          "absolute_shap_value": 0.0081951441,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "age",
+          "shap_value": -0.0069291041,
+          "absolute_shap_value": 0.0069291041,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "merch_lat",
+          "shap_value": -0.0066908131,
+          "absolute_shap_value": 0.0066908131,
+          "direction": "decreases_fraud_probability"
+        },
+        {
+          "feature": "lat",
+          "shap_value": -0.0065912653,
+          "absolute_shap_value": 0.0065912653,
+          "direction": "decreases_fraud_probability"
+        }
+      ],
+      "limitations": [
+        "TreeSHAP explains the fitted random-forest prediction; it does not prove causality or fraud.",
+        "Correlated inputs can share or redistribute attribution and must be interpreted cautiously.",
+        "ULB V1-V28 are anonymized components and have no recoverable business meaning.",
+        "Sparkov is synthetic, so its driver patterns are not assumed to generalize to a bank portfolio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+POST-HOC DESCRIPTIVE EVIDENCE: THESIS REPORTING NOTES
+
+Analysis ID: FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1
+No new model calls, retrieval, guardrail execution, or V4 modification occurred.
+
+ULB: 68 of 150 cases were at or above the 0.50 generation gate; 82 were below it.
+Sparkov: 201 of 400 cases were at or above the 0.50 generation gate; 199 were below it.
+Explanation fidelity was computable for 1610 of 2457 generated condition records; 847 generated records were unavailable for the explicitly tabulated reasons.
+Disposition counts across the 3,300 condition records: generated_blocked=796, generated_released=1661, pre_generation_suppressed=843.
+
+Claim boundaries:
+- The gate split is descriptive, not a detector-accuracy estimate.
+- Fidelity availability is not a human assessment of correctness.
+- Disposition-stratified latency groups are outcomes, not randomized groups.
+- Do not add counts from overlapping condition contrasts as independent cases.

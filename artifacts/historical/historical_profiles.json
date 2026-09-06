@@ -1,0 +1,522 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-26T13:55:23.689482+00:00",
+  "methodology": "Descriptive aggregates use only the locked training partitions. They are not final-test results and do not contain individual customer identifiers.",
+  "datasets": [
+    {
+      "dataset_id": "ULB",
+      "dataset_nature": "real anonymized benchmark",
+      "scope": "deduplicated training partition only",
+      "interpretation_limit": "V1-V28 semantics are undisclosed; differences are statistical and must not be assigned invented business meanings.",
+      "records": [
+        {
+          "evidence_id": "historical:ulb:prevalence",
+          "topic": "historical_prevalence",
+          "facts": {
+            "transactions": 181584,
+            "fraud": 302,
+            "legitimate": 181282,
+            "fraud_rate": 0.0016631421270596528,
+            "elapsed_hours_min": 0.0,
+            "elapsed_hours_max": 47.99666666666667
+          }
+        },
+        {
+          "evidence_id": "historical:ulb:amount",
+          "topic": "amount_by_class",
+          "facts": [
+            {
+              "Class": 0,
+              "transactions": 181282,
+              "mean": 88.371357,
+              "median": 22.22,
+              "standard_deviation": 246.108846,
+              "minimum": 0.0,
+              "maximum": 19656.53
+            },
+            {
+              "Class": 1,
+              "transactions": 302,
+              "mean": 120.818179,
+              "median": 12.31,
+              "standard_deviation": 256.015509,
+              "minimum": 0.0,
+              "maximum": 2125.87
+            }
+          ]
+        },
+        {
+          "evidence_id": "historical:ulb:relative-time",
+          "topic": "highest_observed_fraud_rate_relative_hours",
+          "facts": [
+            {
+              "relative_hour": 26,
+              "transactions": 1131,
+              "fraud": 16,
+              "fraud_rate": 0.01414677
+            },
+            {
+              "relative_hour": 2,
+              "transactions": 1006,
+              "fraud": 13,
+              "fraud_rate": 0.01292247
+            },
+            {
+              "relative_hour": 5,
+              "transactions": 1070,
+              "fraud": 9,
+              "fraud_rate": 0.00841121
+            },
+            {
+              "relative_hour": 7,
+              "transactions": 2127,
+              "fraud": 17,
+              "fraud_rate": 0.00799248
+            },
+            {
+              "relative_hour": 3,
+              "transactions": 1173,
+              "fraud": 7,
+              "fraud_rate": 0.0059676
+            },
+            {
+              "relative_hour": 11,
+              "transactions": 5422,
+              "fraud": 29,
+              "fraud_rate": 0.00534858
+            },
+            {
+              "relative_hour": 30,
+              "transactions": 1445,
+              "fraud": 4,
+              "fraud_rate": 0.00276817
+            },
+            {
+              "relative_hour": 23,
+              "transactions": 3872,
+              "fraud": 10,
+              "fraud_rate": 0.00258264
+            }
+          ],
+          "caution": "Descriptive relative-time bins; no calendar timestamp is supplied."
+        },
+        {
+          "evidence_id": "historical:ulb:anonymized-features",
+          "topic": "largest_training_median_differences",
+          "facts": [
+            {
+              "anonymized_feature": "V14",
+              "legitimate_median": 0.05080377,
+              "fraud_median": -6.6664842,
+              "absolute_median_difference": 6.71728796
+            },
+            {
+              "anonymized_feature": "V12",
+              "legitimate_median": 0.13984538,
+              "fraud_median": -5.41132865,
+              "absolute_median_difference": 5.55117403
+            },
+            {
+              "anonymized_feature": "V17",
+              "legitimate_median": -0.06607796,
+              "fraud_median": -5.36290666,
+              "absolute_median_difference": 5.2968287
+            },
+            {
+              "anonymized_feature": "V3",
+              "legitimate_median": 0.18238298,
+              "fraud_median": -4.81217116,
+              "absolute_median_difference": 4.99455415
+            },
+            {
+              "anonymized_feature": "V10",
+              "legitimate_median": -0.09187409,
+              "fraud_median": -4.50761071,
+              "absolute_median_difference": 4.41573662
+            },
+            {
+              "anonymized_feature": "V4",
+              "legitimate_median": -0.02433533,
+              "fraud_median": 3.98717351,
+              "absolute_median_difference": 4.01150884
+            },
+            {
+              "anonymized_feature": "V11",
+              "legitimate_median": -0.03382782,
+              "fraud_median": 3.58621847,
+              "absolute_median_difference": 3.62004628
+            },
+            {
+              "anonymized_feature": "V16",
+              "legitimate_median": 0.06776154,
+              "fraud_median": -3.34402951,
+              "absolute_median_difference": 3.41179105
+            },
+            {
+              "anonymized_feature": "V7",
+              "legitimate_median": 0.04197447,
+              "fraud_median": -2.83434741,
+              "absolute_median_difference": 2.87632188
+            },
+            {
+              "anonymized_feature": "V2",
+              "legitimate_median": 0.06198732,
+              "fraud_median": 2.62573286,
+              "absolute_median_difference": 2.56374554
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "Sparkov",
+      "dataset_nature": "synthetic behavioural benchmark",
+      "scope": "chronological training window before 2020-03-06T07:15:17",
+      "interpretation_limit": "Patterns describe the Sparkov generator and cannot establish independent real-bank deployment behaviour.",
+      "records": [
+        {
+          "evidence_id": "historical:sparkov:prevalence",
+          "topic": "historical_prevalence",
+          "facts": {
+            "transactions": 1037339,
+            "fraud": 5968,
+            "legitimate": 1031371,
+            "fraud_rate": 0.005753181939558813,
+            "start": "2019-01-01T00:00:18",
+            "end": "2020-03-06T07:14:37"
+          }
+        },
+        {
+          "evidence_id": "historical:sparkov:amount",
+          "topic": "amount_by_class",
+          "facts": [
+            {
+              "is_fraud": 0,
+              "transactions": 1031371,
+              "mean": 67.633718,
+              "median": 47.22,
+              "standard_deviation": 154.08934,
+              "minimum": 1.0,
+              "maximum": 28948.9
+            },
+            {
+              "is_fraud": 1,
+              "transactions": 5968,
+              "mean": 531.471572,
+              "median": 397.84,
+              "standard_deviation": 391.378406,
+              "minimum": 1.18,
+              "maximum": 1371.81
+            }
+          ]
+        },
+        {
+          "evidence_id": "historical:sparkov:category",
+          "topic": "highest_observed_fraud_rate_categories",
+          "facts": [
+            {
+              "category": "shopping_net",
+              "transactions": 78025,
+              "fraud": 1370,
+              "fraud_rate": 0.01755847
+            },
+            {
+              "category": "misc_net",
+              "transactions": 50501,
+              "fraud": 737,
+              "fraud_rate": 0.01459377
+            },
+            {
+              "category": "grocery_pos",
+              "transactions": 98808,
+              "fraud": 1387,
+              "fraud_rate": 0.01403732
+            },
+            {
+              "category": "shopping_pos",
+              "transactions": 93330,
+              "fraud": 661,
+              "fraud_rate": 0.0070824
+            },
+            {
+              "category": "gas_transport",
+              "transactions": 105247,
+              "fraud": 493,
+              "fraud_rate": 0.00468422
+            },
+            {
+              "category": "grocery_net",
+              "transactions": 36337,
+              "fraud": 110,
+              "fraud_rate": 0.00302722
+            },
+            {
+              "category": "misc_pos",
+              "transactions": 63813,
+              "fraud": 193,
+              "fraud_rate": 0.00302446
+            },
+            {
+              "category": "travel",
+              "transactions": 32489,
+              "fraud": 98,
+              "fraud_rate": 0.00301641
+            },
+            {
+              "category": "entertainment",
+              "transactions": 75208,
+              "fraud": 184,
+              "fraud_rate": 0.00244655
+            },
+            {
+              "category": "personal_care",
+              "transactions": 72752,
+              "fraud": 171,
+              "fraud_rate": 0.00235045
+            }
+          ]
+        },
+        {
+          "evidence_id": "historical:sparkov:hour",
+          "topic": "highest_observed_fraud_rate_hours",
+          "facts": [
+            {
+              "hour": 22,
+              "transactions": 53596,
+              "fraud": 1519,
+              "fraud_rate": 0.02834167
+            },
+            {
+              "hour": 23,
+              "transactions": 53588,
+              "fraud": 1506,
+              "fraud_rate": 0.02810331
+            },
+            {
+              "hour": 1,
+              "transactions": 34392,
+              "fraud": 532,
+              "fraud_rate": 0.01546871
+            },
+            {
+              "hour": 0,
+              "transactions": 34034,
+              "fraud": 519,
+              "fraud_rate": 0.01524946
+            },
+            {
+              "hour": 2,
+              "transactions": 34054,
+              "fraud": 502,
+              "fraud_rate": 0.01474129
+            },
+            {
+              "hour": 3,
+              "transactions": 34219,
+              "fraud": 484,
+              "fraud_rate": 0.01414419
+            },
+            {
+              "hour": 14,
+              "transactions": 51856,
+              "fraud": 75,
+              "fraud_rate": 0.00144631
+            },
+            {
+              "hour": 5,
+              "transactions": 33749,
+              "fraud": 48,
+              "fraud_rate": 0.00142226
+            }
+          ]
+        },
+        {
+          "evidence_id": "historical:sparkov:weekday",
+          "topic": "fraud_rate_by_weekday_monday_zero",
+          "facts": [
+            {
+              "day_of_week": 0,
+              "transactions": 202393,
+              "fraud": 963,
+              "fraud_rate": 0.00475807
+            },
+            {
+              "day_of_week": 1,
+              "transactions": 110718,
+              "fraud": 676,
+              "fraud_rate": 0.0061056
+            },
+            {
+              "day_of_week": 2,
+              "transactions": 107248,
+              "fraud": 658,
+              "fraud_rate": 0.00613531
+            },
+            {
+              "day_of_week": 3,
+              "transactions": 120426,
+              "fraud": 762,
+              "fraud_rate": 0.00632754
+            },
+            {
+              "day_of_week": 4,
+              "transactions": 120985,
+              "fraud": 869,
+              "fraud_rate": 0.00718271
+            },
+            {
+              "day_of_week": 5,
+              "transactions": 169352,
+              "fraud": 1052,
+              "fraud_rate": 0.00621191
+            },
+            {
+              "day_of_week": 6,
+              "transactions": 206217,
+              "fraud": 988,
+              "fraud_rate": 0.00479107
+            }
+          ]
+        },
+        {
+          "evidence_id": "historical:sparkov:age",
+          "topic": "fraud_rate_by_age_band",
+          "facts": [
+            {
+              "age_band": "under_25",
+              "transactions": 97902,
+              "fraud": 677,
+              "fraud_rate": 0.00691508
+            },
+            {
+              "age_band": "25_34",
+              "transactions": 233271,
+              "fraud": 1065,
+              "fraud_rate": 0.00456551
+            },
+            {
+              "age_band": "35_44",
+              "transactions": 217176,
+              "fraud": 923,
+              "fraud_rate": 0.00425001
+            },
+            {
+              "age_band": "45_54",
+              "transactions": 204117,
+              "fraud": 1173,
+              "fraud_rate": 0.0057467
+            },
+            {
+              "age_band": "55_64",
+              "transactions": 131845,
+              "fraud": 1017,
+              "fraud_rate": 0.0077136
+            },
+            {
+              "age_band": "65_plus",
+              "transactions": 153028,
+              "fraud": 1113,
+              "fraud_rate": 0.00727318
+            }
+          ]
+        },
+        {
+          "evidence_id": "historical:sparkov:monthly",
+          "topic": "monthly_fraud_trend",
+          "facts": [
+            {
+              "month": "2019-01",
+              "transactions": 52525,
+              "fraud": 506,
+              "fraud_rate": 0.00963351
+            },
+            {
+              "month": "2019-02",
+              "transactions": 49866,
+              "fraud": 517,
+              "fraud_rate": 0.01036779
+            },
+            {
+              "month": "2019-03",
+              "transactions": 70939,
+              "fraud": 494,
+              "fraud_rate": 0.00696373
+            },
+            {
+              "month": "2019-04",
+              "transactions": 68078,
+              "fraud": 376,
+              "fraud_rate": 0.00552308
+            },
+            {
+              "month": "2019-05",
+              "transactions": 72532,
+              "fraud": 408,
+              "fraud_rate": 0.0056251
+            },
+            {
+              "month": "2019-06",
+              "transactions": 86064,
+              "fraud": 354,
+              "fraud_rate": 0.00411322
+            },
+            {
+              "month": "2019-07",
+              "transactions": 86596,
+              "fraud": 331,
+              "fraud_rate": 0.00382235
+            },
+            {
+              "month": "2019-08",
+              "transactions": 87359,
+              "fraud": 382,
+              "fraud_rate": 0.00437276
+            },
+            {
+              "month": "2019-09",
+              "transactions": 70652,
+              "fraud": 418,
+              "fraud_rate": 0.00591632
+            },
+            {
+              "month": "2019-10",
+              "transactions": 68758,
+              "fraud": 454,
+              "fraud_rate": 0.00660287
+            },
+            {
+              "month": "2019-11",
+              "transactions": 70421,
+              "fraud": 388,
+              "fraud_rate": 0.00550972
+            },
+            {
+              "month": "2019-12",
+              "transactions": 141060,
+              "fraud": 592,
+              "fraud_rate": 0.0041968
+            },
+            {
+              "month": "2020-01",
+              "transactions": 52202,
+              "fraud": 343,
+              "fraud_rate": 0.00657063
+            },
+            {
+              "month": "2020-02",
+              "transactions": 47791,
+              "fraud": 336,
+              "fraud_rate": 0.00703061
+            },
+            {
+              "month": "2020-03",
+              "transactions": 12496,
+              "fraud": 69,
+              "fraud_rate": 0.00552177
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

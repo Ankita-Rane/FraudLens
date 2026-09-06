@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.0",
+  "scientific_status": "locked_researcher_authored_known_item_diagnostic",
+  "created_at_utc": "2026-09-02T11:44:38.439620+00:00",
+  "human_relevance_judgments_used": false,
+  "purpose": "Functional known-item comparison of document ranking under a frozen local corpus.",
+  "interpretation_boundary": "Expected documents are researcher-authored design targets derived from registry metadata; they are not an independently adjudicated relevance gold standard and do not prove semantic correctness, entailment, legal correctness, or operational usefulness.",
+  "circularity_control": "Expected document assignments are stored in this non-overwritable manifest; the benchmark consumes this hash-bound file and does not infer targets from retrieval results.",
+  "residual_limitation": "A file hash proves immutability after creation, not that the researcher had never observed results from earlier exploratory retrieval runs.",
+  "source_registry": {
+    "path": "datasets/policy_sources/policy_source_registry.json",
+    "sha256": "9004b0676ca564ad851d3a82c2f82fe5058f803c83913260f0243197304d8cc5"
+  },
+  "query_set_sha256": "466d2dc9114004997f45117fb84f026c4af6fa475d78a368c4d65f729a30bccf",
+  "query_type_counts": {
+    "direct": 5,
+    "paraphrased": 8,
+    "multi_concept": 2
+  },
+  "method_references": [
+    {
+      "method": "dense sentence embeddings compared with cosine similarity",
+      "citation": "Reimers and Gurevych (2019), Sentence-BERT",
+      "doi": "10.18653/v1/D19-1410",
+      "url": "https://aclanthology.org/D19-1410/"
+    },
+    {
+      "method": "reciprocal rank fusion",
+      "citation": "Cormack, Clarke, and Buettcher (2009)",
+      "doi": "10.1145/1571941.1572114",
+      "url": "https://dl.acm.org/doi/10.1145/1571941.1572114"
+    },
+    {
+      "method": "discounted cumulative gain evaluation",
+      "citation": "Jarvelin and Kekalainen (2002)",
+      "doi": "10.1145/582415.582418",
+      "url": "https://dl.acm.org/doi/10.1145/582415.582418"
+    },
+    {
+      "method": "inverse document frequency",
+      "citation": "Sparck Jones (1972)",
+      "doi": "10.1108/eb026526",
+      "url": "https://doi.org/10.1108/eb026526"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "DIRECT_RZ12",
+      "query_type": "direct",
+      "query": "Which source is titled 12 CFR 1026.12 - Special credit card provisions?",
+      "expected_document_ids": [
+        "regulation_z_1026_12.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "regulation_z_1026_12.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "12 CFR 1026.12 - Special credit card provisions",
+            "authority": "official_regulatory_reference",
+            "use_for": [
+              "unauthorized credit-card use",
+              "consumer liability context"
+            ],
+            "not_for": [
+              "institution-specific alert thresholds",
+              "fraud classification labels"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "PARA_RZ12_A",
+      "query_type": "paraphrased",
+      "query": "Which registered source provides context on consumer liability for unauthorized credit-card use?",
+      "expected_document_ids": [
+        "regulation_z_1026_12.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "regulation_z_1026_12.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "12 CFR 1026.12 - Special credit card provisions",
+            "authority": "official_regulatory_reference",
+            "use_for": [
+              "unauthorized credit-card use",
+              "consumer liability context"
+            ],
+            "not_for": [
+              "institution-specific alert thresholds",
+              "fraud classification labels"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "PARA_RZ12_B",
+      "query_type": "paraphrased",
+      "query": "Find the official regulatory reference intended for unauthorized card-use context, not fraud classification labels.",
+      "expected_document_ids": [
+        "regulation_z_1026_12.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "regulation_z_1026_12.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "12 CFR 1026.12 - Special credit card provisions",
+            "authority": "official_regulatory_reference",
+            "use_for": [
+              "unauthorized credit-card use",
+              "consumer liability context"
+            ],
+            "not_for": [
+              "institution-specific alert thresholds",
+              "fraud classification labels"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "DIRECT_RZ13",
+      "query_type": "direct",
+      "query": "Which source is titled 12 CFR 1026.13 - Billing error resolution?",
+      "expected_document_ids": [
+        "regulation_z_1026_13.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "regulation_z_1026_13.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "12 CFR 1026.13 - Billing error resolution",
+            "authority": "official_regulatory_reference",
+            "use_for": [
+              "billing-error investigation procedure",
+              "timing and evidence context"
+            ],
+            "not_for": [
+              "institution-specific alert thresholds",
+              "fraud classification labels"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "PARA_RZ13_A",
+      "query_type": "paraphrased",
+      "query": "Which registered source covers billing-error investigation procedure, timing, and evidence context?",
+      "expected_document_ids": [
+        "regulation_z_1026_13.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "regulation_z_1026_13.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "12 CFR 1026.13 - Billing error resolution",
+            "authority": "official_regulatory_reference",
+            "use_for": [
+              "billing-error investigation procedure",
+              "timing and evidence context"
+            ],
+            "not_for": [
+              "institution-specific alert thresholds",
+              "fraud classification labels"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "PARA_RZ13_B",
+      "query_type": "paraphrased",
+      "query": "Find the official regulatory reference for resolving a billing dispute rather than setting an institution's alert threshold.",
+      "expected_document_ids": [
+        "regulation_z_1026_13.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "regulation_z_1026_13.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "12 CFR 1026.13 - Billing error resolution",
+            "authority": "official_regulatory_reference",
+            "use_for": [
+              "billing-error investigation procedure",
+              "timing and evidence context"
+            ],
+            "not_for": [
+              "institution-specific alert thresholds",
+              "fraud classification labels"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "DIRECT_SR",
+      "query_type": "direct",
+      "query": "Which source is titled SR 26-2 - Revised Guidance on Model Risk Management?",
+      "expected_document_ids": [
+        "federal_reserve_sr_26_2.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "federal_reserve_sr_26_2.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "SR 26-2 - Revised Guidance on Model Risk Management",
+            "authority": "official_supervisory_guidance",
+            "use_for": [
+              "model risk management principles",
+              "risk-based model risk management"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "consumer legal advice"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "PARA_SR_A",
+      "query_type": "paraphrased",
+      "query": "Which supervisory source presents model risk management principles and emphasizes a risk-based approach?",
+      "expected_document_ids": [
+        "federal_reserve_sr_26_2.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "federal_reserve_sr_26_2.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "SR 26-2 - Revised Guidance on Model Risk Management",
+            "authority": "official_supervisory_guidance",
+            "use_for": [
+              "model risk management principles",
+              "risk-based model risk management"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "consumer legal advice"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "PARA_SR_B",
+      "query_type": "paraphrased",
+      "query": "Find the source for risk-based model risk management rather than transaction-level fraud decisions.",
+      "expected_document_ids": [
+        "federal_reserve_sr_26_2.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "federal_reserve_sr_26_2.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "SR 26-2 - Revised Guidance on Model Risk Management",
+            "authority": "official_supervisory_guidance",
+            "use_for": [
+              "model risk management principles",
+              "risk-based model risk management"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "consumer legal advice"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "DIRECT_NIST",
+      "query_type": "direct",
+      "query": "Which source is titled NIST AI 600-1 - Generative AI Profile?",
+      "expected_document_ids": [
+        "nist_ai_600_1.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "nist_ai_600_1.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "NIST AI 600-1 - Generative AI Profile",
+            "authority": "official_governance_framework",
+            "use_for": [
+              "generative-AI risk management",
+              "trustworthiness considerations",
+              "AI measurement and evaluation"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "bank operating policy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "PARA_NIST_A",
+      "query_type": "paraphrased",
+      "query": "Which voluntary framework source covers generative-AI risk management, trustworthiness considerations, and AI measurement and evaluation?",
+      "expected_document_ids": [
+        "nist_ai_600_1.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "nist_ai_600_1.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "NIST AI 600-1 - Generative AI Profile",
+            "authority": "official_governance_framework",
+            "use_for": [
+              "generative-AI risk management",
+              "trustworthiness considerations",
+              "AI measurement and evaluation"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "bank operating policy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "DIRECT_BIS",
+      "query_type": "direct",
+      "query": "Which source is titled FSI Insights 63 - Regulating AI in the financial sector?",
+      "expected_document_ids": [
+        "bis_fsi_insights_63.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "bis_fsi_insights_63.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "FSI Insights 63 - Regulating AI in the financial sector",
+            "authority": "official_research_guidance",
+            "use_for": [
+              "financial-sector AI governance",
+              "hallucination and model-risk context"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "binding institution policy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "PARA_BIS_A",
+      "query_type": "paraphrased",
+      "query": "Which international research and supervisory source covers financial-sector AI governance and hallucination or model-risk context?",
+      "expected_document_ids": [
+        "bis_fsi_insights_63.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "bis_fsi_insights_63.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "FSI Insights 63 - Regulating AI in the financial sector",
+            "authority": "official_research_guidance",
+            "use_for": [
+              "financial-sector AI governance",
+              "hallucination and model-risk context"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "binding institution policy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "MULTI_CONSUMER",
+      "query_type": "multi_concept",
+      "query": "Find the registered consumer-credit sources for both unauthorized card-use liability and billing-error investigation procedure.",
+      "expected_document_ids": [
+        "regulation_z_1026_12.html",
+        "regulation_z_1026_13.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "regulation_z_1026_12.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "12 CFR 1026.12 - Special credit card provisions",
+            "authority": "official_regulatory_reference",
+            "use_for": [
+              "unauthorized credit-card use",
+              "consumer liability context"
+            ],
+            "not_for": [
+              "institution-specific alert thresholds",
+              "fraud classification labels"
+            ]
+          }
+        },
+        {
+          "document_id": "regulation_z_1026_13.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "12 CFR 1026.13 - Billing error resolution",
+            "authority": "official_regulatory_reference",
+            "use_for": [
+              "billing-error investigation procedure",
+              "timing and evidence context"
+            ],
+            "not_for": [
+              "institution-specific alert thresholds",
+              "fraud classification labels"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "MULTI_AI_GOV",
+      "query_type": "multi_concept",
+      "query": "Find the registered sources covering risk-based model risk management, generative-AI trustworthiness and evaluation, and financial-sector AI hallucination risk.",
+      "expected_document_ids": [
+        "federal_reserve_sr_26_2.html",
+        "nist_ai_600_1.html",
+        "bis_fsi_insights_63.html"
+      ],
+      "expected_document_assignments": [
+        {
+          "document_id": "federal_reserve_sr_26_2.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "SR 26-2 - Revised Guidance on Model Risk Management",
+            "authority": "official_supervisory_guidance",
+            "use_for": [
+              "model risk management principles",
+              "risk-based model risk management"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "consumer legal advice"
+            ]
+          }
+        },
+        {
+          "document_id": "nist_ai_600_1.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "NIST AI 600-1 - Generative AI Profile",
+            "authority": "official_governance_framework",
+            "use_for": [
+              "generative-AI risk management",
+              "trustworthiness considerations",
+              "AI measurement and evaluation"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "bank operating policy"
+            ]
+          }
+        },
+        {
+          "document_id": "bis_fsi_insights_63.html",
+          "assignment_rule": "Known item selected only from frozen registry metadata.",
+          "registry_evidence": {
+            "title": "FSI Insights 63 - Regulating AI in the financial sector",
+            "authority": "official_research_guidance",
+            "use_for": [
+              "financial-sector AI governance",
+              "hallucination and model-risk context"
+            ],
+            "not_for": [
+              "transaction-level fraud decisions",
+              "binding institution policy"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

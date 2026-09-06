@@ -1,0 +1,2090 @@
+{
+  "analysis_id": "FOLLOWUP-RETRIEVAL-20260902-02-POSTHOC-DESCRIPTIVE-V1",
+  "fidelity_missingness_analysis": {
+    "claim_boundary": "Availability describes whether the automatic response-to-TreeSHAP comparison could be computed; it is not a human correctness score.",
+    "summary": {
+      "all_run_count": 3300,
+      "by_dataset_condition": [
+        {
+          "condition_id": "A_direct",
+          "dataset_id": "Sparkov",
+          "fidelity_available_count": 297,
+          "fidelity_available_percent_of_generated": 74.25,
+          "fidelity_unavailable_count": 103,
+          "generated_count": 400,
+          "not_generated_count": 0,
+          "run_count": 400,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 97,
+            "model_drivers_missing": 6
+          }
+        },
+        {
+          "condition_id": "B_dense",
+          "dataset_id": "Sparkov",
+          "fidelity_available_count": 285,
+          "fidelity_available_percent_of_generated": 71.25,
+          "fidelity_unavailable_count": 115,
+          "generated_count": 400,
+          "not_generated_count": 0,
+          "run_count": 400,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 112,
+            "model_drivers_missing": 3
+          }
+        },
+        {
+          "condition_id": "B_lexical",
+          "dataset_id": "Sparkov",
+          "fidelity_available_count": 243,
+          "fidelity_available_percent_of_generated": 60.75,
+          "fidelity_unavailable_count": 157,
+          "generated_count": 400,
+          "not_generated_count": 0,
+          "run_count": 400,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 152,
+            "model_drivers_missing": 5
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "dataset_id": "Sparkov",
+          "fidelity_available_count": 126,
+          "fidelity_available_percent_of_generated": 62.686567,
+          "fidelity_unavailable_count": 75,
+          "generated_count": 201,
+          "not_generated_count": 199,
+          "run_count": 400,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 75
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "dataset_id": "Sparkov",
+          "fidelity_available_count": 129,
+          "fidelity_available_percent_of_generated": 64.179104,
+          "fidelity_unavailable_count": 72,
+          "generated_count": 201,
+          "not_generated_count": 199,
+          "run_count": 400,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 69,
+            "model_drivers_missing": 3
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "dataset_id": "Sparkov",
+          "fidelity_available_count": 125,
+          "fidelity_available_percent_of_generated": 62.189055,
+          "fidelity_unavailable_count": 76,
+          "generated_count": 201,
+          "not_generated_count": 199,
+          "run_count": 400,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 74,
+            "model_drivers_missing": 2
+          }
+        },
+        {
+          "condition_id": "A_direct",
+          "dataset_id": "ULB",
+          "fidelity_available_count": 107,
+          "fidelity_available_percent_of_generated": 71.333333,
+          "fidelity_unavailable_count": 43,
+          "generated_count": 150,
+          "not_generated_count": 0,
+          "run_count": 150,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 42,
+            "model_drivers_missing": 1
+          }
+        },
+        {
+          "condition_id": "B_dense",
+          "dataset_id": "ULB",
+          "fidelity_available_count": 85,
+          "fidelity_available_percent_of_generated": 56.666667,
+          "fidelity_unavailable_count": 65,
+          "generated_count": 150,
+          "not_generated_count": 0,
+          "run_count": 150,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 63,
+            "model_drivers_missing": 2
+          }
+        },
+        {
+          "condition_id": "B_lexical",
+          "dataset_id": "ULB",
+          "fidelity_available_count": 81,
+          "fidelity_available_percent_of_generated": 54.0,
+          "fidelity_unavailable_count": 69,
+          "generated_count": 150,
+          "not_generated_count": 0,
+          "run_count": 150,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 69
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "dataset_id": "ULB",
+          "fidelity_available_count": 46,
+          "fidelity_available_percent_of_generated": 67.647059,
+          "fidelity_unavailable_count": 22,
+          "generated_count": 68,
+          "not_generated_count": 82,
+          "run_count": 150,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 21,
+            "model_drivers_missing": 1
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "dataset_id": "ULB",
+          "fidelity_available_count": 41,
+          "fidelity_available_percent_of_generated": 60.294118,
+          "fidelity_unavailable_count": 27,
+          "generated_count": 68,
+          "not_generated_count": 82,
+          "run_count": 150,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 25,
+            "model_drivers_missing": 2
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "dataset_id": "ULB",
+          "fidelity_available_count": 45,
+          "fidelity_available_percent_of_generated": 66.176471,
+          "fidelity_unavailable_count": 23,
+          "generated_count": 68,
+          "not_generated_count": 82,
+          "run_count": 150,
+          "unavailable_reason_counts": {
+            "candidate_invalid_json": 19,
+            "model_drivers_missing": 4
+          }
+        }
+      ],
+      "fidelity_available_count": 1610,
+      "fidelity_available_percent_of_generated": 65.527066,
+      "fidelity_unavailable_count": 847,
+      "generated_count": 2457,
+      "not_generated_count": 843,
+      "unavailable_reason_counts": {
+        "candidate_invalid_json": 818,
+        "model_drivers_missing": 29
+      }
+    },
+    "unit": "generated condition record within dataset and condition"
+  },
+  "gate_analysis": {
+    "claim_boundary": "The gate split is descriptive and is not an estimate of detector accuracy or a causal guardrail effect.",
+    "purpose": "describe exposure to the 0.50 pre-generation gate",
+    "summary": [
+      {
+        "at_or_above_gate_count": 201,
+        "at_or_above_gate_percent": 50.25,
+        "below_gate_count": 199,
+        "below_gate_percent": 49.75,
+        "case_count": 400,
+        "dataset_id": "Sparkov",
+        "detector_score": {
+          "maximum": 0.999974,
+          "mean": 0.480448,
+          "median": 0.513371,
+          "minimum": 0.0,
+          "n": 400,
+          "p25": 0.0,
+          "p75": 0.943217,
+          "p95": 0.994707,
+          "standard_deviation": 0.432195
+        },
+        "generation_gate": 0.5
+      },
+      {
+        "at_or_above_gate_count": 68,
+        "at_or_above_gate_percent": 45.333333,
+        "below_gate_count": 82,
+        "below_gate_percent": 54.666667,
+        "case_count": 150,
+        "dataset_id": "ULB",
+        "detector_score": {
+          "maximum": 0.999972,
+          "mean": 0.413753,
+          "median": 0.176493,
+          "minimum": 0.0,
+          "n": 150,
+          "p25": 0.0,
+          "p75": 0.899796,
+          "p95": 0.986647,
+          "standard_deviation": 0.43388
+        },
+        "generation_gate": 0.5
+      }
+    ],
+    "unit": "unique evaluation case within dataset"
+  },
+  "latency_by_disposition_analysis": {
+    "claim_boundary": "These are post-hoc descriptive timings. Disposition groups are outcomes of the pipeline and are not randomized comparison groups.",
+    "summary": {
+      "all_run_count": 3300,
+      "by_dataset_condition_disposition": [
+        {
+          "condition_id": "A_direct",
+          "cpu_time_ms": {
+            "maximum": 12405.527,
+            "mean": 4541.962205,
+            "median": 1834.725,
+            "minimum": 319.191,
+            "n": 400,
+            "p25": 1463.1605,
+            "p75": 8901.32275,
+            "p95": 10392.29965,
+            "standard_deviation": 3755.918205
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 83075.534,
+            "mean": 27578.909387,
+            "median": 7928.003,
+            "minimum": 1785.249,
+            "n": 400,
+            "p25": 6808.288,
+            "p75": 58739.44975,
+            "p95": 69346.66165,
+            "standard_deviation": 26401.072662
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 19103744.0,
+            "mean": -24606351.36,
+            "median": -1163264.0,
+            "minimum": -459423744.0,
+            "n": 400,
+            "p25": -6823936.0,
+            "p75": 671744.0,
+            "p95": 3247308.8,
+            "standard_deviation": 74963577.075226
+          },
+          "processing_latency_ms": {
+            "maximum": 83085.086,
+            "mean": 27588.358485,
+            "median": 7938.1225,
+            "minimum": 1794.011,
+            "n": 400,
+            "p25": 6817.3855,
+            "p75": 58748.92525,
+            "p95": 69356.4958,
+            "standard_deviation": 26401.006495
+          },
+          "retrieval_latency_ms": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 400,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "run_count": 400,
+          "validation_latency_ms": {
+            "maximum": 7.313,
+            "mean": 0.064317,
+            "median": 0.015,
+            "minimum": 0.01,
+            "n": 400,
+            "p25": 0.014,
+            "p75": 0.02125,
+            "p95": 0.085,
+            "standard_deviation": 0.408615
+          }
+        },
+        {
+          "condition_id": "B_dense",
+          "cpu_time_ms": {
+            "maximum": 17837.359,
+            "mean": 2050.902668,
+            "median": 1555.9115,
+            "minimum": 311.163,
+            "n": 400,
+            "p25": 1415.93975,
+            "p75": 1774.4685,
+            "p95": 2097.09535,
+            "standard_deviation": 2622.482286
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 105007.881,
+            "mean": 12380.436013,
+            "median": 9567.599,
+            "minimum": 2765.539,
+            "n": 400,
+            "p25": 8775.17525,
+            "p75": 10790.30175,
+            "p95": 12494.9929,
+            "standard_deviation": 14884.491279
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 14303232.0,
+            "mean": -18000445.44,
+            "median": 835584.0,
+            "minimum": -688259072.0,
+            "n": 400,
+            "p25": 438272.0,
+            "p75": 1527808.0,
+            "p95": 4555571.2,
+            "standard_deviation": 105206090.087679
+          },
+          "processing_latency_ms": {
+            "maximum": 105319.974,
+            "mean": 12539.211698,
+            "median": 9614.5505,
+            "minimum": 2780.914,
+            "n": 400,
+            "p25": 8827.25725,
+            "p75": 10968.4735,
+            "p95": 13456.2358,
+            "standard_deviation": 14936.57432
+          },
+          "retrieval_latency_ms": {
+            "maximum": 5974.502,
+            "mean": 148.454878,
+            "median": 5.8715,
+            "minimum": 4.562,
+            "n": 400,
+            "p25": 5.274,
+            "p75": 8.3795,
+            "p95": 357.49685,
+            "standard_deviation": 721.923173
+          },
+          "run_count": 400,
+          "validation_latency_ms": {
+            "maximum": 2.948,
+            "mean": 0.11004,
+            "median": 0.014,
+            "minimum": 0.01,
+            "n": 400,
+            "p25": 0.013,
+            "p75": 0.02,
+            "p95": 0.03325,
+            "standard_deviation": 0.461148
+          }
+        },
+        {
+          "condition_id": "B_lexical",
+          "cpu_time_ms": {
+            "maximum": 2848.637,
+            "mean": 1680.434802,
+            "median": 1649.634,
+            "minimum": 391.967,
+            "n": 400,
+            "p25": 1462.54375,
+            "p75": 1890.84075,
+            "p95": 2293.99575,
+            "standard_deviation": 353.619481
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 18084.951,
+            "mean": 10503.397183,
+            "median": 10173.198,
+            "minimum": 3190.899,
+            "n": 400,
+            "p25": 9255.57325,
+            "p75": 11627.47025,
+            "p95": 14687.0774,
+            "standard_deviation": 2089.876397
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 14336000.0,
+            "mean": 1911562.24,
+            "median": 1048576.0,
+            "minimum": -56410112.0,
+            "n": 400,
+            "p25": 360448.0,
+            "p75": 3874816.0,
+            "p95": 7675904.0,
+            "standard_deviation": 4315317.181563
+          },
+          "processing_latency_ms": {
+            "maximum": 18106.662,
+            "mean": 10525.894973,
+            "median": 10196.523,
+            "minimum": 3210.839,
+            "n": 400,
+            "p25": 9274.66275,
+            "p75": 11649.138,
+            "p95": 14711.2148,
+            "standard_deviation": 2091.083656
+          },
+          "retrieval_latency_ms": {
+            "maximum": 103.012,
+            "mean": 11.374585,
+            "median": 9.6735,
+            "minimum": 9.327,
+            "n": 400,
+            "p25": 9.603,
+            "p75": 9.9255,
+            "p95": 14.31795,
+            "standard_deviation": 8.870295
+          },
+          "run_count": 400,
+          "validation_latency_ms": {
+            "maximum": 4.045,
+            "mean": 0.030977,
+            "median": 0.015,
+            "minimum": 0.01,
+            "n": 400,
+            "p25": 0.013,
+            "p75": 0.021,
+            "p95": 0.029,
+            "standard_deviation": 0.204084
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "cpu_time_ms": {
+            "maximum": 18149.104,
+            "mean": 2120.184473,
+            "median": 1719.457,
+            "minimum": 367.976,
+            "n": 201,
+            "p25": 1611.383,
+            "p75": 1797.643,
+            "p95": 1986.822,
+            "standard_deviation": 2615.649533
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "generated_blocked",
+          "generation_latency_ms": {
+            "maximum": 107019.574,
+            "mean": 13017.58694,
+            "median": 10712.027,
+            "minimum": 2979.216,
+            "n": 201,
+            "p25": 10121.331,
+            "p75": 11095.068,
+            "p95": 12228.495,
+            "standard_deviation": 15085.667903
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 5046272.0,
+            "mean": -16137587.900498,
+            "median": 720896.0,
+            "minimum": -641744896.0,
+            "n": 201,
+            "p25": 163840.0,
+            "p75": 950272.0,
+            "p95": 3670016.0,
+            "standard_deviation": 96231453.580191
+          },
+          "processing_latency_ms": {
+            "maximum": 107331.135,
+            "mean": 13043.542169,
+            "median": 10726.359,
+            "minimum": 2995.067,
+            "n": 201,
+            "p25": 10135.587,
+            "p75": 11109.671,
+            "p95": 12242.989,
+            "standard_deviation": 15135.66807
+          },
+          "retrieval_latency_ms": {
+            "maximum": 302.603,
+            "mean": 15.971269,
+            "median": 5.443,
+            "minimum": 4.523,
+            "n": 201,
+            "p25": 5.124,
+            "p75": 6.067,
+            "p95": 33.246,
+            "standard_deviation": 50.060792
+          },
+          "run_count": 201,
+          "validation_latency_ms": {
+            "maximum": 5.459,
+            "mean": 0.165811,
+            "median": 0.035,
+            "minimum": 0.021,
+            "n": 201,
+            "p25": 0.028,
+            "p75": 0.039,
+            "p95": 0.048,
+            "standard_deviation": 0.7638
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "cpu_time_ms": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 199,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "pre_generation_suppressed",
+          "generation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 199,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "processing_latency_ms": {
+            "maximum": 321.903,
+            "mean": 27.169497,
+            "median": 14.723,
+            "minimum": 13.625,
+            "n": 199,
+            "p25": 14.2845,
+            "p75": 15.798,
+            "p95": 68.1769,
+            "standard_deviation": 54.34333
+          },
+          "retrieval_latency_ms": {
+            "maximum": 312.229,
+            "mean": 18.111814,
+            "median": 5.811,
+            "minimum": 4.708,
+            "n": 199,
+            "p25": 5.2705,
+            "p75": 6.5015,
+            "p95": 58.6632,
+            "standard_deviation": 54.231994
+          },
+          "run_count": 199,
+          "validation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "cpu_time_ms": {
+            "maximum": 2119.472,
+            "mean": 1526.639627,
+            "median": 1536.907,
+            "minimum": 820.361,
+            "n": 201,
+            "p25": 1418.734,
+            "p75": 1645.694,
+            "p95": 1851.075,
+            "standard_deviation": 210.782756
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "generated_blocked",
+          "generation_latency_ms": {
+            "maximum": 12443.678,
+            "mean": 9749.08695,
+            "median": 9794.928,
+            "minimum": 5565.66,
+            "n": 201,
+            "p25": 9169.896,
+            "p75": 10454.099,
+            "p95": 11336.879,
+            "standard_deviation": 1134.333597
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 27688960.0,
+            "mean": 1669211.701493,
+            "median": 770048.0,
+            "minimum": -4947968.0,
+            "n": 201,
+            "p25": 245760.0,
+            "p75": 1097728.0,
+            "p95": 4554752.0,
+            "standard_deviation": 4772943.947778
+          },
+          "processing_latency_ms": {
+            "maximum": 12462.963,
+            "mean": 9772.666771,
+            "median": 9814.695,
+            "minimum": 5584.64,
+            "n": 201,
+            "p25": 9195.177,
+            "p75": 10501.115,
+            "p95": 11356.643,
+            "standard_deviation": 1133.682125
+          },
+          "retrieval_latency_ms": {
+            "maximum": 58.594,
+            "mean": 11.242129,
+            "median": 9.664,
+            "minimum": 9.477,
+            "n": 201,
+            "p25": 9.602,
+            "p75": 9.792,
+            "p95": 12.205,
+            "standard_deviation": 7.697733
+          },
+          "run_count": 201,
+          "validation_latency_ms": {
+            "maximum": 9.673,
+            "mean": 0.127582,
+            "median": 0.035,
+            "minimum": 0.019,
+            "n": 201,
+            "p25": 0.027,
+            "p75": 0.04,
+            "p95": 0.058,
+            "standard_deviation": 0.770972
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "cpu_time_ms": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 199,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "pre_generation_suppressed",
+          "generation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 199,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "processing_latency_ms": {
+            "maximum": 147.108,
+            "mean": 22.866161,
+            "median": 19.287,
+            "minimum": 18.49,
+            "n": 199,
+            "p25": 18.8675,
+            "p75": 19.801,
+            "p95": 21.4776,
+            "standard_deviation": 19.717361
+          },
+          "retrieval_latency_ms": {
+            "maximum": 59.372,
+            "mean": 11.064633,
+            "median": 9.666,
+            "minimum": 9.465,
+            "n": 199,
+            "p25": 9.601,
+            "p75": 9.8755,
+            "p95": 10.5207,
+            "standard_deviation": 7.355273
+          },
+          "run_count": 199,
+          "validation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "cpu_time_ms": {
+            "maximum": 2286.672,
+            "mean": 1590.392109,
+            "median": 1602.32,
+            "minimum": 347.455,
+            "n": 201,
+            "p25": 1455.813,
+            "p75": 1732.649,
+            "p95": 1886.085,
+            "standard_deviation": 224.438408
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "generated_blocked",
+          "generation_latency_ms": {
+            "maximum": 13795.981,
+            "mean": 10042.968881,
+            "median": 10122.539,
+            "minimum": 3181.19,
+            "n": 201,
+            "p25": 9233.486,
+            "p75": 10782.451,
+            "p95": 11876.035,
+            "standard_deviation": 1258.997052
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 23838720.0,
+            "mean": 931442.626866,
+            "median": 688128.0,
+            "minimum": -7438336.0,
+            "n": 201,
+            "p25": 147456.0,
+            "p75": 884736.0,
+            "p95": 3473408.0,
+            "standard_deviation": 3897241.441076
+          },
+          "processing_latency_ms": {
+            "maximum": 13820.739,
+            "mean": 10073.447468,
+            "median": 10149.413,
+            "minimum": 3206.493,
+            "n": 201,
+            "p25": 9258.42,
+            "p75": 10809.81,
+            "p95": 11901.637,
+            "standard_deviation": 1253.542751
+          },
+          "retrieval_latency_ms": {
+            "maximum": 119.309,
+            "mean": 18.450408,
+            "median": 15.282,
+            "minimum": 14.203,
+            "n": 201,
+            "p25": 14.965,
+            "p75": 15.991,
+            "p95": 22.008,
+            "standard_deviation": 15.532825
+          },
+          "run_count": 201,
+          "validation_latency_ms": {
+            "maximum": 0.05,
+            "mean": 0.033318,
+            "median": 0.035,
+            "minimum": 0.02,
+            "n": 201,
+            "p25": 0.027,
+            "p75": 0.038,
+            "p95": 0.043,
+            "standard_deviation": 0.007026
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "cpu_time_ms": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 199,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "dataset_id": "Sparkov",
+          "disposition": "pre_generation_suppressed",
+          "generation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 199,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "processing_latency_ms": {
+            "maximum": 35.13,
+            "mean": 25.679206,
+            "median": 24.923,
+            "minimum": 22.915,
+            "n": 199,
+            "p25": 23.925,
+            "p75": 26.989,
+            "p95": 29.815,
+            "standard_deviation": 2.239662
+          },
+          "retrieval_latency_ms": {
+            "maximum": 24.237,
+            "mean": 16.626136,
+            "median": 15.839,
+            "minimum": 14.297,
+            "n": 199,
+            "p25": 14.956,
+            "p75": 17.914,
+            "p95": 20.809,
+            "standard_deviation": 2.062759
+          },
+          "run_count": 199,
+          "validation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          }
+        },
+        {
+          "condition_id": "A_direct",
+          "cpu_time_ms": {
+            "maximum": 5971.077,
+            "mean": 1804.62774,
+            "median": 1696.405,
+            "minimum": 492.917,
+            "n": 150,
+            "p25": 1586.54075,
+            "p75": 1873.3645,
+            "p95": 2352.8612,
+            "standard_deviation": 628.587864
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 30762.835,
+            "mean": 8964.572247,
+            "median": 8461.2355,
+            "minimum": 2830.655,
+            "n": 150,
+            "p25": 7999.66875,
+            "p75": 9350.029,
+            "p95": 12036.677,
+            "standard_deviation": 2954.760201
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 18022400.0,
+            "mean": -12744785.92,
+            "median": 737280.0,
+            "minimum": -349536256.0,
+            "n": 150,
+            "p25": -237568.0,
+            "p75": 1257472.0,
+            "p95": 3819110.4,
+            "standard_deviation": 60459402.45489
+          },
+          "processing_latency_ms": {
+            "maximum": 30771.89,
+            "mean": 8969.396807,
+            "median": 8465.7095,
+            "minimum": 2843.755,
+            "n": 150,
+            "p25": 8003.997,
+            "p75": 9354.381,
+            "p95": 12041.59415,
+            "standard_deviation": 2955.047223
+          },
+          "retrieval_latency_ms": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 150,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "run_count": 150,
+          "validation_latency_ms": {
+            "maximum": 2.413,
+            "mean": 0.064273,
+            "median": 0.015,
+            "minimum": 0.011,
+            "n": 150,
+            "p25": 0.014,
+            "p75": 0.021,
+            "p95": 0.0311,
+            "standard_deviation": 0.294344
+          }
+        },
+        {
+          "condition_id": "B_dense",
+          "cpu_time_ms": {
+            "maximum": 9128.67,
+            "mean": 1894.32392,
+            "median": 1787.809,
+            "minimum": 755.534,
+            "n": 150,
+            "p25": 1593.17325,
+            "p75": 1927.63825,
+            "p95": 2231.3417,
+            "standard_deviation": 887.709471
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 44176.65,
+            "mean": 12242.508193,
+            "median": 11802.961,
+            "minimum": 6621.709,
+            "n": 150,
+            "p25": 10520.44575,
+            "p75": 12670.131,
+            "p95": 16052.81185,
+            "standard_deviation": 3873.032446
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 4603904.0,
+            "mean": -22120475.306667,
+            "median": 778240.0,
+            "minimum": -697679872.0,
+            "n": 150,
+            "p25": 16384.0,
+            "p75": 1306624.0,
+            "p95": 3957555.2,
+            "standard_deviation": 123207630.537071
+          },
+          "processing_latency_ms": {
+            "maximum": 44488.431,
+            "mean": 12278.158067,
+            "median": 11813.9285,
+            "minimum": 6632.007,
+            "n": 150,
+            "p25": 10571.1495,
+            "p75": 12679.98275,
+            "p95": 16064.9499,
+            "standard_deviation": 3916.773997
+          },
+          "retrieval_latency_ms": {
+            "maximum": 666.782,
+            "mean": 30.360947,
+            "median": 5.282,
+            "minimum": 4.135,
+            "n": 150,
+            "p25": 4.935,
+            "p75": 6.415,
+            "p95": 294.57235,
+            "standard_deviation": 96.014244
+          },
+          "run_count": 150,
+          "validation_latency_ms": {
+            "maximum": 2.46,
+            "mean": 0.077513,
+            "median": 0.018,
+            "minimum": 0.011,
+            "n": 150,
+            "p25": 0.014,
+            "p75": 0.02275,
+            "p95": 0.0332,
+            "standard_deviation": 0.335802
+          }
+        },
+        {
+          "condition_id": "B_lexical",
+          "cpu_time_ms": {
+            "maximum": 2576.924,
+            "mean": 1727.128787,
+            "median": 1745.2695,
+            "minimum": 357.92,
+            "n": 150,
+            "p25": 1547.40825,
+            "p75": 1920.955,
+            "p95": 2127.5387,
+            "standard_deviation": 280.634205
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 17558.613,
+            "mean": 11609.618373,
+            "median": 11654.43,
+            "minimum": 3259.688,
+            "n": 150,
+            "p25": 10339.489,
+            "p75": 12693.66325,
+            "p95": 15524.58825,
+            "standard_deviation": 1972.383604
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 10371072.0,
+            "mean": 895658.666667,
+            "median": 827392.0,
+            "minimum": -18530304.0,
+            "n": 150,
+            "p25": 20480.0,
+            "p75": 1732608.0,
+            "p95": 6472499.2,
+            "standard_deviation": 3180665.358451
+          },
+          "processing_latency_ms": {
+            "maximum": 17575.816,
+            "mean": 11626.617493,
+            "median": 11670.0825,
+            "minimum": 3274.05,
+            "n": 150,
+            "p25": 10353.96975,
+            "p75": 12708.26075,
+            "p95": 15539.29715,
+            "standard_deviation": 1973.145436
+          },
+          "retrieval_latency_ms": {
+            "maximum": 51.371,
+            "mean": 10.941647,
+            "median": 9.9545,
+            "minimum": 9.546,
+            "n": 150,
+            "p25": 9.70075,
+            "p75": 10.13975,
+            "p95": 12.28455,
+            "standard_deviation": 5.402034
+          },
+          "run_count": 150,
+          "validation_latency_ms": {
+            "maximum": 2.471,
+            "mean": 0.065853,
+            "median": 0.017,
+            "minimum": 0.012,
+            "n": 150,
+            "p25": 0.014,
+            "p75": 0.02275,
+            "p95": 0.02855,
+            "standard_deviation": 0.333193
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "cpu_time_ms": {
+            "maximum": 7814.349,
+            "mean": 1804.049754,
+            "median": 1609.918,
+            "minimum": 419.401,
+            "n": 65,
+            "p25": 1550.295,
+            "p75": 1763.847,
+            "p95": 2032.662,
+            "standard_deviation": 1101.114278
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_blocked",
+          "generation_latency_ms": {
+            "maximum": 40276.137,
+            "mean": 12202.140877,
+            "median": 11098.19,
+            "minimum": 3682.342,
+            "n": 65,
+            "p25": 10553.64,
+            "p75": 12679.913,
+            "p95": 15570.3236,
+            "standard_deviation": 5072.686782
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 4866048.0,
+            "mean": -20460591.261538,
+            "median": 753664.0,
+            "minimum": -695468032.0,
+            "n": 65,
+            "p25": 671744.0,
+            "p75": 950272.0,
+            "p95": 4023910.4,
+            "standard_deviation": 121172687.386761
+          },
+          "processing_latency_ms": {
+            "maximum": 40584.333,
+            "mean": 12225.549585,
+            "median": 11108.875,
+            "minimum": 3691.706,
+            "n": 65,
+            "p25": 10563.355,
+            "p75": 12690.036,
+            "p95": 15580.8876,
+            "standard_deviation": 5119.024286
+          },
+          "retrieval_latency_ms": {
+            "maximum": 296.346,
+            "mean": 18.043446,
+            "median": 5.159,
+            "minimum": 4.364,
+            "n": 65,
+            "p25": 4.889,
+            "p75": 5.674,
+            "p95": 42.146,
+            "standard_deviation": 55.774444
+          },
+          "run_count": 65,
+          "validation_latency_ms": {
+            "maximum": 6.504,
+            "mean": 0.190892,
+            "median": 0.036,
+            "minimum": 0.022,
+            "n": 65,
+            "p25": 0.028,
+            "p75": 0.04,
+            "p95": 0.051,
+            "standard_deviation": 0.91492
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "cpu_time_ms": {
+            "maximum": 1905.806,
+            "mean": 1836.411,
+            "median": 1816.243,
+            "minimum": 1787.184,
+            "n": 3,
+            "p25": 1801.7135,
+            "p75": 1861.0245,
+            "p95": 1896.8497,
+            "standard_deviation": 61.829248
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 15974.774,
+            "mean": 13530.691333,
+            "median": 12465.254,
+            "minimum": 12152.046,
+            "n": 3,
+            "p25": 12308.65,
+            "p75": 14220.014,
+            "p95": 15623.822,
+            "standard_deviation": 2122.423114
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 1622016.0,
+            "mean": 846506.666667,
+            "median": 884736.0,
+            "minimum": 32768.0,
+            "n": 3,
+            "p25": 458752.0,
+            "p75": 1253376.0,
+            "p95": 1548288.0,
+            "standard_deviation": 795313.405408
+          },
+          "processing_latency_ms": {
+            "maximum": 16006.368,
+            "mean": 13549.130667,
+            "median": 12476.99,
+            "minimum": 12164.034,
+            "n": 3,
+            "p25": 12320.512,
+            "p75": 14241.679,
+            "p95": 15653.4302,
+            "standard_deviation": 2133.775257
+          },
+          "retrieval_latency_ms": {
+            "maximum": 26.417,
+            "mean": 12.914333,
+            "median": 7.246,
+            "minimum": 5.08,
+            "n": 3,
+            "p25": 6.163,
+            "p75": 16.8315,
+            "p95": 24.4999,
+            "standard_deviation": 11.743696
+          },
+          "run_count": 3,
+          "validation_latency_ms": {
+            "maximum": 0.073,
+            "mean": 0.065667,
+            "median": 0.064,
+            "minimum": 0.06,
+            "n": 3,
+            "p25": 0.062,
+            "p75": 0.0685,
+            "p95": 0.0721,
+            "standard_deviation": 0.006658
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "cpu_time_ms": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 82,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "dataset_id": "ULB",
+          "disposition": "pre_generation_suppressed",
+          "generation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 82,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "processing_latency_ms": {
+            "maximum": 303.008,
+            "mean": 22.258159,
+            "median": 10.119,
+            "minimum": 8.632,
+            "n": 82,
+            "p25": 9.44275,
+            "p75": 10.7675,
+            "p95": 33.86465,
+            "standard_deviation": 55.801767
+          },
+          "retrieval_latency_ms": {
+            "maximum": 298.252,
+            "mean": 17.780598,
+            "median": 5.592,
+            "minimum": 4.263,
+            "n": 82,
+            "p25": 5.041,
+            "p75": 6.41175,
+            "p95": 29.1941,
+            "standard_deviation": 55.733968
+          },
+          "run_count": 82,
+          "validation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "cpu_time_ms": {
+            "maximum": 2373.364,
+            "mean": 1650.440905,
+            "median": 1594.961,
+            "minimum": 1096.614,
+            "n": 63,
+            "p25": 1535.9335,
+            "p75": 1749.568,
+            "p95": 1984.6625,
+            "standard_deviation": 211.098922
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_blocked",
+          "generation_latency_ms": {
+            "maximum": 18504.444,
+            "mean": 11634.408111,
+            "median": 11154.776,
+            "minimum": 7737.541,
+            "n": 63,
+            "p25": 10564.8375,
+            "p75": 12726.854,
+            "p95": 13732.6571,
+            "standard_deviation": 1703.96263
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 25165824.0,
+            "mean": 1948915.809524,
+            "median": 770048.0,
+            "minimum": -3702784.0,
+            "n": 63,
+            "p25": 688128.0,
+            "p75": 958464.0,
+            "p95": 4040294.4,
+            "standard_deviation": 5419057.528543
+          },
+          "processing_latency_ms": {
+            "maximum": 18520.691,
+            "mean": 11653.771444,
+            "median": 11170.006,
+            "minimum": 7751.998,
+            "n": 63,
+            "p25": 10579.19,
+            "p75": 12741.537,
+            "p95": 13747.021,
+            "standard_deviation": 1703.864957
+          },
+          "retrieval_latency_ms": {
+            "maximum": 54.884,
+            "mean": 11.544079,
+            "median": 9.724,
+            "minimum": 9.447,
+            "n": 63,
+            "p25": 9.6355,
+            "p75": 10.117,
+            "p95": 10.9897,
+            "standard_deviation": 7.605632
+          },
+          "run_count": 63,
+          "validation_latency_ms": {
+            "maximum": 4.44,
+            "mean": 0.112397,
+            "median": 0.035,
+            "minimum": 0.02,
+            "n": 63,
+            "p25": 0.0285,
+            "p75": 0.041,
+            "p95": 0.0538,
+            "standard_deviation": 0.555725
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "cpu_time_ms": {
+            "maximum": 2372.519,
+            "mean": 1972.2874,
+            "median": 1886.034,
+            "minimum": 1770.021,
+            "n": 5,
+            "p25": 1879.651,
+            "p75": 1953.212,
+            "p95": 2288.6576,
+            "standard_deviation": 233.174855
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 15988.753,
+            "mean": 13822.0032,
+            "median": 13314.815,
+            "minimum": 11944.738,
+            "n": 5,
+            "p25": 12402.866,
+            "p75": 15458.844,
+            "p95": 15882.7712,
+            "standard_deviation": 1814.481151
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 3719168.0,
+            "mean": -917504.0,
+            "median": -2473984.0,
+            "minimum": -3964928.0,
+            "n": 5,
+            "p25": -2539520.0,
+            "p75": 671744.0,
+            "p95": 3109683.2,
+            "standard_deviation": 3096966.07067
+          },
+          "processing_latency_ms": {
+            "maximum": 16003.487,
+            "mean": 13837.0624,
+            "median": 13330.264,
+            "minimum": 11959.174,
+            "n": 5,
+            "p25": 12418.091,
+            "p75": 15474.296,
+            "p95": 15897.6488,
+            "standard_deviation": 1814.574241
+          },
+          "retrieval_latency_ms": {
+            "maximum": 10.124,
+            "mean": 9.8766,
+            "median": 9.933,
+            "minimum": 9.661,
+            "n": 5,
+            "p25": 9.661,
+            "p75": 10.004,
+            "p95": 10.1,
+            "standard_deviation": 0.208318
+          },
+          "run_count": 5,
+          "validation_latency_ms": {
+            "maximum": 0.069,
+            "mean": 0.0622,
+            "median": 0.061,
+            "minimum": 0.059,
+            "n": 5,
+            "p25": 0.06,
+            "p75": 0.062,
+            "p95": 0.0676,
+            "standard_deviation": 0.003962
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "cpu_time_ms": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 82,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "dataset_id": "ULB",
+          "disposition": "pre_generation_suppressed",
+          "generation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 82,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "processing_latency_ms": {
+            "maximum": 179.489,
+            "mean": 17.710768,
+            "median": 14.9435,
+            "minimum": 14.077,
+            "n": 82,
+            "p25": 14.5145,
+            "p75": 15.43025,
+            "p95": 17.0081,
+            "standard_deviation": 18.985765
+          },
+          "retrieval_latency_ms": {
+            "maximum": 112.859,
+            "mean": 11.62661,
+            "median": 10.087,
+            "minimum": 9.492,
+            "n": 82,
+            "p25": 9.79525,
+            "p75": 10.33175,
+            "p95": 11.0503,
+            "standard_deviation": 11.559391
+          },
+          "run_count": 82,
+          "validation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "cpu_time_ms": {
+            "maximum": 1974.413,
+            "mean": 1576.544662,
+            "median": 1576.549,
+            "minimum": 960.223,
+            "n": 65,
+            "p25": 1397.773,
+            "p75": 1772.529,
+            "p95": 1944.7092,
+            "standard_deviation": 245.808363
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_blocked",
+          "generation_latency_ms": {
+            "maximum": 16217.979,
+            "mean": 11469.416631,
+            "median": 11221.796,
+            "minimum": 7104.062,
+            "n": 65,
+            "p25": 9810.841,
+            "p75": 12952.115,
+            "p95": 15076.1534,
+            "standard_deviation": 2046.683664
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 22708224.0,
+            "mean": 1053869.292308,
+            "median": 770048.0,
+            "minimum": -2998272.0,
+            "n": 65,
+            "p25": 458752.0,
+            "p75": 1064960.0,
+            "p95": 3912499.2,
+            "standard_deviation": 3225520.169523
+          },
+          "processing_latency_ms": {
+            "maximum": 16238.267,
+            "mean": 11493.186969,
+            "median": 11241.583,
+            "minimum": 7126.292,
+            "n": 65,
+            "p25": 9831.786,
+            "p75": 12972.151,
+            "p95": 15098.899,
+            "standard_deviation": 2046.008188
+          },
+          "retrieval_latency_ms": {
+            "maximum": 152.305,
+            "mean": 17.696908,
+            "median": 15.388,
+            "minimum": 14.39,
+            "n": 65,
+            "p25": 14.781,
+            "p75": 16.292,
+            "p95": 17.3714,
+            "standard_deviation": 16.980949
+          },
+          "run_count": 65,
+          "validation_latency_ms": {
+            "maximum": 0.058,
+            "mean": 0.035123,
+            "median": 0.035,
+            "minimum": 0.021,
+            "n": 65,
+            "p25": 0.029,
+            "p75": 0.039,
+            "p95": 0.0458,
+            "standard_deviation": 0.007466
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "cpu_time_ms": {
+            "maximum": 1938.968,
+            "mean": 1880.816333,
+            "median": 1932.759,
+            "minimum": 1770.722,
+            "n": 3,
+            "p25": 1851.7405,
+            "p75": 1935.8635,
+            "p95": 1938.3471,
+            "standard_deviation": 95.395019
+          },
+          "dataset_id": "ULB",
+          "disposition": "generated_released",
+          "generation_latency_ms": {
+            "maximum": 12933.67,
+            "mean": 12601.247667,
+            "median": 12886.832,
+            "minimum": 11983.241,
+            "n": 3,
+            "p25": 12435.0365,
+            "p75": 12910.251,
+            "p95": 12928.9862,
+            "standard_deviation": 535.721597
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 23412736.0,
+            "mean": 8202922.666667,
+            "median": 1196032.0,
+            "minimum": 0.0,
+            "n": 3,
+            "p25": 598016.0,
+            "p75": 12304384.0,
+            "p95": 21191065.6,
+            "standard_deviation": 13185652.784841
+          },
+          "processing_latency_ms": {
+            "maximum": 13066.092,
+            "mean": 12674.605333,
+            "median": 12954.406,
+            "minimum": 12003.318,
+            "n": 3,
+            "p25": 12478.862,
+            "p75": 13010.249,
+            "p95": 13054.9234,
+            "standard_deviation": 584.027785
+          },
+          "retrieval_latency_ms": {
+            "maximum": 109.51,
+            "mean": 46.829667,
+            "median": 15.66,
+            "minimum": 15.319,
+            "n": 3,
+            "p25": 15.4895,
+            "p75": 62.585,
+            "p95": 100.125,
+            "standard_deviation": 54.283029
+          },
+          "run_count": 3,
+          "validation_latency_ms": {
+            "maximum": 0.079,
+            "mean": 0.066,
+            "median": 0.06,
+            "minimum": 0.059,
+            "n": 3,
+            "p25": 0.0595,
+            "p75": 0.0695,
+            "p95": 0.0771,
+            "standard_deviation": 0.011269
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "cpu_time_ms": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 82,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "dataset_id": "ULB",
+          "disposition": "pre_generation_suppressed",
+          "generation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          },
+          "memory_rss_delta_bytes": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "n": 82,
+            "p25": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "standard_deviation": 0.0
+          },
+          "processing_latency_ms": {
+            "maximum": 32.836,
+            "mean": 20.073671,
+            "median": 19.744,
+            "minimum": 18.227,
+            "n": 82,
+            "p25": 19.21225,
+            "p75": 20.37975,
+            "p95": 22.483,
+            "standard_deviation": 1.807012
+          },
+          "retrieval_latency_ms": {
+            "maximum": 19.383,
+            "mean": 15.506024,
+            "median": 15.194,
+            "minimum": 14.013,
+            "n": 82,
+            "p25": 14.8035,
+            "p75": 15.90175,
+            "p95": 18.12445,
+            "standard_deviation": 1.058095
+          },
+          "run_count": 82,
+          "validation_latency_ms": {
+            "maximum": null,
+            "mean": null,
+            "median": null,
+            "minimum": null,
+            "n": 0,
+            "p25": null,
+            "p75": null,
+            "p95": null,
+            "standard_deviation": null
+          }
+        }
+      ],
+      "disposition_counts": {
+        "generated_blocked": 796,
+        "generated_released": 1661,
+        "pre_generation_suppressed": 843
+      },
+      "generation_only_by_dataset_condition": [
+        {
+          "condition_id": "A_direct",
+          "dataset_id": "Sparkov",
+          "generated_count": 400,
+          "generation_latency_ms": {
+            "maximum": 83075.534,
+            "mean": 27578.909387,
+            "median": 7928.003,
+            "minimum": 1785.249,
+            "n": 400,
+            "p25": 6808.288,
+            "p75": 58739.44975,
+            "p95": 69346.66165,
+            "standard_deviation": 26401.072662
+          },
+          "processing_latency_ms": {
+            "maximum": 83085.086,
+            "mean": 27588.358485,
+            "median": 7938.1225,
+            "minimum": 1794.011,
+            "n": 400,
+            "p25": 6817.3855,
+            "p75": 58748.92525,
+            "p95": 69356.4958,
+            "standard_deviation": 26401.006495
+          }
+        },
+        {
+          "condition_id": "B_dense",
+          "dataset_id": "Sparkov",
+          "generated_count": 400,
+          "generation_latency_ms": {
+            "maximum": 105007.881,
+            "mean": 12380.436013,
+            "median": 9567.599,
+            "minimum": 2765.539,
+            "n": 400,
+            "p25": 8775.17525,
+            "p75": 10790.30175,
+            "p95": 12494.9929,
+            "standard_deviation": 14884.491279
+          },
+          "processing_latency_ms": {
+            "maximum": 105319.974,
+            "mean": 12539.211698,
+            "median": 9614.5505,
+            "minimum": 2780.914,
+            "n": 400,
+            "p25": 8827.25725,
+            "p75": 10968.4735,
+            "p95": 13456.2358,
+            "standard_deviation": 14936.57432
+          }
+        },
+        {
+          "condition_id": "B_lexical",
+          "dataset_id": "Sparkov",
+          "generated_count": 400,
+          "generation_latency_ms": {
+            "maximum": 18084.951,
+            "mean": 10503.397183,
+            "median": 10173.198,
+            "minimum": 3190.899,
+            "n": 400,
+            "p25": 9255.57325,
+            "p75": 11627.47025,
+            "p95": 14687.0774,
+            "standard_deviation": 2089.876397
+          },
+          "processing_latency_ms": {
+            "maximum": 18106.662,
+            "mean": 10525.894973,
+            "median": 10196.523,
+            "minimum": 3210.839,
+            "n": 400,
+            "p25": 9274.66275,
+            "p75": 11649.138,
+            "p95": 14711.2148,
+            "standard_deviation": 2091.083656
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "dataset_id": "Sparkov",
+          "generated_count": 201,
+          "generation_latency_ms": {
+            "maximum": 107019.574,
+            "mean": 13017.58694,
+            "median": 10712.027,
+            "minimum": 2979.216,
+            "n": 201,
+            "p25": 10121.331,
+            "p75": 11095.068,
+            "p95": 12228.495,
+            "standard_deviation": 15085.667903
+          },
+          "processing_latency_ms": {
+            "maximum": 107331.135,
+            "mean": 13043.542169,
+            "median": 10726.359,
+            "minimum": 2995.067,
+            "n": 201,
+            "p25": 10135.587,
+            "p75": 11109.671,
+            "p95": 12242.989,
+            "standard_deviation": 15135.66807
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "dataset_id": "Sparkov",
+          "generated_count": 201,
+          "generation_latency_ms": {
+            "maximum": 12443.678,
+            "mean": 9749.08695,
+            "median": 9794.928,
+            "minimum": 5565.66,
+            "n": 201,
+            "p25": 9169.896,
+            "p75": 10454.099,
+            "p95": 11336.879,
+            "standard_deviation": 1134.333597
+          },
+          "processing_latency_ms": {
+            "maximum": 12462.963,
+            "mean": 9772.666771,
+            "median": 9814.695,
+            "minimum": 5584.64,
+            "n": 201,
+            "p25": 9195.177,
+            "p75": 10501.115,
+            "p95": 11356.643,
+            "standard_deviation": 1133.682125
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "dataset_id": "Sparkov",
+          "generated_count": 201,
+          "generation_latency_ms": {
+            "maximum": 13795.981,
+            "mean": 10042.968881,
+            "median": 10122.539,
+            "minimum": 3181.19,
+            "n": 201,
+            "p25": 9233.486,
+            "p75": 10782.451,
+            "p95": 11876.035,
+            "standard_deviation": 1258.997052
+          },
+          "processing_latency_ms": {
+            "maximum": 13820.739,
+            "mean": 10073.447468,
+            "median": 10149.413,
+            "minimum": 3206.493,
+            "n": 201,
+            "p25": 9258.42,
+            "p75": 10809.81,
+            "p95": 11901.637,
+            "standard_deviation": 1253.542751
+          }
+        },
+        {
+          "condition_id": "A_direct",
+          "dataset_id": "ULB",
+          "generated_count": 150,
+          "generation_latency_ms": {
+            "maximum": 30762.835,
+            "mean": 8964.572247,
+            "median": 8461.2355,
+            "minimum": 2830.655,
+            "n": 150,
+            "p25": 7999.66875,
+            "p75": 9350.029,
+            "p95": 12036.677,
+            "standard_deviation": 2954.760201
+          },
+          "processing_latency_ms": {
+            "maximum": 30771.89,
+            "mean": 8969.396807,
+            "median": 8465.7095,
+            "minimum": 2843.755,
+            "n": 150,
+            "p25": 8003.997,
+            "p75": 9354.381,
+            "p95": 12041.59415,
+            "standard_deviation": 2955.047223
+          }
+        },
+        {
+          "condition_id": "B_dense",
+          "dataset_id": "ULB",
+          "generated_count": 150,
+          "generation_latency_ms": {
+            "maximum": 44176.65,
+            "mean": 12242.508193,
+            "median": 11802.961,
+            "minimum": 6621.709,
+            "n": 150,
+            "p25": 10520.44575,
+            "p75": 12670.131,
+            "p95": 16052.81185,
+            "standard_deviation": 3873.032446
+          },
+          "processing_latency_ms": {
+            "maximum": 44488.431,
+            "mean": 12278.158067,
+            "median": 11813.9285,
+            "minimum": 6632.007,
+            "n": 150,
+            "p25": 10571.1495,
+            "p75": 12679.98275,
+            "p95": 16064.9499,
+            "standard_deviation": 3916.773997
+          }
+        },
+        {
+          "condition_id": "B_lexical",
+          "dataset_id": "ULB",
+          "generated_count": 150,
+          "generation_latency_ms": {
+            "maximum": 17558.613,
+            "mean": 11609.618373,
+            "median": 11654.43,
+            "minimum": 3259.688,
+            "n": 150,
+            "p25": 10339.489,
+            "p75": 12693.66325,
+            "p95": 15524.58825,
+            "standard_deviation": 1972.383604
+          },
+          "processing_latency_ms": {
+            "maximum": 17575.816,
+            "mean": 11626.617493,
+            "median": 11670.0825,
+            "minimum": 3274.05,
+            "n": 150,
+            "p25": 10353.96975,
+            "p75": 12708.26075,
+            "p95": 15539.29715,
+            "standard_deviation": 1973.145436
+          }
+        },
+        {
+          "condition_id": "C_dense",
+          "dataset_id": "ULB",
+          "generated_count": 68,
+          "generation_latency_ms": {
+            "maximum": 40276.137,
+            "mean": 12260.753397,
+            "median": 11103.317,
+            "minimum": 3682.342,
+            "n": 68,
+            "p25": 10571.3805,
+            "p75": 12680.52425,
+            "p95": 15901.66425,
+            "standard_deviation": 4978.953564
+          },
+          "processing_latency_ms": {
+            "maximum": 40584.333,
+            "mean": 12283.942868,
+            "median": 11135.2075,
+            "minimum": 3691.706,
+            "n": 68,
+            "p25": 10581.511,
+            "p75": 12690.57075,
+            "p95": 15925.82425,
+            "standard_deviation": 5024.138668
+          }
+        },
+        {
+          "condition_id": "C_lexical",
+          "dataset_id": "ULB",
+          "generated_count": 68,
+          "generation_latency_ms": {
+            "maximum": 18504.444,
+            "mean": 11795.260691,
+            "median": 11352.803,
+            "minimum": 7737.541,
+            "n": 68,
+            "p25": 10632.70525,
+            "p75": 12771.7905,
+            "p95": 15057.6376,
+            "standard_deviation": 1792.830345
+          },
+          "processing_latency_ms": {
+            "maximum": 18520.691,
+            "mean": 11814.307544,
+            "median": 11367.1695,
+            "minimum": 7751.998,
+            "n": 68,
+            "p25": 10647.08675,
+            "p75": 12786.043,
+            "p95": 15073.22855,
+            "standard_deviation": 1792.387259
+          }
+        },
+        {
+          "condition_id": "D_hybrid",
+          "dataset_id": "ULB",
+          "generated_count": 68,
+          "generation_latency_ms": {
+            "maximum": 16217.979,
+            "mean": 11519.350353,
+            "median": 11295.6095,
+            "minimum": 7104.062,
+            "n": 68,
+            "p25": 9998.38375,
+            "p75": 12950.6,
+            "p95": 15028.14695,
+            "standard_deviation": 2016.121841
+          },
+          "processing_latency_ms": {
+            "maximum": 16238.267,
+            "mean": 11545.308368,
+            "median": 11315.253,
+            "minimum": 7126.292,
+            "n": 68,
+            "p25": 10019.88,
+            "p75": 12972.35325,
+            "p95": 15050.53375,
+            "standard_deviation": 2017.084721
+          }
+        }
+      ]
+    },
+    "unit": "condition record within dataset, condition, and disposition"
+  },
+  "schema_version": "1.0",
+  "scientific_status": "post_hoc_descriptive_analysis_no_new_model_calls",
+  "scope_boundary": "Derived only from accepted immutable raw records; no model, retrieval, guardrail, panel, protocol, or V4 re-execution or alteration.",
+  "study_id": "FOLLOWUP-RETRIEVAL-20260902-02"
+}

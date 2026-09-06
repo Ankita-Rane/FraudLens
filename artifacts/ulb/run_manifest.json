@@ -1,0 +1,37 @@
+{
+  "dataset": "ULB",
+  "data_sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89",
+  "seed": 42,
+  "duplicate_policy": "retain first row from each exact duplicate group before split",
+  "selected_model": "Random forest",
+  "primary_metric": "average_precision",
+  "threshold_selection": "maximum validation F2",
+  "selected_threshold": 0.16981675118042264,
+  "split_manifest": [
+    {
+      "split": "train",
+      "rows": 181584,
+      "fraud": 302,
+      "fraud_rate": 0.0016631421270596528
+    },
+    {
+      "split": "validation",
+      "rows": 45396,
+      "fraud": 76,
+      "fraud_rate": 0.001674156313331571
+    },
+    {
+      "split": "test",
+      "rows": 56746,
+      "fraud": 95,
+      "fraud_rate": 0.0016741268107003137
+    }
+  ],
+  "versions": {
+    "python": "3.13.5",
+    "pandas": "2.3.1",
+    "numpy": "2.3.2",
+    "scikit_learn": "1.6.1",
+    "imbalanced_learn": "0.13.0"
+  }
+}
